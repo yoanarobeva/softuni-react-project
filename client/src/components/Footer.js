@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
     return (
         <footer className="bg-dark" id="tempaltemo_footer">
@@ -5,44 +7,45 @@ export const Footer = () => {
                 <div className="row">
 
                     <div className="col-md-4 pt-5">
-                        <h2 className="h2 text-success border-bottom pb-3 border-light logo">Zay Shop</h2>
+                        <h2 className="h2 text-success border-bottom pb-3 border-light logo">uniQUEode</h2>
                         <ul className="list-unstyled text-light footer-link-list">
                             <li>
                                 <i className="fas fa-map-marker-alt fa-fw"></i>
-                                123 Consectetur at ligula 10660
+                                1000, Sofia, Bulgaria
                             </li>
                             <li>
                                 <i className="fa fa-phone fa-fw"></i>
-                                <a className="text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                                <a className="text-decoration-none" href="tel:+359885825068">+359 88 582 50 68</a>
                             </li>
                             <li>
                                 <i className="fa fa-envelope fa-fw"></i>
-                                <a className="text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                                <a className="text-decoration-none" href="mailto:info@company.com">uniqode@gmail.com</a>
                             </li>
                         </ul>
                     </div>
 
                     <div className="col-md-4 pt-5">
-                        <h2 className="h2 text-light border-bottom pb-3 border-light">Products</h2>
+                        <h2 className="h2 text-light border-bottom pb-3 border-light">Designs</h2>
+                        {/* TODO: Not sure for categoies, think about it */}
                         <ul className="list-unstyled text-light footer-link-list">
-                            <li><a className="text-decoration-none" href="#">Luxury</a></li>
-                            <li><a className="text-decoration-none" href="#">Sport Wear</a></li>
-                            <li><a className="text-decoration-none" href="#">Men's Shoes</a></li>
-                            <li><a className="text-decoration-none" href="#">Women's Shoes</a></li>
-                            <li><a className="text-decoration-none" href="#">Popular Dress</a></li>
-                            <li><a className="text-decoration-none" href="#">Gym Accessories</a></li>
-                            <li><a className="text-decoration-none" href="#">Sport Shoes</a></li>
+                            <li><Link className="text-decoration-none" to="/designs/?where=category=triangles">Triangle</Link></li>
+                            <li><Link className="text-decoration-none" to="/designs/?where=category=squares">Square</Link></li>
+                            <li><Link className="text-decoration-none" to="/designs/?where=category=circles">Circle</Link></li>
+                            <li><Link className="text-decoration-none" to="/designs/?where=category=pentagones">Pentagon</Link></li>
+                            <li><Link className="text-decoration-none" to="/designs/?where=category=hexagons">Hexagon</Link></li>
+                            <li><Link className="text-decoration-none" to="/designs/?where=category=heptagons">Heptagon</Link></li>
+                            <li><Link className="text-decoration-none" to="/designs/?where=category=octagons">Octagon</Link></li>
+                            <li><Link className="text-decoration-none" to="/designs/?where=category=decagons">Decagon</Link></li>
+                            <li><Link className="text-decoration-none" to="/designs/?where=category=composites">Composite</Link></li>
                         </ul>
                     </div>
 
                     <div className="col-md-4 pt-5">
                         <h2 className="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
                         <ul className="list-unstyled text-light footer-link-list">
-                            <li><a className="text-decoration-none" href="#">Home</a></li>
-                            <li><a className="text-decoration-none" href="#">About Us</a></li>
-                            <li><a className="text-decoration-none" href="#">Shop Locations</a></li>
-                            <li><a className="text-decoration-none" href="#">FAQs</a></li>
-                            <li><a className="text-decoration-none" href="#">Contact</a></li>
+                            <li><Link className="text-decoration-none" to="/">Home</Link></li>
+                            <li><Link className="text-decoration-none" to="/about">About Us</Link></li>
+                            <li><Link className="text-decoration-none" to="/contact">Contact</Link></li>
                         </ul>
                     </div>
 
@@ -55,26 +58,23 @@ export const Footer = () => {
                     <div className="col-auto me-auto">
                         <ul className="list-inline text-left footer-icons">
                             <li className="list-inline-item border border-light rounded-circle text-center">
-                                <a className="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i className="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                                <a rel="noreferrer" className="text-light text-decoration-none" target="_blank" href="https://www.facebook.com/uniqueode.brainmade/"><i className="fab fa-facebook-f fa-lg fa-fw"></i></a>
                             </li>
                             <li className="list-inline-item border border-light rounded-circle text-center">
-                                <a className="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i className="fab fa-instagram fa-lg fa-fw"></i></a>
+                                <a rel="noreferrer" className="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/uniqueode.brainmade.vigo/"><i className="fab fa-instagram fa-lg fa-fw"></i></a>
                             </li>
                             <li className="list-inline-item border border-light rounded-circle text-center">
-                                <a className="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i className="fab fa-twitter fa-lg fa-fw"></i></a>
-                            </li>
-                            <li className="list-inline-item border border-light rounded-circle text-center">
-                                <a className="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i className="fab fa-linkedin fa-lg fa-fw"></i></a>
+                                <a rel="noreferrer" className="text-light text-decoration-none" target="_blank" href="https://www.pinterest.com/uniqueode/"><i className="fab fa-pinterest fa-lg fa-fw"></i></a>
                             </li>
                         </ul>
                     </div>
-                    <div className="col-auto">
-                        <label className="sr-only" for="subscribeEmail">Email address</label>
+                    {/* <div className="col-auto">
+                        <label className="sr-only" htmlFor="subscribeEmail">Email address</label>
                         <div className="input-group mb-2">
                             <input type="text" className="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address"/>
                             <div className="input-group-text btn-success text-light">Subscribe</div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
@@ -83,8 +83,8 @@ export const Footer = () => {
                     <div className="row pt-2">
                         <div className="col-12">
                             <p className="text-left text-light">
-                                Copyright &copy; 2021 Company Name 
-                                | Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+                                Copyright &copy; 2023 uniQUEode by Diana Todorova
+                                | Designed by <a rel="noreferrer" href="https://templatemo.com" target="_blank">TemplateMo</a> and Yoana Robeva
                             </p>
                         </div>
                     </div>

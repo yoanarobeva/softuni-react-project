@@ -7,7 +7,7 @@ export const TopHeader = () => {
                         <i className="fa fa-envelope mx-2"></i>
                         <a className="navbar-sm-brand text-light text-decoration-none" href="mailto:uniqode@gmail.com">uniqode@gmail.com</a>
                         <i className="fa fa-phone mx-2"></i>
-                        <a className="navbar-sm-brand text-light text-decoration-none" href="tel:0885825068">+359 88 582 50 68</a>
+                        <a className="navbar-sm-brand text-light text-decoration-none" href="tel:+359885825068">+359 88 582 50 68</a>
                     </div>
                     <div>
                         <a className="text-light" href="https://www.facebook.com/uniqueode.brainmade" target="_blank" rel="noreferrer"><i className="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>

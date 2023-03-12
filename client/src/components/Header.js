@@ -1,11 +1,13 @@
+import { NavLink } from "react-router-dom";
+
 export const Header = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light shadow">
             <div className="container d-flex justify-content-between align-items-center">
 
-                <a className="navbar-brand text-success logo h1 align-self-center" href="/">
+                <NavLink to={"/"} className="navbar-brand text-success logo h1 align-self-center">
                     uniQUEode
-                </a>
+                </NavLink>
 
                 <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -15,16 +17,16 @@ export const Header = () => {
                     <div className="flex-fill">
                         <ul className="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                             <li className="nav-item">
-                                <a className="nav-link" href="/">Home</a>
+                                <NavLink to={"/"} className="nav-link">Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/about">About</a>
+                                <NavLink to={"/about"} className="nav-link">About</NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/catalog">Designs</a>
+                                <NavLink to={"/catalog"} className="nav-link">Designs</NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/contact">Contact</a>
+                                <NavLink to={"/contact"} className="nav-link">Contact</NavLink>
                             </li>
                         </ul>
                     </div>
@@ -37,17 +39,23 @@ export const Header = () => {
                                 </div>
                             </div>
                         </div>
-                        <a className="nav-icon d-none d-lg-inline" href="/search" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+
+                        {/* TODO: Implement search as a modal, now is not working */}
+                        <NavLink to={"/search"} className="nav-icon d-none d-lg-inline">
                             <i className="fa fa-fw fa-search text-dark mr-2"></i>
-                        </a>
-                        <a className="nav-icon position-relative text-decoration-none" href="/cart">
+                        </NavLink>
+                            
+                        <NavLink to={"/cart"} className="nav-icon position-relative text-decoration-none">
                             <i className="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                             {/* <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span> */}
-                        </a>
-                        <a className="nav-icon position-relative text-decoration-none" href="/auth">
+
+                        </NavLink>
+
+                        <NavLink to={"/auth"} className="nav-icon position-relative text-decoration-none">
                             <i className="fa fa-fw fa-user text-dark mr-3"></i>
                             {/* <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span> */}
-                        </a>
+                        </NavLink>
+                        
                     </div>
                 </div>
 

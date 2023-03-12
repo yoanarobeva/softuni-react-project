@@ -1,17 +1,19 @@
+import { Link } from "react-router-dom";
+
 export const Banner = () => {
     return (
         <div id="template-mo-zay-hero-carousel" className="carousel slide" data-bs-ride="carousel">
-            <ol className="carousel-indicators">
+            {/* <ol className="carousel-indicators">
                 <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" className="active"></li>
                 <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
                 <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
-            </ol>
+            </ol> */}
             <div className="carousel-inner">
                 <div className="carousel-item active">
                     <div className="container">
                         <div className="row p-5">
                             <div className="mx-auto col-md-8 col-lg-6 order-lg-last">
-                                <img className="img-fluid" src="./assets/img/banner_img_01.jpg" alt=""/>
+                                <img className="img-fluid" src="/assets/img/banner_img_01.jpg" alt=""/>
                             </div>
                             <div className="col-lg-6 mb-0 d-flex align-items-center">
                                 <div className="text-align-left align-self-center">
@@ -20,7 +22,7 @@ export const Banner = () => {
                                     <p>Geometric jewelry : : inspired by the Sacred Geometry</p> 
                                     <p>designed by code : : produced by 3D print</p>
                                     <p>
-                                        Learn more <a className="text-success" href="/about">about us</a>, check out <a className="text-success" href="/catalog">our designs</a> or <a className="text-success" href="/contact">contact us</a> directly.
+                                        Learn more <Link className="text-success" to={"/about"}>about us</Link>, check out <Link className="text-success" to="/catalog">our designs</Link> or <Link className="text-success" to="/contact">contact us</Link> directly.
                                     </p>    
                                 </div>
                             </div>
@@ -31,7 +33,7 @@ export const Banner = () => {
                     <div className="container">
                         <div className="row p-5">
                             <div className="mx-auto col-md-8 col-lg-6 order-lg-last">
-                                <img className="img-fluid" src="./assets/img/banner_img_02.jpg" alt=""/>
+                                <img className="img-fluid" src="/assets/img/banner_img_02.jpg" alt=""/>
                             </div>
                             <div className="col-lg-6 mb-0 d-flex align-items-center">
                                 <div className="text-align-left">
@@ -49,14 +51,14 @@ export const Banner = () => {
                     <div className="container">
                         <div className="row p-5">
                             <div className="mx-auto col-md-8 col-lg-6 order-lg-last">
-                                <img className="img-fluid" src="./assets/img/banner_img_03.jpg" alt=""/>
+                                <img className="img-fluid" src="/assets/img/banner_img_03.jpg" alt=""/>
                             </div>
                             <div className="col-lg-6 mb-0 d-flex align-items-center">
                                 <div className="text-align-left">
                                     <h1 className="h1">Create your jewelry!</h1>
                                     <h3 className="h2">3D print it</h3>
                                     <p>
-                                        We can 3D print your unique jewelry! You can choose to make it a beautiful pair of earrings or necklace.
+                                        We can 3D print your unique jewelry! You can choose to make it a beautiful pair of earrings, necklace or broche.
                                     </p>
                                 </div>
                             </div>
