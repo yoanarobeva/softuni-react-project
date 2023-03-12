@@ -1,4 +1,4 @@
-# [SoftUni Practice Server](https://github.com/softuni-practice-server/softuni-practice-server) &copy
+# [SoftUni Practice Server](https://github.com/softuni-practice-server/softuni-practice-server) ©
 
 ## Usage
 
