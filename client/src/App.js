@@ -8,6 +8,7 @@ import { AboutPage } from './components/AboutPage/AboutPage';
 import { ContactPage } from './components/ContactPage/ContactPage';
 import { Footer } from "./components/Footer";
 import { CatalogPage } from './components/CatalogPage/CatalogPage';
+import { DetailsPage } from './components/DetailsPage/DetailsPage';
 
 function App() {
   return (
@@ -22,7 +23,9 @@ function App() {
         <Route path='/about' element={<AboutPage />} />
         <Route path='/catalog' element={<CatalogPage />} />
         <Route path='/contact' element={<ContactPage />} />
-        {/* search is a modal and its not working that way, try another */}
+        {/* TODO: check if there is better way to route this (in catalog page maybe?) */}
+        <Route path='/details' element={<DetailsPage />} /> 
+        {/* TODO: search is a modal and its not working that way, try another */}
         <Route path='/search' element={<Search />} /> 
         <Route path='/cart' element={<HomePage />} />
         <Route path='/auth' element={<HomePage />} />

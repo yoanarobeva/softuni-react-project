@@ -48,6 +48,13 @@ export const CatalogPage = () => {
                         <div className="row">
                             {/* TODO: Map CatalogCard when you have database */}
                             <CatalogCard />
+                            <CatalogCard />
+                            <CatalogCard />
+                            <CatalogCard />
+                            <CatalogCard />
+                            <CatalogCard />
+                            <CatalogCard />
+                            <CatalogCard />
                         </div>
                         <Pagination />
                     </div>

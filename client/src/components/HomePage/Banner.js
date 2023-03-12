@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 
 export const Banner = () => {
     return (
-        <div id="template-mo-zay-hero-carousel" className="carousel slide" data-bs-ride="carousel">
-            {/* <ol className="carousel-indicators">
-                <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" className="active"></li>
-                <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
-                <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
-            </ol> */}
+        <div id="uniQUEode-carousel" className="carousel slide" data-bs-ride="carousel">
+            <ol className="carousel-indicators">
+                <li data-bs-target="#uniQUEode-carousel" data-bs-slide-to="0" className="active"></li>
+                <li data-bs-target="#uniQUEode-carousel" data-bs-slide-to="1"></li>
+                <li data-bs-target="#uniQUEode-carousel" data-bs-slide-to="2"></li>
+            </ol>
             <div className="carousel-inner">
                 <div className="carousel-item active">
                     <div className="container">
@@ -66,10 +66,10 @@ export const Banner = () => {
                     </div>
                 </div>
             </div>
-            <a className="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+            <a className="carousel-control-prev text-decoration-none w-auto ps-3" href="#uniQUEode-carousel" role="button" data-bs-slide="prev">
                 <i className="fas fa-chevron-left"></i>
             </a>
-            <a className="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+            <a className="carousel-control-next text-decoration-none w-auto pe-3" href="#uniQUEode-carousel" role="button" data-bs-slide="next">
                 <i className="fas fa-chevron-right"></i>
             </a>
         </div>
