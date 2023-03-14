@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 import { CatalogCard } from "./CatalogCard";
 import { Category } from "./Category";
-import { Pagination } from "./Pagination";
+import { Pagination } from "../Pagination/Pagination";
 
-export const CatalogPage = () => {
+export const Catalog = () => {
     return (
         <>
             <div className="container py-5">

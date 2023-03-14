@@ -1,4 +1,4 @@
-export const AboutPage = () => {
+export const About = () => {
     return (
         <section className="bg-success py-5">
             <div className="container">

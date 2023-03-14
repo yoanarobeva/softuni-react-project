@@ -1,4 +1,4 @@
-export const Contact = () => {
+export const ContactForm = () => {
     return (
         <div className="container py-5">
             <div className="row py-5">

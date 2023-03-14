@@ -1,6 +1,6 @@
 export const Details = () => {
     return (
-        <section class="bg-light">
+        <section className="bg-light">
             <div className="container pb-5">
                 <div className="row">
                     <div className="col-lg-5 mt-5">

@@ -9,9 +9,10 @@ export const Header = () => {
                     uniQUEode
                 </NavLink>
 
-                <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                {/* TODO: Check if you need this */}
+                {/* <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
-                </button>
+                </button> */}
 
                 <div className="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
                     <div className="flex-fill">
@@ -25,23 +26,19 @@ export const Header = () => {
                             <li className="nav-item">
                                 <NavLink to={"/catalog"} className="nav-link">Designs</NavLink>
                             </li>
+                            {/* TODO: show if owner */}
+                            <li className="nav-item">
+                                <NavLink to={"/create"} className="nav-link">Create Design</NavLink>
+                            </li>
                             <li className="nav-item">
                                 <NavLink to={"/contact"} className="nav-link">Contact</NavLink>
                             </li>
                         </ul>
                     </div>
                     <div className="navbar align-self-center d-flex">
-                        <div className="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
-                            <div className="input-group">
-                                <input type="text" className="form-control" id="inputMobileSearch" placeholder="Search ..."/>
-                                <div className="input-group-text">
-                                    <i className="fa fa-fw fa-search"></i>
-                                </div>
-                            </div>
-                        </div>
 
                         {/* TODO: Implement search as a modal, now is not working */}
-                        <NavLink to={"/search"} className="nav-icon d-none d-lg-inline">
+                        <NavLink to={"/search"} className="nav-icon d-none d-lg-inline" data-bs-toggle="modal" data-bs-target="#templatemo_search">
                             <i className="fa fa-fw fa-search text-dark mr-2"></i>
                         </NavLink>
                             
@@ -51,9 +48,18 @@ export const Header = () => {
 
                         </NavLink>
 
-                        <NavLink to={"/auth"} className="nav-icon position-relative text-decoration-none">
+                        {/* TODO: show login for not logged users */}
+                        <NavLink to={"/login"} className="nav-icon position-relative text-decoration-none">
+                            <i className="fa fa-fw fa-sign-in-alt text-dark mr-4"></i>
+                        </NavLink>
+
+                        {/* TODO: show profile and logout for registered users and only logout for owner */}
+                        <NavLink to={"/profile"} className="nav-icon position-relative text-decoration-none">
                             <i className="fa fa-fw fa-user text-dark mr-3"></i>
-                            {/* <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span> */}
+                        </NavLink>
+
+                        <NavLink to={"/logout"} className="nav-icon position-relative text-decoration-none">
+                            <i className="fa fa-fw fa-sign-out-alt text-dark mr-4"></i>
                         </NavLink>
                         
                     </div>

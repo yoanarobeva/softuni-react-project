@@ -1,14 +1,19 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { TopHeader } from "./components/TopHeader";
-import { Header } from "./components/Header";
-import { Search } from './components/Search';
-import { HomePage } from "./components/HomePage/HomePage";
-import { AboutPage } from './components/AboutPage/AboutPage';
-import { ContactPage } from './components/ContactPage/ContactPage';
-import { Footer } from "./components/Footer";
-import { CatalogPage } from './components/CatalogPage/CatalogPage';
-import { DetailsPage } from './components/DetailsPage/DetailsPage';
+import { TopHeader } from "./components/TopHeader/TopHeader";
+import { Header } from "./components/Header/Header";
+import { Search } from './components/SearchModal/Search';
+import { Home } from "./components/Home/Home";
+import { About } from './components/About/About';
+import { Contact } from './components/Contact/Contact';
+import { Footer } from "./components/Footer/Footer";
+import { Catalog } from './components/Catalog/Catalog';
+import { Details } from './components/Details/Details';
+import { Login } from './components/Login/Login';
+import { Register } from './components/Register/Register';
+import { Profile } from './components/Profile/Profile';
+import { CreateDesign } from './components/CreateDesign/CreateDesign';
+import { Cart } from './components/Cart/Cart';
 
 function App() {
   return (
@@ -17,18 +22,21 @@ function App() {
 
       <Header />
 
+      <Search />
+
       <Routes>
         <Route path='*' element={<h1>404</h1>} />
-        <Route path='/' element={<HomePage />} />
-        <Route path='/about' element={<AboutPage />} />
-        <Route path='/catalog' element={<CatalogPage />} />
-        <Route path='/contact' element={<ContactPage />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/catalog' element={<Catalog />} />
+        <Route path='/create' element={<CreateDesign />} />
+        <Route path='/contact' element={<Contact />} />
         {/* TODO: check if there is better way to route this (in catalog page maybe?) */}
-        <Route path='/details' element={<DetailsPage />} /> 
-        {/* TODO: search is a modal and its not working that way, try another */}
-        <Route path='/search' element={<Search />} /> 
-        <Route path='/cart' element={<HomePage />} />
-        <Route path='/auth' element={<HomePage />} />
+        <Route path='/details' element={<Details />} /> 
+        <Route path='/cart' element={<Cart />} />
+        <Route path='/profile' element={<Profile />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
       </Routes>
 
       <Footer />
