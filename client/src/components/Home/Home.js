@@ -1,3 +1,4 @@
+import './Home.css'
 import { Banner } from "./Banner";
 import { Categories } from "../Categories/Categories";
 

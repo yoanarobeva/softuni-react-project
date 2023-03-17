@@ -1096,174 +1096,165 @@
     	}
     };
     var seedData = {
-    	recipes: {
-    		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			name: "Easy Lasagna",
-    			img: "assets/lasagna.jpg",
-    			ingredients: [
-    				"1 tbsp Ingredient 1",
-    				"2 cups Ingredient 2",
-    				"500 g  Ingredient 3",
-    				"25 g Ingredient 4"
-    			],
-    			steps: [
-    				"Prepare ingredients",
-    				"Mix ingredients",
-    				"Cook until done"
-    			],
-    			_createdOn: 1613551279012
-    		},
-    		"8f414b4f-ab39-4d36-bedb-2ad69da9c830": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			name: "Grilled Duck Fillet",
-    			img: "assets/roast.jpg",
-    			ingredients: [
-    				"500 g  Ingredient 1",
-    				"3 tbsp Ingredient 2",
-    				"2 cups Ingredient 3"
-    			],
-    			steps: [
-    				"Prepare ingredients",
-    				"Mix ingredients",
-    				"Cook until done"
-    			],
-    			_createdOn: 1613551344360
-    		},
-    		"985d9eab-ad2e-4622-a5c8-116261fb1fd2": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			name: "Roast Trout",
-    			img: "assets/fish.jpg",
-    			ingredients: [
-    				"4 cups Ingredient 1",
-    				"1 tbsp Ingredient 2",
-    				"1 tbsp Ingredient 3",
-    				"750 g  Ingredient 4",
-    				"25 g Ingredient 5"
-    			],
-    			steps: [
-    				"Prepare ingredients",
-    				"Mix ingredients",
-    				"Cook until done"
-    			],
-    			_createdOn: 1613551388703
-    		}
+    	designs: {
+            "design_1": {
+                "_id": "design_1",
+                "name": "Lynx",
+                "price": 15,
+                "imageUrl": "/assets/img/designs/design_1.jpg",
+                "shape": "circle",
+                "description": "Czech Republic proposal; a fictional substance in the novel Továrna na absolutno by Karel Čapek." 
+              },
+              "design_2": {
+                  "_id": "design_2",
+                  "name": "Eridanus",
+                  "price": 20,
+                  "imageUrl": "/assets/img/designs/design_2.jpg",
+                  "shape": "circle",
+                  "description": "The name was originally Arabic: آخر النهر āẖir an-nahr ('river's end')." 
+              },
+              "design_3": {
+                  "_id": "design_3",
+                  "name": "Cassiopeia",
+                  "price": 15,
+                  "imageUrl": "/assets/img/designs/design_3.jpg",
+                  "shape": "heptagon",
+                  "description": "Apparently first applied to η Cassiopeiae in the Skalnate Pleso Atlas of the Heavens published in 1950, but is not known prior to that." 
+              },
+              "design_4": {
+                  "_id": "design_4",
+                  "name": "Scorpius",
+                  "price": 15,
+                  "imageUrl": "/assets/img/designs/design_4.jpg",
+                  "shape": "hexagon",
+                  "description": "The traditional name of the β Scorpii system has been rendered Akrab and Elakrab, derived (like Acrab) from Arabic: العقرب al-ʿaqrab ('the scorpion')." 
+              },
+              "design_5": {
+                  "_id": "design_5",
+                  "name": "Crux",
+                  "price": 18,
+                  "imageUrl": "/assets/img/designs/design_5.jpg",
+                  "shape": "hexagon",
+                  "description": "Acrux is a modern contraction of the Bayer designation, coined in the 19th century, but which entered into common use only by the mid-20th century." 
+              },
+              "design_6": {
+                  "_id": "design_6",
+                  "name": "Cancer",
+                  "price": 20,
+                  "imageUrl": "/assets/img/designs/design_6.jpg",
+                  "shape": "hexagon",
+                  "description": "The name was originally Arabic: الزبانى az-zubāná ('the claws')." 
+              },
+              "design_7": {
+                  "_id": "design_7",
+                  "name": "Canis Major",
+                  "price": 22,
+                  "imageUrl": "/assets/img/designs/design_7.jpg",
+                  "shape": "octagon",
+                  "description": "The name is originally from Arabic: عذارى ʿaḏārá ('virgins'). In the Calendarium of Al Achsasi Al Mouakket, it is designated أول العذاري awwil al-ʿaḏāriyy, translated into Latin as Prima Virginum ('first virgin')." 
+              },
+              "design_8": {
+                  "_id": "design_8",
+                  "name": "Andromeda",
+                  "price": 16,
+                  "imageUrl": "/assets/img/designs/design_8.jpg",
+                  "shape": "octagon",
+                  "description": "The name was originally Arabic: الذيل aḏ-ḏayl (the train, lit. 'the tail')." 
+              },
+              "design_9": {
+                  "_id": "design_9",
+                  "name": "Taurus",
+                  "price": 23,
+                  "imageUrl": "/assets/img/designs/design_9.jpg",
+                  "shape": "pentagon",
+                  "description": "The name is originally from Arabic: عين ʿayn ('eye') and was reviewed and adopted by the Working Group on Star Names." 
+              },
+              "design_10": {
+                  "_id": "design_10",
+                  "name": "Sagittarius",
+                  "price": 24,
+                  "imageUrl": "/assets/img/designs/design_10.jpg",
+                  "shape": "pentagon",
+                  "description": "From Arabic: عين الرامي ʿayn ar-rāmī ('eye of the archer')." 
+              },
+              "design_11": {
+                  "_id": "design_11",
+                  "name": "Lyra",
+                  "price": 14,
+                  "imageUrl": "/assets/img/designs/design_11.jpg",
+                  "shape": "square",
+                  "description": "The name is originally from Arabic: الأظفر al-uẓfur ('the talons' [of the swooping eagle]), shared with μ Lyrae (Alathfar)." 
+              },
+              "design_12": {
+                  "_id": "design_12",
+                  "name": "Serpens",
+                  "price": 21,
+                  "imageUrl": "/assets/img/designs/design_12.jpg",
+                  "shape": "square",
+                  "description": "Cypriot proposal; first historically recorded name of Cyprus (mid-15th century)." 
+              },
+              "design_13": {
+                  "_id": "design_13",
+                  "name": "Cygnus",
+                  "price": 22,
+                  "imageUrl": "/assets/img/designs/design_13.jpg",
+                  "shape": "square",
+                  "description": "The source of the name Albireo is not entirely clear." 
+              },
+              "design_15": {
+                  "_id": "design_15",
+                  "name": "Cepheus",
+                  "price": 23,
+                  "imageUrl": "/assets/img/designs/design_15.jpg",
+                  "shape": "triangle",
+                  "description": "From Arabic: الذراع اليمين aḏ-ḏirāʿ al-yamīn ('the right arm' [of Cepheus])." 
+              },
+              "design_16": {
+                  "_id": "design_16",
+                  "name": "Grus",
+                  "price": 24,
+                  "imageUrl": "/assets/img/designs/design_16.jpg",
+                  "shape": "triangle",
+                  "description": "The name was originally الذنب aḏ-ḏanab ('the tail' [of the constellation of the Southern Fish])." 
+              },
+              "design_17": {
+                  "_id": "design_17",
+                  "name": "Draco",
+                  "price": 23,
+                  "imageUrl": "/assets/img/designs/design_17.jpg",
+                  "shape": "hexagon",
+                  "description": "From Arabic: الضباع aḍ-ḍibāʿ ('the hyenas')." 
+              },
+              "design_18": {
+                  "_id": "design_18",
+                  "name": "Pegasus",
+                  "price": 27,
+                  "imageUrl": "/assets/img/designs/design_18.jpg",
+                  "shape": "hexagon",
+                  "description": "From Arabic: الجانب al-jānib ('the flank'). Algenib is also another name for alfa Persei (Mirfak)." 
+              },
+              "design_19": {
+                  "_id": "design_19",
+                  "name": "Perseus",
+                  "price": 26,
+                  "imageUrl": "/assets/img/designs/design_19.jpg",
+                  "shape": "hexagon",
+                  "description": "From Arabic: رأس الغول ra's al-ġūl ('head of the ogre'). In Egyptian, Horus." 
+              },
+              "design_20": {
+                  "_id": "design_20",
+                  "name": "Canis Major",
+                  "price": 26,
+                  "imageUrl": "/assets/img/designs/design_20.jpg",
+                  "shape": "octagon",
+                  "description": "Nigerian proposal; named after Amadioha, a god in Igbo mythology." 
+              }
+            },
+    	loves: {
     	},
-    	comments: {
-    		"0a272c58-b7ea-4e09-a000-7ec988248f66": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			content: "Great recipe!",
-    			recipeId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
-    			_createdOn: 1614260681375,
-    			_id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
-    		}
-    	},
-    	records: {
-    		i01: {
-    			name: "John1",
-    			val: 1,
-    			_createdOn: 1613551388703
-    		},
-    		i02: {
-    			name: "John2",
-    			val: 1,
-    			_createdOn: 1613551388713
-    		},
-    		i03: {
-    			name: "John3",
-    			val: 2,
-    			_createdOn: 1613551388723
-    		},
-    		i04: {
-    			name: "John4",
-    			val: 2,
-    			_createdOn: 1613551388733
-    		},
-    		i05: {
-    			name: "John5",
-    			val: 2,
-    			_createdOn: 1613551388743
-    		},
-    		i06: {
-    			name: "John6",
-    			val: 3,
-    			_createdOn: 1613551388753
-    		},
-    		i07: {
-    			name: "John7",
-    			val: 3,
-    			_createdOn: 1613551388763
-    		},
-    		i08: {
-    			name: "John8",
-    			val: 2,
-    			_createdOn: 1613551388773
-    		},
-    		i09: {
-    			name: "John9",
-    			val: 3,
-    			_createdOn: 1613551388783
-    		},
-    		i10: {
-    			name: "John10",
-    			val: 1,
-    			_createdOn: 1613551388793
-    		}
-    	},
-    	catches: {
-    		"07f260f4-466c-4607-9a33-f7273b24f1b4": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			angler: "Paulo Admorim",
-    			weight: 636,
-    			species: "Atlantic Blue Marlin",
-    			location: "Vitoria, Brazil",
-    			bait: "trolled pink",
-    			captureTime: 80,
-    			_createdOn: 1614760714812,
-    			_id: "07f260f4-466c-4607-9a33-f7273b24f1b4"
-    		},
-    		"bdabf5e9-23be-40a1-9f14-9117b6702a9d": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			angler: "John Does",
-    			weight: 554,
-    			species: "Atlantic Blue Marlin",
-    			location: "Buenos Aires, Argentina",
-    			bait: "trolled pink",
-    			captureTime: 120,
-    			_createdOn: 1614760782277,
-    			_id: "bdabf5e9-23be-40a1-9f14-9117b6702a9d"
-    		}
-    	},
-    	furniture: {
-    	},
-    	movies: {
-    		"1240549d-f0e0-497e-ab99-eb8f703713d7": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			title: "Black Widow",
-    			description: "Natasha Romanoff aka Black Widow confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Comes on the screens 2020.",
-    			img: "https://miro.medium.com/max/735/1*akkAa2CcbKqHsvqVusF3-w.jpeg",
-    			_createdOn: 1614935055353,
-    			_id: "1240549d-f0e0-497e-ab99-eb8f703713d7"
-    		},
-    		"143e5265-333e-4150-80e4-16b61de31aa0": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			title: "Wonder Woman 1984",
-    			description: "Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient artifact that grants wishes goes missing.",
-    			img: "https://pbs.twimg.com/media/ETINgKwWAAAyA4r.jpg",
-    			_createdOn: 1614935181470,
-    			_id: "143e5265-333e-4150-80e4-16b61de31aa0"
-    		},
-    		"a9bae6d8-793e-46c4-a9db-deb9e3484909": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			title: "Top Gun 2",
-    			description: "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
-    			img: "https://i.pinimg.com/originals/f2/a4/58/f2a458048757bc6914d559c9e4dc962a.jpg",
-    			_createdOn: 1614935268135,
-    			_id: "a9bae6d8-793e-46c4-a9db-deb9e3484909"
-    		}
-    	},
-    	likes: {
-    	}
+        cart: {
+
+        },
     };
     var settings = {
     	identity: identity,

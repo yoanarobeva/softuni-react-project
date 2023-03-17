@@ -1,0 +1,11 @@
+#uniQUEode-carousel { background: #f8f8f8 ;}
+
+#uniQUEode-carousel .carousel-indicators li {
+    margin-top: -50px;
+    background-color: #f8a69a;
+}
+#uniQUEode-carousel .carousel-control-next i,
+#uniQUEode-carousel .carousel-control-prev i {
+color: #f8a69a ;
+font-size: 2.8em ;
+}

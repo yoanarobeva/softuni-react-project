@@ -14,34 +14,45 @@ import { Register } from './components/Register/Register';
 import { Profile } from './components/Profile/Profile';
 import { CreateDesign } from './components/CreateDesign/CreateDesign';
 import { Cart } from './components/Cart/Cart';
+import { useEffect, useState } from 'react';
+import * as designsService from './services/designsService';
 
 function App() {
-  return (
-    <>
-      <TopHeader />
+    const [designs, setDesigns] = useState([]);
 
-      <Header />
+    useEffect(() => {
+        designsService.getAll()
+            .then(result => {
+                setDesigns(result);
+            })
+    }, []);
 
-      <Search />
+    return (
+        <>
+            <TopHeader />
 
-      <Routes>
-        <Route path='*' element={<h1>404</h1>} />
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/catalog' element={<Catalog />} />
-        <Route path='/create' element={<CreateDesign />} />
-        <Route path='/contact' element={<Contact />} />
-        {/* TODO: check if there is better way to route this (in catalog page maybe?) */}
-        <Route path='/details' element={<Details />} /> 
-        <Route path='/cart' element={<Cart />} />
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-      </Routes>
+            <Header />
 
-      <Footer />
-    </>
-  );
+            <Search />
+
+            <Routes>
+                <Route path='*' element={<h1>404</h1>} />
+                <Route path='/' element={<Home />} />
+                <Route path='/about' element={<About />} />
+                <Route path='/catalog' element={<Catalog designs={designs}/>} />
+                <Route path='/create' element={<CreateDesign />} />
+                <Route path='/contact' element={<Contact />} />
+                {/* TODO: check if there is better way to route this (in catalog page maybe?) */}
+                <Route path='/details/:designId' element={<Details />} />
+                <Route path='/cart' element={<Cart />} />
+                <Route path='/profile' element={<Profile />} />
+                <Route path='/login' element={<Login />} />
+                <Route path='/register' element={<Register />} />
+            </Routes>
+
+            <Footer />
+        </>
+    );
 }
 
 export default App;

@@ -1,0 +1,154 @@
+{
+  "design_1": {
+      "_id": "design_1",
+      "name": "Lynx",
+      "price": 15,
+      "imageUrl": "/assets/img/designs/design_1.jpg",
+      "shape": "circle",
+      "description": "Czech Republic proposal; a fictional substance in the novel Továrna na absolutno by Karel Čapek." 
+    },
+    "design_2": {
+        "_id": "design_2",
+        "name": "Eridanus",
+        "price": 20,
+        "imageUrl": "/assets/img/designs/design_2.jpg",
+        "shape": "circle",
+        "description": "The name was originally Arabic: آخر النهر āẖir an-nahr ('river's end')." 
+    },
+    "design_3": {
+        "_id": "design_3",
+        "name": "Cassiopeia",
+        "price": 15,
+        "imageUrl": "/assets/img/designs/design_3.jpg",
+        "shape": "heptagon",
+        "description": "Apparently first applied to η Cassiopeiae in the Skalnate Pleso Atlas of the Heavens published in 1950, but is not known prior to that." 
+    },
+    "design_4": {
+        "_id": "design_4",
+        "name": "Scorpius",
+        "price": 15,
+        "imageUrl": "/assets/img/designs/design_4.jpg",
+        "shape": "hexagon",
+        "description": "The traditional name of the β Scorpii system has been rendered Akrab and Elakrab, derived (like Acrab) from Arabic: العقرب al-ʿaqrab ('the scorpion')." 
+    },
+    "design_5": {
+        "_id": "design_5",
+        "name": "Crux",
+        "price": 18,
+        "imageUrl": "/assets/img/designs/design_5.jpg",
+        "shape": "hexagon",
+        "description": "Acrux is a modern contraction of the Bayer designation, coined in the 19th century, but which entered into common use only by the mid-20th century." 
+    },
+    "design_6": {
+        "_id": "design_6",
+        "name": "Cancer",
+        "price": 20,
+        "imageUrl": "/assets/img/designs/design_6.jpg",
+        "shape": "hexagon",
+        "description": "The name was originally Arabic: الزبانى az-zubāná ('the claws')." 
+    },
+    "design_7": {
+        "_id": "design_7",
+        "name": "Canis Major",
+        "price": 22,
+        "imageUrl": "/assets/img/designs/design_7.jpg",
+        "shape": "octagon",
+        "description": "The name is originally from Arabic: عذارى ʿaḏārá ('virgins'). In the Calendarium of Al Achsasi Al Mouakket, it is designated أول العذاري awwil al-ʿaḏāriyy, translated into Latin as Prima Virginum ('first virgin')." 
+    },
+    "design_8": {
+        "_id": "design_8",
+        "name": "Andromeda",
+        "price": 16,
+        "imageUrl": "/assets/img/designs/design_8.jpg",
+        "shape": "octagon",
+        "description": "The name was originally Arabic: الذيل aḏ-ḏayl (the train, lit. 'the tail')." 
+    },
+    "design_9": {
+        "_id": "design_9",
+        "name": "Taurus",
+        "price": 23,
+        "imageUrl": "/assets/img/designs/design_9.jpg",
+        "shape": "pentagon",
+        "description": "The name is originally from Arabic: عين ʿayn ('eye') and was reviewed and adopted by the Working Group on Star Names." 
+    },
+    "design_10": {
+        "_id": "design_10",
+        "name": "Sagittarius",
+        "price": 24,
+        "imageUrl": "/assets/img/designs/design_10.jpg",
+        "shape": "pentagon",
+        "description": "From Arabic: عين الرامي ʿayn ar-rāmī ('eye of the archer')." 
+    },
+    "design_11": {
+        "_id": "design_11",
+        "name": "Lyra",
+        "price": 14,
+        "imageUrl": "/assets/img/designs/design_11.jpg",
+        "shape": "square",
+        "description": "The name is originally from Arabic: الأظفر al-uẓfur ('the talons' [of the swooping eagle]), shared with μ Lyrae (Alathfar)." 
+    },
+    "design_12": {
+        "_id": "design_12",
+        "name": "Serpens",
+        "price": 21,
+        "imageUrl": "/assets/img/designs/design_12.jpg",
+        "shape": "square",
+        "description": "Cypriot proposal; first historically recorded name of Cyprus (mid-15th century)." 
+    },
+    "design_13": {
+        "_id": "design_13",
+        "name": "Cygnus",
+        "price": 22,
+        "imageUrl": "/assets/img/designs/design_13.jpg",
+        "shape": "square",
+        "description": "The source of the name Albireo is not entirely clear." 
+    },
+    "design_15": {
+        "_id": "design_15",
+        "name": "Cepheus",
+        "price": 23,
+        "imageUrl": "/assets/img/designs/design_15.jpg",
+        "shape": "triangle",
+        "description": "From Arabic: الذراع اليمين aḏ-ḏirāʿ al-yamīn ('the right arm' [of Cepheus])." 
+    },
+    "design_16": {
+        "_id": "design_16",
+        "name": "Grus",
+        "price": 24,
+        "imageUrl": "/assets/img/designs/design_16.jpg",
+        "shape": "triangle",
+        "description": "The name was originally الذنب aḏ-ḏanab ('the tail' [of the constellation of the Southern Fish])." 
+    },
+    "design_17": {
+        "_id": "design_17",
+        "name": "Draco",
+        "price": 23,
+        "imageUrl": "/assets/img/designs/design_17.jpg",
+        "shape": "hexagon",
+        "description": "From Arabic: الضباع aḍ-ḍibāʿ ('the hyenas')." 
+    },
+    "design_18": {
+        "_id": "design_18",
+        "name": "Pegasus",
+        "price": 27,
+        "imageUrl": "/assets/img/designs/design_18.jpg",
+        "shape": "hexagon",
+        "description": "From Arabic: الجانب al-jānib ('the flank'). Algenib is also another name for alfa Persei (Mirfak)." 
+    },
+    "design_19": {
+        "_id": "design_19",
+        "name": "Perseus",
+        "price": 26,
+        "imageUrl": "/assets/img/designs/design_19.jpg",
+        "shape": "hexagon",
+        "description": "From Arabic: رأس الغول ra's al-ġūl ('head of the ogre'). In Egyptian, Horus." 
+    },
+    "design_20": {
+        "_id": "design_20",
+        "name": "Canis Major",
+        "price": 26,
+        "imageUrl": "/assets/img/designs/design_20.jpg",
+        "shape": "octagon",
+        "description": "Nigerian proposal; named after Amadioha, a god in Igbo mythology." 
+    }
+}

@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
 
+import './Catalog.css'
+
 import { CatalogCard } from "./CatalogCard";
 import { Category } from "./Category";
 import { Pagination } from "../Pagination/Pagination";
 
-export const Catalog = () => {
+export const Catalog = ({
+    designs,
+    isLoading,
+}) => {
     return (
         <>
+            
             <div className="container py-5">
                 <div className="row">
 
@@ -47,14 +53,7 @@ export const Catalog = () => {
                         </div>
                         <div className="row">
                             {/* TODO: Map CatalogCard when you have database */}
-                            <CatalogCard />
-                            <CatalogCard />
-                            <CatalogCard />
-                            <CatalogCard />
-                            <CatalogCard />
-                            <CatalogCard />
-                            <CatalogCard />
-                            <CatalogCard />
+                            {designs.map(x => <CatalogCard key={x._id} {...x} />)}
                         </div>
                         <Pagination />
                     </div>
