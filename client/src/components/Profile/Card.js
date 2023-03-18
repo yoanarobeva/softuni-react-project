@@ -22,17 +22,7 @@ export const Card = ({
                     <img src={design.imageUrl} className="card-img-top" alt={design.name}/>
                 </Link>
                 <div className="card-body">
-                    <ul className="list-unstyled d-flex justify-content-between">
-                        <li>
-                            <i className="text-warning fa fa-star"></i>
-                            <i className="text-warning fa fa-star"></i>
-                            <i className="text-warning fa fa-star"></i>
-                            <i className="text-muted fa fa-star"></i>
-                            <i className="text-muted fa fa-star"></i>
-                        </li>
-                        <li className="text-muted text-right">{design.price} BGN</li>
-                    </ul>
-                    <a href="shop-single.html" className="h2 text-decoration-none text-dark">{design.name}</a>
+                    <Link to={`/details/${design._id}`} className="h2 text-decoration-none text-dark">{design.name}</Link>
                     <p className="card-text">
                         {design.description}
                     </p>

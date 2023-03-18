@@ -27,10 +27,11 @@ export const Profile = () => {
                         </p>
                     </div>
                 </div>
-                <h1 className="h1">Products you have loved:</h1>
+                <h2 className="h2">Products you have loved:</h2>
                 <div className="row">
 
-                    { userLoves === [] ? userLoves.map(x => <Card key={x._id} {...x} />) : <p className="h3">You have nothing loved...</p>}
+                    {userLoves.map(x => <Card key={x._id} {...x} />)}
+                    {userLoves === [] ? <p className="h3">You have nothing loved...</p> : null}
                    
                 </div>
             </div>
