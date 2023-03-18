@@ -2,6 +2,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 import * as designsService from './services/designsService';
+import * as cartService from './services/cartService';
 
 import { TopHeader } from "./components/TopHeader/TopHeader";
 import { Header } from "./components/Header/Header";
@@ -22,11 +23,19 @@ import { Cart } from './components/Cart/Cart';
 function App() {
     const navigate = useNavigate();
     const [designs, setDesigns] = useState([]);
+    const [cart, setCart] = useState([]);
 
     useEffect(() => {
         designsService.getAll()
             .then(result => {
                 setDesigns(result);
+            })
+    }, []);
+    
+    useEffect(() => {
+        cartService.getAll()
+            .then(result => {
+                setCart(result);
             })
     }, []);
 
@@ -43,7 +52,7 @@ function App() {
         <>
             <TopHeader />
 
-            <Header />
+            <Header cart={cart}/>
 
             <Search />
 
@@ -54,7 +63,7 @@ function App() {
                 <Route path='/catalog' element={<Catalog designs={designs}/>} />
                 <Route path='/create' element={<CreateDesign onCreateDesignSubmit={onCreateDesignSubmit} />} />
                 <Route path='/contact' element={<Contact />} />
-                <Route path='/details/:designId' element={<Details />} />
+                <Route path='/details/:designId' element={<Details setCart={setCart}/>} />
                 <Route path='/cart' element={<Cart />} />
                 <Route path='/profile' element={<Profile />} />
                 <Route path='/login' element={<Login />} />

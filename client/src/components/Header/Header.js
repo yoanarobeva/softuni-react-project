@@ -1,7 +1,9 @@
 import './Header.css'
 import { NavLink } from "react-router-dom";
 
-export const Header = () => {
+export const Header = ({
+    cart,
+}) => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light shadow">
             <div className="container d-flex justify-content-between align-items-center">
@@ -45,7 +47,7 @@ export const Header = () => {
                             
                         <NavLink to={"/cart"} className="nav-icon position-relative text-decoration-none">
                             <i className="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                            {/* <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span> */}
+                            <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{cart.length}</span>
 
                         </NavLink>
 
