@@ -57,7 +57,7 @@ export const Details = ({
                                 <h6>Description:</h6>
                                 <p>{design.description}</p>
 
-                                <DetailsForm designId={designId} setCart={setCart} />
+                                <DetailsForm design={design} setCart={setCart} />
 
                             </div>
                         </div>

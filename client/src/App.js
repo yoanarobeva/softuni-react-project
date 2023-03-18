@@ -64,7 +64,7 @@ function App() {
                 <Route path='/create' element={<CreateDesign onCreateDesignSubmit={onCreateDesignSubmit} />} />
                 <Route path='/contact' element={<Contact />} />
                 <Route path='/details/:designId' element={<Details setCart={setCart}/>} />
-                <Route path='/cart' element={<Cart />} />
+                <Route path='/cart' element={<Cart cart={cart} />} />
                 <Route path='/profile' element={<Profile />} />
                 <Route path='/login' element={<Login />} />
                 <Route path='/register' element={<Register />} />

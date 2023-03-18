@@ -4,21 +4,16 @@ import { useNavigate } from "react-router-dom";
 import * as cartService from '../../services/cartService';
 
 export const DetailsForm = ({
-    designId,
+    design,
     setCart,
 }) => {
     const navigate = useNavigate();
-    const [isCategorySelected, setIsCategorySelected] = useState({
-        code: false,
-        earrings: false,
-        necklace: false,
-        broche: false,
-    });
+    const [isCategorySelected, setIsCategorySelected] = useState(false);
 
     const [isQuantityDisabled, setIsQuantityDisabled] = useState(false);
 
     const [values, setValues] = useState({
-        category: [],
+        category: '',
         quantity: 0,
     });
 
@@ -28,8 +23,8 @@ export const DetailsForm = ({
 
     const onChangeCategory = (value) => {
 
-        setValues(state => ({ ...state, category: [...state.category, value] }));
-        setIsCategorySelected(state => ({ ...state, [value]: !isCategorySelected[value] }));
+        setValues(state => ({ ...state, category: value}));
+        setIsCategorySelected(true);
 
     };
 
@@ -48,7 +43,7 @@ export const DetailsForm = ({
     const onSubmit = async (e) => {
         e.preventDefault();
 
-        const newCartItem = await cartService.create({ designId, ...values });
+        const newCartItem = await cartService.create({ designId: design._id, totalPrice: (values.quantity * design.price), ...values });
 
         //TODO: update cart state
         setCart(state => [...state, newCartItem]);
@@ -68,10 +63,10 @@ export const DetailsForm = ({
                             <li className="list-inline-item">Category :
                                 <input onChange={onChangeHandler} type="hidden" name="category" value={values.category} />
                             </li>
-                            <li className="list-inline-item"><button type="button" onClick={() => onChangeCategory('code')} className="btn btn-success btn-size" disabled={isCategorySelected.code}>Code</button></li>
-                            <li className="list-inline-item"><button type="button" onClick={() => onChangeCategory('earrings')} className="btn btn-success btn-size" disabled={isCategorySelected.earrings}>Earrings</button></li>
-                            <li className="list-inline-item"><button type="button" onClick={() => onChangeCategory('necklace')} className="btn btn-success btn-size" disabled={isCategorySelected.necklace}>Necklace</button></li>
-                            <li className="list-inline-item"><button type="button" onClick={() => onChangeCategory('broche')} className="btn btn-success btn-size" disabled={isCategorySelected.broche}>Broche</button></li>
+                            <li className="list-inline-item"><button type="button" onClick={() => onChangeCategory('code')} className="btn btn-success btn-size" disabled={isCategorySelected}>Code</button></li>
+                            <li className="list-inline-item"><button type="button" onClick={() => onChangeCategory('earrings')} className="btn btn-success btn-size" disabled={isCategorySelected}>Earrings</button></li>
+                            <li className="list-inline-item"><button type="button" onClick={() => onChangeCategory('necklace')} className="btn btn-success btn-size" disabled={isCategorySelected}>Necklace</button></li>
+                            <li className="list-inline-item"><button type="button" onClick={() => onChangeCategory('broche')} className="btn btn-success btn-size" disabled={isCategorySelected}>Broche</button></li>
                         </ul>
                     </div>
                     <div className="col-auto">
