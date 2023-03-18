@@ -6,13 +6,13 @@ export const About = () => {
                     <div className="col-md-8 text-white">
                         <h1>About Us</h1>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        The project is inspired by the sacred geometry, that consists of geometric patterns that work as building blocks that can be used for manifesting, magic, healing, and evolution.
+                        It was started by Diana Todorova in 2019 year when she is in Vigo, Spain. She is working in architectural studio that shares office space with 3D lab.
+                        Diana get easily inspired by their work and decide to create a collaboration. That's how uniQUEode is born.
                         </p>
                     </div>
                     <div className="col-md-4">
-                        <img src="assets/img/about-hero.svg" alt="About Hero"/>
+                        <img src="assets/img/about.png" alt="About"/>
                     </div>
                 </div>
             </div>

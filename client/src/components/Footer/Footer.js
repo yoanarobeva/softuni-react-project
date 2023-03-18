@@ -33,11 +33,7 @@ export const Footer = () => {
                             <li><Link className="text-decoration-none" to="/designs/?where=category=triangles">Triangle</Link></li>
                             <li><Link className="text-decoration-none" to="/designs/?where=category=squares">Square</Link></li>
                             <li><Link className="text-decoration-none" to="/designs/?where=category=circles">Circle</Link></li>
-                            <li><Link className="text-decoration-none" to="/designs/?where=category=pentagones">Pentagon</Link></li>
-                            <li><Link className="text-decoration-none" to="/designs/?where=category=hexagons">Hexagon</Link></li>
-                            <li><Link className="text-decoration-none" to="/designs/?where=category=heptagons">Heptagon</Link></li>
-                            <li><Link className="text-decoration-none" to="/designs/?where=category=octagons">Octagon</Link></li>
-                            <li><Link className="text-decoration-none" to="/designs/?where=category=decagons">Decagon</Link></li>
+                            <li><Link className="text-decoration-none" to="/designs/?where=category=polygones">Polygon</Link></li>
                             <li><Link className="text-decoration-none" to="/designs/?where=category=composites">Composite</Link></li>
                         </ul>
                     </div>

@@ -1,27 +1,30 @@
+import React from "react";
+import GoogleMapReact from 'google-map-react';
+
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
+
 export const Map = () => {
+    const defaultProps = {
+        center: {
+            lat: 10.99835602,
+            lng: 77.01502627
+        },
+        zoom: 11
+    };
+
     return (
-        <>
-            {/* <div id="mapid" style={{width: 100, height: 300}}></div> */}
-            <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-            {/* <script>
-                let mymap = L.map('mapid').setView([-23.013104, -43.394365, 13], 13);
-
-                L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-                    maxZoom: 18,
-                    attribution: 'Zay Telmplte | Template Design by <a href="https://templatemo.com/">Templatemo</a> | Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-                        '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                        'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                    id: 'mapbox/streets-v11',
-                    tileSize: 512,
-                    zoomOffset: -1
-                }).addTo(mymap);
-
-                L.marker([-23.013104, -43.394365, 13]).addTo(mymap)
-                    .bindPopup("<b>Zay</b> eCommerce Template<br />Location.").openPopup();
-
-                mymap.scrollWheelZoom.disable();
-                mymap.touchZoom.disable();
-            </script> */}
-        </>
+        <div style={{ height: '100vh', width: '100%' }}>
+            <GoogleMapReact
+            bootstrapURLKeys={{ key: "any" }}
+            defaultCenter={defaultProps.center}
+            defaultZoom={defaultProps.zoom}
+            >
+            <AnyReactComponent
+                lat={59.955413}
+                lng={30.337844}
+                text="My Marker"
+            />
+            </GoogleMapReact>
+        </div>
     );
 };

@@ -14,3 +14,19 @@ export const getOne = async (designId) => {
 
     return data;
 };
+
+export const create = async (designData) => {
+    const user = JSON.parse(sessionStorage.getItem('userData'));
+
+    const response = await fetch(baseUrl, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "X-Authorization": user.accessToken,
+        },
+        body: JSON.stringify(designData)
+    })
+    const result = await response.json()
+    console.log(result);
+    return result;
+}

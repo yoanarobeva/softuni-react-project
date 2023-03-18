@@ -1,36 +1,57 @@
-export const CreateDesign = () => {
+import { useState } from "react"
+
+export const CreateDesign = ({
+    onCreateDesignSubmit,
+}) => {
+    const [values, setValues] = useState({
+        name: '',
+        price: '',
+        imageUrl: '',
+        shape: '',
+        description: '',
+    });
+
+    const onChangeHandler = (e) => {
+        setValues(state => ({...state, [e.target.name]: e.target.value}));
+    };
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+
+        onCreateDesignSubmit(values);
+    };
+
     return (
         <section className="section py-5">
             <div className="row py-5">
-                <form id="create" className="col-md-9 m-auto">
+                <form id="create" className="col-md-9 m-auto" onSubmit={onSubmit}>
                     <div className="container">
                         <h1 className="h1">Create Design</h1>
 
                         <div className="col py-3">
-                            {/* TODO: Change input fields */}
                             <div className="form-group mb-3">
-                                <label htmlFor="leg-title">Legendary title:</label>
-                                <input className="form-control mt-2" type="text" name="title" placeholder="Enter game title..."/>
+                                <label htmlFor="design-name">Name:</label>
+                                <input onChange={onChangeHandler} className="form-control mt-2" type="text" name="name" placeholder="Enter design name..."/>
                             </div>
 
                             <div className="form-group mb-3">
-                                <label htmlFor="category">Category:</label>
-                                <input className="form-control mt-2" type="text" name="category" placeholder="Enter game category..."/>
+                                <label htmlFor="price">Price:</label>
+                                <input onChange={onChangeHandler} className="form-control mt-2" type="number" name="price" min="1" placeholder="10 BGN"/>
                             </div>
 
                             <div className="form-group mb-3">
-                                <label htmlFor="levels">MaxLevel:</label>
-                                <input className="form-control mt-2" type="number" name="maxLevel" min="1" placeholder="1"/>
+                                <label htmlFor="design-img">Image:</label>
+                                <input onChange={onChangeHandler} className="form-control mt-2" type="text" name="imageUrl" placeholder="Upload a photo..."/>
                             </div>
 
                             <div className="form-group mb-3">
-                                <label htmlFor="game-img">Image:</label>
-                                <input className="form-control mt-2" type="text" name="imageUrl" placeholder="Upload a photo..."/>
+                                <label htmlFor="design-shape">Shape:</label>
+                                <input onChange={onChangeHandler} className="form-control mt-2" type="text" name="shape" placeholder="Enter design shape..."/>
                             </div>
 
                             <div className="form-group mb-3">
-                                <label htmlFor="summary">Summary:</label>
-                                <textarea className="form-control mt-2" name="summary"></textarea>
+                                <label htmlFor="description">Description:</label>
+                                <textarea onChange={onChangeHandler} className="form-control mt-2" name="description"></textarea>
                             </div>
 
                         </div>

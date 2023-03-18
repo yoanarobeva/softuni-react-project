@@ -1,13 +1,13 @@
 import './Home.css'
 import { Banner } from "./Banner";
-import { Categories } from "../Categories/Categories";
+// import { Categories } from "../Categories/Categories";
 
 export const Home = () => {
     return (
         <>
           <Banner />
 
-          <Categories />
+          {/* <Categories /> */}
 
         </>
     );

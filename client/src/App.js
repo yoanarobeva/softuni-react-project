@@ -1,4 +1,7 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+
+import * as designsService from './services/designsService';
 
 import { TopHeader } from "./components/TopHeader/TopHeader";
 import { Header } from "./components/Header/Header";
@@ -14,10 +17,10 @@ import { Register } from './components/Register/Register';
 import { Profile } from './components/Profile/Profile';
 import { CreateDesign } from './components/CreateDesign/CreateDesign';
 import { Cart } from './components/Cart/Cart';
-import { useEffect, useState } from 'react';
-import * as designsService from './services/designsService';
+
 
 function App() {
+    const navigate = useNavigate();
     const [designs, setDesigns] = useState([]);
 
     useEffect(() => {
@@ -26,6 +29,15 @@ function App() {
                 setDesigns(result);
             })
     }, []);
+
+    const onCreateDesignSubmit = async (data) => {
+        // !!! Will work after authorization is added!!!
+        const newDesign = await designsService.create(data);
+
+        setDesigns(state => [...state, newDesign]);
+
+        navigate('/catalog');
+    };
 
     return (
         <>
@@ -40,9 +52,8 @@ function App() {
                 <Route path='/' element={<Home />} />
                 <Route path='/about' element={<About />} />
                 <Route path='/catalog' element={<Catalog designs={designs}/>} />
-                <Route path='/create' element={<CreateDesign />} />
+                <Route path='/create' element={<CreateDesign onCreateDesignSubmit={onCreateDesignSubmit} />} />
                 <Route path='/contact' element={<Contact />} />
-                {/* TODO: check if there is better way to route this (in catalog page maybe?) */}
                 <Route path='/details/:designId' element={<Details />} />
                 <Route path='/cart' element={<Cart />} />
                 <Route path='/profile' element={<Profile />} />

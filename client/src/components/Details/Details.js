@@ -27,7 +27,7 @@ export const Details = () => {
                         <div className="card">
                             <div className="card-body">
                                 <h1 className="h2">{design.name}</h1>
-                                <p className="h3 py-2">{design.price} лв.</p>
+                                <p className="h3 py-2">{design.price} BGN</p>
                                 <p className="py-2">
                                     <i className="fa fa-heart text-warning"></i>
                                     <i className="fa fa-heart text-warning"></i>
