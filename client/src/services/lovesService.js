@@ -1,4 +1,5 @@
 const baseUrl = 'http://localhost:3030/data/loves';
+const user = JSON.parse(sessionStorage.getItem('userData'));
 
 export const getAllLovedUsers = async (designId) => {
     const response = await fetch(`${baseUrl}?where=designId%3D%22${designId}%22&distinct=_ownerId&count`);
@@ -8,7 +9,6 @@ export const getAllLovedUsers = async (designId) => {
 }
 
 export const getAllUserLoves = async (designId) => {
-    const user = JSON.parse(sessionStorage.getItem('userData'));
     const response = await fetch (`${baseUrl}?where=designId%3D%22${designId}%22%20and%20_ownerId%3D%22${user._id}%22&count`);
     const result = await response.json();
 
@@ -16,7 +16,6 @@ export const getAllUserLoves = async (designId) => {
 }
 
 export const love = async (designId) => {
-    const user = JSON.parse(sessionStorage.getItem('userData'));
 
     const response = await fetch(baseUrl, {
         method: "POST",
@@ -27,6 +26,12 @@ export const love = async (designId) => {
         body: JSON.stringify({ designId })
     })
     const result = await response.json()
-    console.log(result);
     return result;
 };
+
+export const getOwnLoves = async () => {
+    const response = await fetch(`${baseUrl}?where=_ownerId%3D%22${user._id}%22`);
+    const result = await response.json();
+
+    return result;
+}

@@ -27,6 +27,5 @@ export const create = async (designData) => {
         body: JSON.stringify(designData)
     })
     const result = await response.json()
-    console.log(result);
     return result;
 }

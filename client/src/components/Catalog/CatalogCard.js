@@ -14,7 +14,6 @@ export const CatalogCard = ({
     useEffect(() => {
         lovesService.getAllUserLoves(_id)
             .then(result => {
-                console.log(result);
                 if(result) {
                     setIsLoved(true)
                 }
@@ -25,7 +24,6 @@ export const CatalogCard = ({
         await lovesService.love(_id);
 
         setIsLoved(true);
-        console.log(isLoved);
     };
 
     return (
