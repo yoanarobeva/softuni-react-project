@@ -20,3 +20,20 @@
   font-size: 15px;
   margin-top: 20px;
 }
+
+.h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px ;
+  font-weight: 300;
+}
+
+.h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px ;
+}
+
+body, ul, li, p, a, label, input, div {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px ;
+  font-weight: 300 ;
+}

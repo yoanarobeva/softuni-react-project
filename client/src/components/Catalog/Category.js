@@ -3,16 +3,18 @@ import { Link } from "react-router-dom";
 export const Category = () => {
     //TODO: make this component dynamic when you have database
     return (
-        <li className="pb-3">
-            <Link className="collapsed d-flex justify-content-between h3 text-decoration-none" to="/">
-                Gender
-                <i className="fa fa-fw fa-chevron-circle-down mt-1"></i>
-            </Link>
-            <ul className="collapse show list-unstyled pl-3">
+        <div className="col-lg-3">
+            <h1 className="h2 pb-4">Shapes</h1>
+            
+            <ul className="list-unstyled templatemo-accordion">
                 {/* TODO: Map this li when you have database */}
-                <li><Link className="text-decoration-none" to="/">Men</Link></li>
-                <li><Link className="text-decoration-none" to="/">Women</Link></li>
+                <li><Link className="text-decoration-none" to="/">Triangle</Link></li>
+                <li><Link className="text-decoration-none" to="/">Square</Link></li>
+                <li><Link className="text-decoration-none" to="/">Circle</Link></li>
+                <li><Link className="text-decoration-none" to="/">Polygon</Link></li>
+                <li><Link className="text-decoration-none" to="/">Composite</Link></li>
             </ul>
-        </li>
+            
+        </div>
     );
 };
