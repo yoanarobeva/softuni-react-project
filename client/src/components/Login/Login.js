@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import * as authService from "../../services/authService";
+import { SetAuthContext } from "../../contexts/AuthContext";
 
 export const Login = () => {
     const navigate = useNavigate();
+    const setUser = useContext(SetAuthContext);
+
     const [values, setValues] = useState({
         username: '',
         password: ''
@@ -16,7 +19,9 @@ export const Login = () => {
 
     const onLogin = async (e) => {
         e.preventDefault();
-        await authService.login(values);
+        const user = await authService.login(values);
+        await setUser(user);
+        
         navigate('/catalog')
     };
     return (

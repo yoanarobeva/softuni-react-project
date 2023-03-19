@@ -3,6 +3,12 @@ import { useEffect, useState } from 'react';
 
 import * as designsService from './services/designsService';
 import * as cartService from './services/cartService';
+import * as lovesService from './services/lovesService';
+
+import { DesignsContext, SetDesignsContext } from './contexts/DesignsContext';
+import { CartContext, SetCartContext } from './contexts/CartContext';
+import { LovesContext, SetLovesContext } from './contexts/LovesContext';
+import { AuthContext, SetAuthContext } from './contexts/AuthContext';
 
 import { TopHeader } from "./components/TopHeader/TopHeader";
 import { Header } from "./components/Header/Header";
@@ -22,22 +28,38 @@ import { Cart } from './components/Cart/Cart';
 
 function App() {
     const navigate = useNavigate();
+
+    const [user, setUser] = useState({});
     const [designs, setDesigns] = useState([]);
     const [cart, setCart] = useState([]);
-
+    const [loves, setLoves] = useState([])
+    
     useEffect(() => {
         designsService.getAll()
-            .then(result => {
-                setDesigns(result);
-            })
+        .then(result => {
+            setDesigns(result);
+        })
     }, []);
     
     useEffect(() => {
-        cartService.getAll()
-            .then(result => {
-                setCart(result);
-            })
-    }, []);
+        if (user._id) {       
+            cartService.getOwnCart(user._id)
+                .then(result => {
+                    setCart(result);
+                })
+        }
+    }, [user]);
+
+    useEffect(() => {
+        if (user._id) {
+            lovesService.getOwnLoves(user._id)
+                .then(result => {
+                    if(result) {
+                        setLoves(result);
+                    }
+                })
+        }
+    }, [user])
 
     const onCreateDesignSubmit = async (data) => {
         // !!! Will work after authorization is added!!!
@@ -52,23 +74,48 @@ function App() {
         <>
             <TopHeader />
 
-            <Header cart={cart}/>
+            <AuthContext.Provider value={user}>
+                <SetAuthContext.Provider value={setUser}>
 
-            <Search />
+                    <DesignsContext.Provider value={designs}>
+                        <SetDesignsContext.Provider value={setDesigns}>
 
-            <Routes>
-                <Route path='*' element={<h1>404</h1>} />
-                <Route path='/' element={<Home />} />
-                <Route path='/about' element={<About />} />
-                <Route path='/catalog' element={<Catalog designs={designs}/>} />
-                <Route path='/create' element={<CreateDesign onCreateDesignSubmit={onCreateDesignSubmit} />} />
-                <Route path='/contact' element={<Contact />} />
-                <Route path='/details/:designId' element={<Details setCart={setCart}/>} />
-                <Route path='/cart' element={<Cart cart={cart} />} />
-                <Route path='/profile' element={<Profile />} />
-                <Route path='/login' element={<Login />} />
-                <Route path='/register' element={<Register />} />
-            </Routes>
+                            <CartContext.Provider value={cart}>
+                                <SetCartContext.Provider value={setCart}>
+
+                                    <LovesContext.Provider value={loves}>
+                                        <SetLovesContext.Provider value={setLoves}>
+
+                                            <Header/>
+
+                                            <Search />
+
+                                            <Routes>
+                                                <Route path='*' element={<h1>404</h1>} />
+                                                <Route path='/' element={<Home />} />
+                                                <Route path='/about' element={<About />} />
+                                                <Route path='/catalog' element={<Catalog />} />
+                                                <Route path='/create' element={<CreateDesign onCreateDesignSubmit={onCreateDesignSubmit} />} />
+                                                <Route path='/contact' element={<Contact />} />
+                                                <Route path='/details/:designId' element={<Details/>} />
+                                                <Route path='/cart' element={<Cart />} />
+                                                <Route path='/profile' element={<Profile />} />
+                                                <Route path='/login' element={<Login />} />
+                                                <Route path='/register' element={<Register />} />
+                                            </Routes>
+                                            
+                                        </SetLovesContext.Provider>
+                                    </LovesContext.Provider>
+
+                                </SetCartContext.Provider>
+                            </CartContext.Provider>
+
+                        </SetDesignsContext.Provider>
+                    </DesignsContext.Provider>
+
+                </SetAuthContext.Provider>
+            </AuthContext.Provider>
+
 
             <Footer />
         </>

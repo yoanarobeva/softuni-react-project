@@ -9,8 +9,22 @@ export const login = async (userData) => {
         body: JSON.stringify(userData)
     });
     const data = await response.json();
-    const {email, _id, accessToken} = data;
-    console.log({email, _id, accessToken});
 
-    sessionStorage.setItem('userData', JSON.stringify({email, _id, accessToken}));
+    sessionStorage.setItem('userData', JSON.stringify(data));
+    
+    return data;
 };
+
+export const logout = async (user) => {
+
+    await fetch(`${baseUrl}/logout`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "X-Authorization": user.accessToken
+        },
+        
+    });
+
+    sessionStorage.removeItem('userData');
+}

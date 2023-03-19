@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+
+import { CartContext } from "../../contexts/CartContext";
+
 import { CartCard } from "./CartCard";
 
-export const Cart = ({
-    cart,
-}) => {
+export const Cart = () => {
+    const cart = useContext(CartContext);
+    
     let allTotalPrice = 0;
     cart.map(x => allTotalPrice += x.totalPrice);
 

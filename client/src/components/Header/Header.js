@@ -1,9 +1,30 @@
+import { useContext } from 'react';
+
+import * as authService from '../../services/authService'
+
+import { CartContext } from '../../contexts/CartContext';
+import { LovesContext } from '../../contexts/LovesContext';
+import { AuthContext, SetAuthContext } from "../../contexts/AuthContext";
+
 import './Header.css'
+
 import { NavLink } from "react-router-dom";
 
-export const Header = ({
-    cart,
-}) => {
+export const Header = () => {
+    const user = useContext(AuthContext);
+    const setUser = useContext(SetAuthContext)
+    const cart = useContext(CartContext);
+    const loves = useContext(LovesContext);
+
+    const isUser = Boolean(user._id);
+
+    const onLogout = async () => {
+        if(isUser) {
+            await authService.logout(user);
+            await setUser({});
+        }
+    };
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light shadow">
             <div className="container d-flex justify-content-between align-items-center">
@@ -30,9 +51,11 @@ export const Header = ({
                                 <NavLink to={"/catalog"} className="nav-link">Designs</NavLink>
                             </li>
                             {/* TODO: show if owner */}
-                            <li className="nav-item">
-                                <NavLink to={"/create"} className="nav-link">Create Design</NavLink>
-                            </li>
+                            {isUser ? 
+                                <li className="nav-item">
+                                    <NavLink to={"/create"} className="nav-link">Create Design</NavLink>
+                                </li>
+                            : null}
                             <li className="nav-item">
                                 <NavLink to={"/contact"} className="nav-link">Contact</NavLink>
                             </li>
@@ -44,27 +67,30 @@ export const Header = ({
                         <NavLink to={"/search"} className="nav-icon d-none d-lg-inline" data-bs-toggle="modal" data-bs-target="#templatemo_search">
                             <i className="fa fa-fw fa-search text-dark mr-2"></i>
                         </NavLink>
-                            
-                        <NavLink to={"/cart"} className="nav-icon position-relative text-decoration-none">
-                            <i className="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                            <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{cart.length}</span>
 
-                        </NavLink>
+                        {isUser ? 
+                            <>
+                                <NavLink to={"/cart"} className="nav-icon position-relative text-decoration-none">
+                                    <i className="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                                    <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{cart.length}</span>
 
-                        {/* TODO: show login for not logged users */}
-                        <NavLink to={"/login"} className="nav-icon position-relative text-decoration-none">
-                            <i className="fa fa-fw fa-sign-in-alt text-dark mr-4"></i>
-                        </NavLink>
+                                </NavLink>
 
-                        {/* TODO: show profile and logout for registered users and only logout for owner */}
-                        <NavLink to={"/profile"} className="nav-icon position-relative text-decoration-none">
-                            <i className="fa fa-fw fa-user text-dark mr-3"></i>
-                        </NavLink>
+                                <NavLink to={"/profile"} className="nav-icon position-relative text-decoration-none">
+                                    <i className="fa fa-fw fa-user text-dark mr-3"></i>
+                                    <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{loves.length}</span>
+                                </NavLink>
 
-                        <NavLink to={"/logout"} className="nav-icon position-relative text-decoration-none">
-                            <i className="fa fa-fw fa-sign-out-alt text-dark mr-4"></i>
-                        </NavLink>
-                        
+                                <NavLink onClick={onLogout} className="nav-icon position-relative text-decoration-none">
+                                    <i className="fa fa-fw fa-sign-out-alt text-dark mr-4"></i>
+                                </NavLink>
+                            </>
+                        :
+                            <NavLink to={"/login"} className="nav-icon position-relative text-decoration-none">
+                                <i className="fa fa-fw fa-sign-in-alt text-dark mr-4"></i>
+                            </NavLink>
+                        }
+
                     </div>
                 </div>
 

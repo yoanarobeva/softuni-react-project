@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
 
 import * as designsService from '../../services/designsService';
+
 import { DetailsForm } from "./DetailsForm";
 
-export const Details = ({
-    setCart,
-}) => {
+export const Details = () => {
     const { designId } = useParams();
     const [design, setDesign] = useState({});
 
@@ -57,7 +56,7 @@ export const Details = ({
                                 <h6>Description:</h6>
                                 <p>{design.description}</p>
 
-                                <DetailsForm design={design} setCart={setCart} />
+                                <DetailsForm design={design} />
 
                             </div>
                         </div>

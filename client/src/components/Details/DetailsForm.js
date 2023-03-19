@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useContext } from 'react';
 
 import * as cartService from '../../services/cartService';
+import { SetCartContext } from "../../contexts/CartContext";
 
 export const DetailsForm = ({
     design,
-    setCart,
 }) => {
+    const setCart = useContext(SetCartContext)
+
     const navigate = useNavigate();
     const [isCategorySelected, setIsCategorySelected] = useState(false);
 
@@ -14,7 +17,7 @@ export const DetailsForm = ({
 
     const [values, setValues] = useState({
         category: '',
-        quantity: 0,
+        quantity: 1,
     });
 
     const onChangeHandler = (e) => {

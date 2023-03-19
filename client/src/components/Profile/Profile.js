@@ -1,20 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 
-import * as lovesService from '../../services/lovesService';
+import { AuthContext } from "../../contexts/AuthContext";
+import { LovesContext } from "../../contexts/LovesContext";
 
 import { Card } from "./Card";
 
 export const Profile = () => {
-    const user = JSON.parse(sessionStorage.getItem('userData'));
-
-    const [userLoves, setUserLoves] = useState([]);
-
-    useEffect(() => {
-        lovesService.getOwnLoves()
-            .then(result => {
-                setUserLoves(result);
-            })
-    }, []);
+    const user = useContext(AuthContext);
+    const userLoves = useContext(LovesContext);
 
     return (
         <section className="bg-light">
