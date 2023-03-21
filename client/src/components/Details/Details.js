@@ -30,16 +30,7 @@ export const Details = () => {
                             <div className="card-body">
                                 <h1 className="h2">{design.name}</h1>
                                 <p className="h3 py-2">{design.price} BGN</p>
-                                {/* TODO: Implement rating /eventually/ */}
-                                {/* <p className="py-2">
-                                    <i className="fa fa-star text-warning"></i>
-                                    <i className="fa fa-star text-warning"></i>
-                                    <i className="fa fa-star text-warning"></i>
-                                    <i className="fa fa-star text-warning"></i>
-                                    <i className="fa fa-star text-secondary"></i>
-                                    <span className="list-inline-item text-dark">Rating 4.8</span>
-                                </p> */}
-
+                               
                                 {/* TODO: Implement loves here as well when loved change Love it! to Loved! */}
                                 <p>
                                     <button className="btn btn-success text-white"><i className="far fa-heart"></i> Love it!</button>

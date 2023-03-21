@@ -1,7 +1,6 @@
-import './Catalog.css'
-
 import { useContext } from 'react';
 
+import './Catalog.css'
 import { DesignsContext } from '../../contexts/DesignsContext';
 
 import { CatalogCard } from "./CatalogCard";
@@ -10,8 +9,8 @@ import { Pagination } from "../Pagination/Pagination";
 import { FilterCriteria } from './FilterCriteria';
 
 export const Catalog = () => {
-    const designs = useContext(DesignsContext);
-   
+    const { designs } = useContext(DesignsContext);
+
     return (
         <div className="container py-5">
             <div className="row">

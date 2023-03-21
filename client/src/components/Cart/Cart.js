@@ -6,8 +6,8 @@ import { CartContext } from "../../contexts/CartContext";
 import { CartCard } from "./CartCard";
 
 export const Cart = () => {
-    const cart = useContext(CartContext);
-    
+    const { cart } = useContext(CartContext);
+
     let allTotalPrice = 0;
     cart.map(x => allTotalPrice += x.totalPrice);
 
@@ -33,7 +33,7 @@ export const Cart = () => {
                                 <tbody>
 
                                     {cart.map(x => <CartCard key={x._id} {...x} />)}
-                            
+
                                 </tbody>
                             </table>
                         </div>

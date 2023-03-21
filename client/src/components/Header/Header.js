@@ -1,29 +1,19 @@
 import { useContext } from 'react';
 
-import * as authService from '../../services/authService'
-
 import { CartContext } from '../../contexts/CartContext';
 import { LovesContext } from '../../contexts/LovesContext';
-import { AuthContext, SetAuthContext } from "../../contexts/AuthContext";
+import { AuthContext } from "../../contexts/AuthContext";
 
 import './Header.css'
 
 import { NavLink } from "react-router-dom";
 
 export const Header = () => {
-    const user = useContext(AuthContext);
-    const setUser = useContext(SetAuthContext)
-    const cart = useContext(CartContext);
-    const loves = useContext(LovesContext);
+    const { user, onLogout } = useContext(AuthContext);
+    const { cart } = useContext(CartContext);
+    const { loves } = useContext(LovesContext);
 
     const isUser = Boolean(user._id);
-
-    const onLogout = async () => {
-        if(isUser) {
-            await authService.logout(user);
-            await setUser({});
-        }
-    };
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light shadow">
@@ -51,11 +41,11 @@ export const Header = () => {
                                 <NavLink to={"/catalog"} className="nav-link">Designs</NavLink>
                             </li>
                             {/* TODO: show if owner */}
-                            {isUser ? 
+                            {isUser ?
                                 <li className="nav-item">
                                     <NavLink to={"/create"} className="nav-link">Create Design</NavLink>
                                 </li>
-                            : null}
+                                : null}
                             <li className="nav-item">
                                 <NavLink to={"/contact"} className="nav-link">Contact</NavLink>
                             </li>
@@ -68,7 +58,7 @@ export const Header = () => {
                             <i className="fa fa-fw fa-search text-dark mr-2"></i>
                         </NavLink>
 
-                        {isUser ? 
+                        {isUser ?
                             <>
                                 <NavLink to={"/cart"} className="nav-icon position-relative text-decoration-none">
                                     <i className="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
@@ -85,7 +75,7 @@ export const Header = () => {
                                     <i className="fa fa-fw fa-sign-out-alt text-dark mr-4"></i>
                                 </NavLink>
                             </>
-                        :
+                            :
                             <NavLink to={"/login"} className="nav-icon position-relative text-decoration-none">
                                 <i className="fa fa-fw fa-sign-in-alt text-dark mr-4"></i>
                             </NavLink>

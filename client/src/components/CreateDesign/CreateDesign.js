@@ -1,25 +1,17 @@
-import { useState } from "react"
+import { useContext } from "react"
 
-export const CreateDesign = ({
-    onCreateDesignSubmit,
-}) => {
-    const [values, setValues] = useState({
+import { DesignsContext } from "../../contexts/DesignsContext";
+import { useForm } from "../../hooks/useForm";
+
+export const CreateDesign = () => {
+    const { onCreateDesignSubmit } = useContext(DesignsContext);
+    const {values, changeHandler, onSubmit} = useForm({
         name: '',
         price: '',
         imageUrl: '',
         shape: '',
         description: '',
-    });
-
-    const onChangeHandler = (e) => {
-        setValues(state => ({...state, [e.target.name]: e.target.value}));
-    };
-
-    const onSubmit = (e) => {
-        e.preventDefault();
-
-        onCreateDesignSubmit(values);
-    };
+    }, onCreateDesignSubmit);
 
     return (
         <section className="section py-5">
@@ -31,27 +23,27 @@ export const CreateDesign = ({
                         <div className="col py-3">
                             <div className="form-group mb-3">
                                 <label htmlFor="design-name">Name:</label>
-                                <input onChange={onChangeHandler} className="form-control mt-2" type="text" name="name" placeholder="Enter design name..."/>
+                                <input onChange={changeHandler} value={values.name} className="form-control mt-2" type="text" name="name" placeholder="Enter design name..." />
                             </div>
 
                             <div className="form-group mb-3">
                                 <label htmlFor="price">Price:</label>
-                                <input onChange={onChangeHandler} className="form-control mt-2" type="number" name="price" min="1" placeholder="10 BGN"/>
+                                <input onChange={changeHandler} value={values.price} className="form-control mt-2" type="number" name="price" min="1" placeholder="10 BGN" />
                             </div>
 
                             <div className="form-group mb-3">
                                 <label htmlFor="design-img">Image:</label>
-                                <input onChange={onChangeHandler} className="form-control mt-2" type="text" name="imageUrl" placeholder="Upload a photo..."/>
+                                <input onChange={changeHandler} value={values.imageUrl} className="form-control mt-2" type="text" name="imageUrl" placeholder="Upload a photo..." />
                             </div>
 
                             <div className="form-group mb-3">
                                 <label htmlFor="design-shape">Shape:</label>
-                                <input onChange={onChangeHandler} className="form-control mt-2" type="text" name="shape" placeholder="Enter design shape..."/>
+                                <input onChange={changeHandler} value={values.shape} className="form-control mt-2" type="text" name="shape" placeholder="Enter design shape..." />
                             </div>
 
                             <div className="form-group mb-3">
                                 <label htmlFor="description">Description:</label>
-                                <textarea onChange={onChangeHandler} className="form-control mt-2" name="description"></textarea>
+                                <textarea onChange={changeHandler} value={values.description} className="form-control mt-2" name="description"></textarea>
                             </div>
 
                         </div>

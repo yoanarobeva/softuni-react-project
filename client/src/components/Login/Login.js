@@ -1,45 +1,46 @@
-import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 
-import * as authService from "../../services/authService";
-import { SetAuthContext } from "../../contexts/AuthContext";
+import { useForm } from "../../hooks/useForm";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export const Login = () => {
-    const navigate = useNavigate();
-    const setUser = useContext(SetAuthContext);
-
-    const [values, setValues] = useState({
-        username: '',
+    const {onLogin} = useContext(AuthContext);
+    const {values, changeHandler, onSubmit} = useForm({
+        email: '',
         password: ''
-    })
+    }, onLogin);
 
-    const onChangeHandler = (e) => {
-        setValues(state => ({...state, [e.target.name]: e.target.value}));
-    }
-
-    const onLogin = async (e) => {
-        e.preventDefault();
-        const user = await authService.login(values);
-        await setUser(user);
-        
-        navigate('/catalog')
-    };
     return (
         <section className="section py-5">
             <div className="row py-5">
-                <form onSubmit={onLogin} id="login" className="col-md-9 m-auto">
+                <form onSubmit={onSubmit} id="login" className="col-md-9 m-auto">
                     <div className="container">
                         <h1 className="h1">Login</h1>
 
                         <div className="col py-3">
                             <div className="form-group mb-3">
                                 <label htmlFor="email">Email:</label>
-                                <input onChange={onChangeHandler} className="form-control mt-2" type="email" name="email" placeholder="Sokka@gmail.com"/>
+                                <input
+                                    className="form-control mt-2" 
+                                    type="email" 
+                                    name="email" 
+                                    placeholder="Sokka@gmail.com"
+                                    value={values.email}
+                                    onChange={changeHandler} 
+                                />
                             </div>
 
                             <div className="form-group mb-3">
                                 <label htmlFor="login-pass">Password:</label>
-                                <input onChange={onChangeHandler} className="form-control mt-2" type="password" name="password" placeholder="******"/>
+                                <input 
+                                    className="form-control mt-2" 
+                                    type="password" 
+                                    name="password" 
+                                    placeholder="******"
+                                    value={values.password}
+                                    onChange={changeHandler} 
+                                />
                             </div>
                         </div>
 

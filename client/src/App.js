@@ -4,11 +4,12 @@ import { useEffect, useState } from 'react';
 import * as designsService from './services/designsService';
 import * as cartService from './services/cartService';
 import * as lovesService from './services/lovesService';
+import * as authService from './services/authService';
 
-import { DesignsContext, SetDesignsContext } from './contexts/DesignsContext';
-import { CartContext, SetCartContext } from './contexts/CartContext';
-import { LovesContext, SetLovesContext } from './contexts/LovesContext';
-import { AuthContext, SetAuthContext } from './contexts/AuthContext';
+import { DesignsContext } from './contexts/DesignsContext';
+import { CartContext } from './contexts/CartContext';
+import { LovesContext } from './contexts/LovesContext';
+import { AuthContext } from './contexts/AuthContext';
 
 import { TopHeader } from "./components/TopHeader/TopHeader";
 import { Header } from "./components/Header/Header";
@@ -62,7 +63,6 @@ function App() {
     }, [user])
 
     const onCreateDesignSubmit = async (data) => {
-        // !!! Will work after authorization is added!!!
         const newDesign = await designsService.create(data);
 
         setDesigns(state => [...state, newDesign]);
@@ -70,52 +70,93 @@ function App() {
         navigate('/catalog');
     };
 
+    const onLogin = async (values) => {
+        const user = await authService.login(values);
+        setUser(user);
+        
+        navigate('/catalog');
+    };
+
+    const onLogout = async () => {
+        if(user._id) {
+            await authService.logout(user);
+            setUser({});
+        }
+    };
+
+    const onRegister = async (values) => {
+        const {repeatPassword, ...registerData} = values;
+
+        if (repeatPassword !== registerData.password) {
+            return alert("Passwords dont match!");
+        }
+
+        const user = await authService.register(registerData);
+        setUser(user);
+
+        navigate('/catalog');
+    };
+
+    const authContextValues = {
+        onLogin,
+        onLogout,
+        onRegister,
+        user,
+    }
+
+    const cartContextValues = {
+        cart,
+        setCart,
+    }
+
+    const lovesContextValues = {
+        loves,
+        setLoves,
+    }
+
+    const designContextValues = {
+        designs,
+        setDesigns,
+        onCreateDesignSubmit,
+    }
+
     return (
         <>
             <TopHeader />
 
-            <AuthContext.Provider value={user}>
-                <SetAuthContext.Provider value={setUser}>
+            <AuthContext.Provider value={authContextValues}>
 
-                    <DesignsContext.Provider value={designs}>
-                        <SetDesignsContext.Provider value={setDesigns}>
+                <DesignsContext.Provider value={designContextValues}>
 
-                            <CartContext.Provider value={cart}>
-                                <SetCartContext.Provider value={setCart}>
+                    <CartContext.Provider value={cartContextValues}>
 
-                                    <LovesContext.Provider value={loves}>
-                                        <SetLovesContext.Provider value={setLoves}>
+                        <LovesContext.Provider value={lovesContextValues}>
 
-                                            <Header/>
+                            <Header/>
 
-                                            <Search />
+                            <Search />
 
-                                            <Routes>
-                                                <Route path='*' element={<h1>404</h1>} />
-                                                <Route path='/' element={<Home />} />
-                                                <Route path='/about' element={<About />} />
-                                                <Route path='/catalog' element={<Catalog />} />
-                                                <Route path='/create' element={<CreateDesign onCreateDesignSubmit={onCreateDesignSubmit} />} />
-                                                <Route path='/contact' element={<Contact />} />
-                                                <Route path='/details/:designId' element={<Details/>} />
-                                                <Route path='/cart' element={<Cart />} />
-                                                <Route path='/profile' element={<Profile />} />
-                                                <Route path='/login' element={<Login />} />
-                                                <Route path='/register' element={<Register />} />
-                                            </Routes>
-                                            
-                                        </SetLovesContext.Provider>
-                                    </LovesContext.Provider>
+                            <Routes>
+                                <Route path='*' element={<h1>404</h1>} />
+                                <Route path='/' element={<Home />} />
+                                <Route path='/about' element={<About />} />
+                                <Route path='/catalog' element={<Catalog />} />
+                                <Route path='/create' element={<CreateDesign />} />
+                                <Route path='/contact' element={<Contact />} />
+                                <Route path='/details/:designId' element={<Details/>} />
+                                <Route path='/cart' element={<Cart />} />
+                                <Route path='/profile' element={<Profile />} />
+                                <Route path='/login' element={<Login />} />
+                                <Route path='/register' element={<Register />} />
+                            </Routes>
+                                
+                        </LovesContext.Provider>
 
-                                </SetCartContext.Provider>
-                            </CartContext.Provider>
+                    </CartContext.Provider>
 
-                        </SetDesignsContext.Provider>
-                    </DesignsContext.Provider>
+                </DesignsContext.Provider>
 
-                </SetAuthContext.Provider>
             </AuthContext.Provider>
-
 
             <Footer />
         </>

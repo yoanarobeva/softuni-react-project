@@ -10,12 +10,12 @@ export const CatalogCard = ({
     price,
     imageUrl,
 }) => {
-    const loves = useContext(LovesContext);
+    const { loves } = useContext(LovesContext);
     const [isLoved, setIsLoved] = useState(false);
 
     useEffect(() => {
         const userLoves = loves.map(x => x.designId);
-        if(userLoves.includes(_id)) {
+        if (userLoves.includes(_id)) {
             setIsLoved(true);
         }
     }, [loves, _id]);
@@ -38,17 +38,6 @@ export const CatalogCard = ({
                 </div>
                 <div className="card-body">
                     <Link to={`/details/${_id}`} className="h3 text-decoration-none">{name}</Link>
-
-                    {/* TODO: Check if you need this and if -  Implement rating and show the right one depending on rating */}
-                    {/* <ul className="list-unstyled d-flex justify-content-center mb-1">
-                    <li>
-                        <i className="text-warning fa fa-star"></i>
-                        <i className="text-warning fa fa-star"></i>
-                        <i className="text-warning fa fa-star"></i>
-                        <i className="text-muted fa fa-star"></i>
-                        <i className="text-muted fa fa-star"></i>
-                    </li>
-                </ul> */}
                     <p className="text-center mb-0">{price} BGN</p>
                 </div>
             </div>
