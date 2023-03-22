@@ -1,21 +1,19 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { designsServiceFactory } from "../../services/designsService";
-import { useService } from "../../hooks/useService";
+import * as designsService from "../../services/designsService";
 
 export const Card = ({
     designId,
 }) => {
     const [design, setDesign] = useState({});
-    const designsService = useService(designsServiceFactory);
 
     useEffect(() => {
         designsService.getOne(designId)
             .then(result => {
                 setDesign(result);
             })
-    }, [designsService, designId]);
+    }, [designId]);
     
     return (
         <div className="col-12 col-md-4 mb-4">

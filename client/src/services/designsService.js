@@ -1,37 +1,25 @@
-import { requestFactory } from "./requester";
+import { get, post, put, del } from "./requester";
 
 const baseUrl = 'http://localhost:3030/data/designs';
 
-export const designsServiceFactory = (token) => {
-    const request = requestFactory(token);
+export const getAll = async () =>  {
+    const result = await get(baseUrl);
 
-    const getAll = async () =>  {
-        const result = await request.get(baseUrl);
+    return Object.values(result);
+};
 
-        return Object.values(result);
-    };
+export const getOne = async (designId) => {
+    const result = await get(`${baseUrl}/${designId}`);
 
-    const getOne = async (designId) => {
-        const result = await request.get(`${baseUrl}/${designId}`);
+    return result;
+};
 
-        return result;
-    };
+export const create = async (token, designData) => {
+    const result = await post(baseUrl, token, designData);
 
-    const create = async (designData) => {
-        const result = await request.post(baseUrl, designData);
-
-        return result;
-    }
-
-    const edit = async (designId, data) => request.put(`${baseUrl}/${designId}`, data);
-
-    const deleteDesign = async (designId) => request.delete(`${baseUrl}/${designId}`);
-
-    return {
-        getAll,
-        getOne,
-        create,
-        edit,
-        delete: deleteDesign,
-    };
+    return result;
 }
+
+export const edit = async (designId, token, data) => put(`${baseUrl}/${designId}`, token, data);
+
+export const deleteDesign = async (designId, token) => del(`${baseUrl}/${designId}`, token);

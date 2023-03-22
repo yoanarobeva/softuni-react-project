@@ -1,10 +1,10 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-import { authServiceFactory } from './services/authService';
-import { designsServiceFactory } from './services/designsService';
-import { cartServiceFactory } from './services/cartService';
-import { lovesServiceFactory } from './services/lovesService';
+import * as authService from './services/authService';
+import * as designsService from './services/designsService';
+import * as cartService from './services/cartService';
+import * as lovesService from './services/lovesService';
 
 import { DesignsContext } from './contexts/DesignsContext';
 import { CartContext } from './contexts/CartContext';
@@ -25,6 +25,8 @@ import { Register } from './components/Register/Register';
 import { Profile } from './components/Profile/Profile';
 import { CreateDesign } from './components/CreateDesign/CreateDesign';
 import { Cart } from './components/Cart/Cart';
+import { Logout } from './components/Logout/Logout';
+import { owners } from './utils/ownersUtil';
 
 
 function App() {
@@ -34,11 +36,6 @@ function App() {
     const [designs, setDesigns] = useState([]);
     const [cart, setCart] = useState([]);
     const [loves, setLoves] = useState([])
-
-    const authService = authServiceFactory(user.accessToken);
-    const designsService = designsServiceFactory(user.accessToken);
-    const cartService = cartServiceFactory(user.accessToken);
-    const lovesService = lovesServiceFactory(user.accessToken);
 
     useEffect(() => {
         designsService.getAll()
@@ -54,7 +51,7 @@ function App() {
                     setCart(result);
                 })
         }
-    }, [user]);
+    }, [user._id]);
 
     useEffect(() => {
         if (user._id) {
@@ -65,10 +62,12 @@ function App() {
                     }
                 })
         }
-    }, [user]);
-
+    }, [user._id]);
+    
+    const isOwner = owners.includes(user._id);
+   
     const onCreateDesignSubmit = async (data) => {
-        const newDesign = await designsService.create(data);
+        const newDesign = await designsService.create(user.accessToken, data);
 
         setDesigns(state => [...state, newDesign]);
 
@@ -76,14 +75,14 @@ function App() {
     };
 
     const onLogin = async (values) => {
-        const newUser = await authService.login(values);
+        const newUser = await authService.login(user.accessToken, values);
         setUser(newUser);
 
         navigate('/catalog');
     };
 
     const onLogout = async () => {
-        await authService.logout();
+        await authService.logout(user.accessToken);
         setUser({});
     };
 
@@ -94,7 +93,7 @@ function App() {
             return alert("Passwords dont match!");
         }
 
-        const newUser = await authService.register(registerData);
+        const newUser = await authService.register(user.accessToken, registerData);
         setUser(newUser);
 
         navigate('/catalog');
@@ -104,7 +103,11 @@ function App() {
         onLogin,
         onLogout,
         onRegister,
-        user,
+        isOwner,
+        userId: user._id,
+        token: user.accessToken,
+        userEmail: user.email,
+        isAuthenticated: !!user.accessToken,
     }
 
     const cartContextValues = {
@@ -151,6 +154,7 @@ function App() {
                                 <Route path='/profile' element={<Profile />} />
                                 <Route path='/login' element={<Login />} />
                                 <Route path='/register' element={<Register />} />
+                                <Route path='/logout' element={<Logout />} />
                             </Routes>
 
                         </LovesContext.Provider>

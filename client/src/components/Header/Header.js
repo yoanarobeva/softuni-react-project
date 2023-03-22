@@ -9,11 +9,9 @@ import './Header.css'
 import { NavLink } from "react-router-dom";
 
 export const Header = () => {
-    const { user, onLogout } = useContext(AuthContext);
+    const { isAuthenticated, isOwner, userEmail } = useContext(AuthContext);
     const { cart } = useContext(CartContext);
     const { loves } = useContext(LovesContext);
-
-    const isUser = Boolean(user._id);
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light shadow">
@@ -22,11 +20,6 @@ export const Header = () => {
                 <NavLink to={"/"} className="navbar-brand text-success logo h1 align-self-center">
                     uniQUEode
                 </NavLink>
-
-                {/* TODO: Check if you need this */}
-                {/* <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button> */}
 
                 <div className="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
                     <div className="flex-fill">
@@ -40,15 +33,17 @@ export const Header = () => {
                             <li className="nav-item">
                                 <NavLink to={"/catalog"} className="nav-link">Designs</NavLink>
                             </li>
-                            {/* TODO: show if owner */}
-                            {isUser ?
+
+                            {isOwner ?
                                 <li className="nav-item">
                                     <NavLink to={"/create"} className="nav-link">Create Design</NavLink>
                                 </li>
-                                : null}
+                            : null}
+
                             <li className="nav-item">
                                 <NavLink to={"/contact"} className="nav-link">Contact</NavLink>
                             </li>
+
                         </ul>
                     </div>
                     <div className="navbar align-self-center d-flex">
@@ -58,20 +53,23 @@ export const Header = () => {
                             <i className="fa fa-fw fa-search text-dark mr-2"></i>
                         </NavLink>
 
-                        {isUser ?
+                        {isAuthenticated ?
                             <>
-                                <NavLink to={"/cart"} className="nav-icon position-relative text-decoration-none">
-                                    <i className="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                                    <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{cart.length}</span>
+                                {!isOwner &&
+                                    <>
+                                        <NavLink to={"/cart"} className="nav-icon position-relative text-decoration-none">
+                                            <i className="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                                            <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{cart.length}</span>
+                                        </NavLink>
 
-                                </NavLink>
+                                        <NavLink to={"/profile"} className="nav-icon position-relative text-decoration-none">
+                                            <i className="fa fa-fw fa-user text-dark mr-3"></i>
+                                            <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{loves.length}</span>
+                                        </NavLink>
+                                    </>
+                                }
 
-                                <NavLink to={"/profile"} className="nav-icon position-relative text-decoration-none">
-                                    <i className="fa fa-fw fa-user text-dark mr-3"></i>
-                                    <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{loves.length}</span>
-                                </NavLink>
-
-                                <NavLink onClick={onLogout} className="nav-icon position-relative text-decoration-none">
+                                <NavLink to={"/logout"} className="nav-icon position-relative text-decoration-none">
                                     <i className="fa fa-fw fa-sign-out-alt text-dark mr-4"></i>
                                 </NavLink>
                             </>
@@ -81,7 +79,13 @@ export const Header = () => {
                             </NavLink>
                         }
 
+                        {isAuthenticated && 
+                            <h7 className='h7'>Hello, {userEmail}</h7>  
+                        }
+
                     </div>
+                    
+                    
                 </div>
 
             </div>

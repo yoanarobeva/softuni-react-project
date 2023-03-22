@@ -6,7 +6,7 @@ import { LovesContext } from "../../contexts/LovesContext";
 import { Card } from "./Card";
 
 export const Profile = () => {
-    const { user } = useContext(AuthContext);
+    const { userEmail } = useContext(AuthContext);
     const { loves } = useContext(LovesContext);
 
     return (
@@ -16,7 +16,7 @@ export const Profile = () => {
                     <div className="col-lg-6 m-auto">
                         <img src="/assets/img/profile.jpg" alt="profilePic" className="rounded-circle w-50 img-fluid border" />
                         <p className="mt-3">
-                            {user.email}
+                            {userEmail}
                         </p>
                     </div>
                 </div>

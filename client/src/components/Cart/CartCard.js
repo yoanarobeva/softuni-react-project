@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { useService } from "../../hooks/useService";
-import { designsServiceFactory } from "../../services/designsService";
+import * as designsService from "../../services/designsService";
 
 export const CartCard = ({
     designId,
@@ -9,14 +8,13 @@ export const CartCard = ({
     category,
 }) => {
     const [design, setDesign] = useState({});
-    const designsService = useService(designsServiceFactory);
 
     useEffect(() => {
         designsService.getOne(designId)
             .then(result => {
                 setDesign(result);
             })
-    }, [designsService, designId]);
+    }, [designId]);
 
     const onChangeHandler = () => {
 

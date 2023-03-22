@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
 
 import { LovesContext } from "../../contexts/LovesContext";
-import { lovesServiceFactory } from "../../services/lovesService";
-import { useService } from "../../hooks/useService";
+import * as lovesService from "../../services/lovesService";
 
 export const CatalogCard = ({
     _id,
@@ -11,8 +11,8 @@ export const CatalogCard = ({
     price,
     imageUrl,
 }) => {
-    const { loves } = useContext(LovesContext);
-    const lovesService = useService(lovesServiceFactory);
+    const { isAuthenticated, token } = useContext(AuthContext);
+    const { loves, setLoves } = useContext(LovesContext);
     const [isLoved, setIsLoved] = useState(false);
 
     useEffect(() => {
@@ -23,7 +23,8 @@ export const CatalogCard = ({
     }, [loves, _id]);
 
     const onClickLove = async () => {
-        await lovesService.love(_id);
+        const newLove = await lovesService.love(token, _id);
+        setLoves([...loves, newLove]);
         setIsLoved(true);
     };
 
@@ -34,7 +35,9 @@ export const CatalogCard = ({
                     <img alt="img" className="card-img rounded-0 img-fluid" src={imageUrl} />
                     <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                         <ul className="list-unstyled">
-                            <li><button onClick={onClickLove} className="btn btn-success text-white" disabled={isLoved}><i className="far fa-heart"></i></button></li>
+                            {isAuthenticated &&
+                                <li><button onClick={onClickLove} className="btn btn-success text-white" disabled={isLoved}><i className="far fa-heart"></i></button></li>
+                            }
                             <li><Link className="btn btn-success text-white mt-2" to={`/details/${_id}`}><i className="far fa-eye"></i></Link></li>
                         </ul>
                     </div>

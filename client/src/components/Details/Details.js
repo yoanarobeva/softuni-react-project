@@ -1,28 +1,30 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 
+import * as designsService from "../../services/designsService";
+import * as lovesService from "../../services/lovesService";
 import { LovesContext } from "../../contexts/LovesContext";
-import { useService } from "../../hooks/useService";
-import { designsServiceFactory } from "../../services/designsService";
-import { lovesServiceFactory } from "../../services/lovesService";
+import { AuthContext } from "../../contexts/AuthContext";
+import { DesignsContext } from "../../contexts/DesignsContext";
 
 import { DetailsForm } from "./DetailsForm";
 
 export const Details = () => {
-    const { loves } = useContext(LovesContext);
+    const navigate = useNavigate();
+    const { isOwner } = useContext(AuthContext)
+    const { loves, setLoves } = useContext(LovesContext);
+    const { designs, setDesigns } = useContext(DesignsContext)
     const { designId } = useParams();
     const [design, setDesign] = useState({});
-    const designsService = useService(designsServiceFactory);
-    const lovesService = useService(lovesServiceFactory);
+    const [isLoved, setIsLoved] = useState(false);
 
     useEffect(() => {
         designsService.getOne(designId)
             .then(result => {
                 setDesign(result);
             })
-    }, [designsService, designId]);
+    }, [designId]);
 
-    const [isLoved, setIsLoved] = useState(false);
 
     useEffect(() => {
         const userLoves = loves.map(x => x.designId);
@@ -32,7 +34,15 @@ export const Details = () => {
     }, [loves, designId]);
 
     const onClickLove = async () => {
-        await lovesService.love(designId);
+        const newLove = await lovesService.love(designId);
+        setLoves([...loves, newLove]);
+        setIsLoved(true);
+    };
+
+    const onDeleteClick = async () => {
+        await designsService.deleteDesign(designId);
+        setDesigns(designs.filter(x => x._id !== designId));
+        navigate("/catalog");
     };
 
     return (
@@ -49,11 +59,13 @@ export const Details = () => {
                             <div className="card-body">
                                 <h1 className="h2">{design.name}</h1>
                                 <p className="h3 py-2">{design.price} BGN</p>
-                               
-                                {/* TODO: Implement loves here as well when loved change Love it! to Loved! */}
-                                <p>
-                                    <button onClick={onClickLove} className="btn btn-success text-white" disabled={isLoved}><i className="far fa-heart"></i> Love it!</button>
-                                </p>
+
+                                {!isOwner &&
+                                    <p>
+                                        <button onClick={onClickLove} className="btn btn-success text-white" disabled={isLoved}><i className="far fa-heart"></i> Love it!</button>
+                                    </p>
+                                }
+
                                 <ul className="list-inline">
                                     <li className="list-inline-item">
                                         <h6>Shape:</h6>
@@ -66,7 +78,14 @@ export const Details = () => {
                                 <h6>Description:</h6>
                                 <p>{design.description}</p>
 
-                                <DetailsForm design={design} />
+                                {isOwner ?
+                                    <div className="d-grid">
+                                        <Link to={`/catalog/${designId}/edit`} className="btn btn-success btn-lg">Edit</Link>
+                                        <button onClick={onDeleteClick} className="btn btn-success btn-lg mt-2">Delete</button>
+                                    </div>
+                                    :
+                                    <DetailsForm design={design} />
+                                }
 
                             </div>
                         </div>
