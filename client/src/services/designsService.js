@@ -1,31 +1,37 @@
-// import { get } from "./requester";
+import { requestFactory } from "./requester";
+
 const baseUrl = 'http://localhost:3030/data/designs';
 
-export const getAll = async () =>  {
-    const response = await fetch(baseUrl);
-    const data = await response.json();
+export const designsServiceFactory = (token) => {
+    const request = requestFactory(token);
 
-    return Object.values(data);
-};
+    const getAll = async () =>  {
+        const result = await request.get(baseUrl);
 
-export const getOne = async (designId) => {
-    const response = await fetch(`${baseUrl}/${designId}`);
-    const data = await response.json();
+        return Object.values(result);
+    };
 
-    return data;
-};
+    const getOne = async (designId) => {
+        const result = await request.get(`${baseUrl}/${designId}`);
 
-export const create = async (designData) => {
-    const user = JSON.parse(sessionStorage.getItem('userData'));
+        return result;
+    };
 
-    const response = await fetch(baseUrl, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "X-Authorization": user.accessToken,
-        },
-        body: JSON.stringify(designData)
-    })
-    const result = await response.json()
-    return result;
+    const create = async (designData) => {
+        const result = await request.post(baseUrl, designData);
+
+        return result;
+    }
+
+    const edit = async (designId, data) => request.put(`${baseUrl}/${designId}`, data);
+
+    const deleteDesign = async (designId) => request.delete(`${baseUrl}/${designId}`);
+
+    return {
+        getAll,
+        getOne,
+        create,
+        edit,
+        delete: deleteDesign,
+    };
 }

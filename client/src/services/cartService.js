@@ -1,26 +1,26 @@
+import { requestFactory } from "./requester";
+
 const baseUrl = 'http://localhost:3030/data/cart';
 
-export const getOwnCart = async (userId) =>  {
-    const response = await fetch(`${baseUrl}?where=_ownerId%3D%22${userId}%22`);
-    const data = await response.json();
+export const cartServiceFactory = (token) => {
+    const request = requestFactory(token);
+
+    const getOwnCart = async (userId) =>  {
+        const result = await request.get(`${baseUrl}?where=_ownerId%3D%22${userId}%22`);
+        
+        return Object.values(result);
+    };
     
-    return Object.values(data);
-};
+    const create = async (cartData) => {
+        const result = await request.post(baseUrl, cartData);
+    
+        console.log("Cart Submitted");
+    
+        return result;
+    };
 
-export const create = async (cartData) => {
-    const user = JSON.parse(sessionStorage.getItem('userData'));
-
-    const response = await fetch(baseUrl, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "X-Authorization": user.accessToken,
-        },
-        body: JSON.stringify(cartData)
-    })
-    const result = await response.json();
-
-    console.log("Cart Submitted");
-
-    return result;
+    return {
+        getOwnCart,
+        create,
+    };
 };

@@ -1,20 +1,39 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
 
-import * as designsService from '../../services/designsService';
+import { LovesContext } from "../../contexts/LovesContext";
+import { useService } from "../../hooks/useService";
+import { designsServiceFactory } from "../../services/designsService";
+import { lovesServiceFactory } from "../../services/lovesService";
 
 import { DetailsForm } from "./DetailsForm";
 
 export const Details = () => {
+    const { loves } = useContext(LovesContext);
     const { designId } = useParams();
     const [design, setDesign] = useState({});
+    const designsService = useService(designsServiceFactory);
+    const lovesService = useService(lovesServiceFactory);
 
     useEffect(() => {
         designsService.getOne(designId)
             .then(result => {
                 setDesign(result);
             })
-    }, [designId]);
+    }, [designsService, designId]);
+
+    const [isLoved, setIsLoved] = useState(false);
+
+    useEffect(() => {
+        const userLoves = loves.map(x => x.designId);
+        if (userLoves.includes(designId)) {
+            setIsLoved(true);
+        }
+    }, [loves, designId]);
+
+    const onClickLove = async () => {
+        await lovesService.love(designId);
+    };
 
     return (
         <section className="bg-light">
@@ -33,7 +52,7 @@ export const Details = () => {
                                
                                 {/* TODO: Implement loves here as well when loved change Love it! to Loved! */}
                                 <p>
-                                    <button className="btn btn-success text-white"><i className="far fa-heart"></i> Love it!</button>
+                                    <button onClick={onClickLove} className="btn btn-success text-white" disabled={isLoved}><i className="far fa-heart"></i> Love it!</button>
                                 </p>
                                 <ul className="list-inline">
                                     <li className="list-inline-item">

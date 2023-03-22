@@ -2,7 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { LovesContext } from "../../contexts/LovesContext";
-import * as lovesService from '../../services/lovesService';
+import { lovesServiceFactory } from "../../services/lovesService";
+import { useService } from "../../hooks/useService";
 
 export const CatalogCard = ({
     _id,
@@ -11,6 +12,7 @@ export const CatalogCard = ({
     imageUrl,
 }) => {
     const { loves } = useContext(LovesContext);
+    const lovesService = useService(lovesServiceFactory);
     const [isLoved, setIsLoved] = useState(false);
 
     useEffect(() => {
@@ -22,6 +24,7 @@ export const CatalogCard = ({
 
     const onClickLove = async () => {
         await lovesService.love(_id);
+        setIsLoved(true);
     };
 
     return (

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-import * as designsService from '../../services/designsService';
+import { useService } from "../../hooks/useService";
+import { designsServiceFactory } from "../../services/designsService";
 
 export const CartCard = ({
     designId,
@@ -8,18 +9,19 @@ export const CartCard = ({
     category,
 }) => {
     const [design, setDesign] = useState({});
+    const designsService = useService(designsServiceFactory);
 
     useEffect(() => {
         designsService.getOne(designId)
             .then(result => {
                 setDesign(result);
             })
-    }, [designId]);
+    }, [designsService, designId]);
 
     const onChangeHandler = () => {
-        
+
     };
-  
+
     return (
         <tr>
             <th scope="row">
@@ -32,7 +34,7 @@ export const CartCard = ({
                     </div>
                 </div>
             </th>
-            
+
             <td className="align-middle">
                 <p className="mb-0" >{design.shape}</p>
             </td>

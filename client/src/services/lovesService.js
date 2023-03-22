@@ -1,23 +1,23 @@
+import { requestFactory } from "./requester";
+
 const baseUrl = 'http://localhost:3030/data/loves';
 
-export const love = async (designId) => {
-    const user = JSON.parse(sessionStorage.getItem('userData'));
+export const lovesServiceFactory = (token) => {
+    const request = requestFactory(token);
+
+    const love = async (designId) => {
+        const result = await request.post(baseUrl, {designId});
+
+        return result;
+    };
     
-    const response = await fetch(baseUrl, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "X-Authorization": user.accessToken,
-        },
-        body: JSON.stringify({ designId })
-    })
-    const result = await response.json()
-    return result;
+    const getOwnLoves = async (userId) => {
+        const result = await request.get(`${baseUrl}?where=_ownerId%3D%22${userId}%22`);
+    
+        return result;
+    }
+    return {
+        love,
+        getOwnLoves,
+    };
 };
-
-export const getOwnLoves = async (userId) => {
-    const response = await fetch(`${baseUrl}?where=_ownerId%3D%22${userId}%22`);
-    const result = await response.json();
-
-    return result;
-}

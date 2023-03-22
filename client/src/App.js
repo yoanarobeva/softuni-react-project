@@ -1,10 +1,10 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-import * as designsService from './services/designsService';
-import * as cartService from './services/cartService';
-import * as lovesService from './services/lovesService';
-import * as authService from './services/authService';
+import { authServiceFactory } from './services/authService';
+import { designsServiceFactory } from './services/designsService';
+import { cartServiceFactory } from './services/cartService';
+import { lovesServiceFactory } from './services/lovesService';
 
 import { DesignsContext } from './contexts/DesignsContext';
 import { CartContext } from './contexts/CartContext';
@@ -34,16 +34,21 @@ function App() {
     const [designs, setDesigns] = useState([]);
     const [cart, setCart] = useState([]);
     const [loves, setLoves] = useState([])
-    
+
+    const authService = authServiceFactory(user.accessToken);
+    const designsService = designsServiceFactory(user.accessToken);
+    const cartService = cartServiceFactory(user.accessToken);
+    const lovesService = lovesServiceFactory(user.accessToken);
+
     useEffect(() => {
         designsService.getAll()
-        .then(result => {
-            setDesigns(result);
-        })
+            .then(result => {
+                setDesigns(result);
+            })
     }, []);
-    
+
     useEffect(() => {
-        if (user._id) {       
+        if (user._id) {
             cartService.getOwnCart(user._id)
                 .then(result => {
                     setCart(result);
@@ -55,12 +60,12 @@ function App() {
         if (user._id) {
             lovesService.getOwnLoves(user._id)
                 .then(result => {
-                    if(result) {
+                    if (result) {
                         setLoves(result);
                     }
                 })
         }
-    }, [user])
+    }, [user]);
 
     const onCreateDesignSubmit = async (data) => {
         const newDesign = await designsService.create(data);
@@ -71,28 +76,26 @@ function App() {
     };
 
     const onLogin = async (values) => {
-        const user = await authService.login(values);
-        setUser(user);
-        
+        const newUser = await authService.login(values);
+        setUser(newUser);
+
         navigate('/catalog');
     };
 
     const onLogout = async () => {
-        if(user._id) {
-            await authService.logout(user);
-            setUser({});
-        }
+        await authService.logout();
+        setUser({});
     };
 
     const onRegister = async (values) => {
-        const {repeatPassword, ...registerData} = values;
+        const { repeatPassword, ...registerData } = values;
 
         if (repeatPassword !== registerData.password) {
             return alert("Passwords dont match!");
         }
 
-        const user = await authService.register(registerData);
-        setUser(user);
+        const newUser = await authService.register(registerData);
+        setUser(newUser);
 
         navigate('/catalog');
     };
@@ -132,7 +135,7 @@ function App() {
 
                         <LovesContext.Provider value={lovesContextValues}>
 
-                            <Header/>
+                            <Header />
 
                             <Search />
 
@@ -143,13 +146,13 @@ function App() {
                                 <Route path='/catalog' element={<Catalog />} />
                                 <Route path='/create' element={<CreateDesign />} />
                                 <Route path='/contact' element={<Contact />} />
-                                <Route path='/details/:designId' element={<Details/>} />
+                                <Route path='/details/:designId' element={<Details />} />
                                 <Route path='/cart' element={<Cart />} />
                                 <Route path='/profile' element={<Profile />} />
                                 <Route path='/login' element={<Login />} />
                                 <Route path='/register' element={<Register />} />
                             </Routes>
-                                
+
                         </LovesContext.Provider>
 
                     </CartContext.Provider>
