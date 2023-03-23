@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 import * as authService from '../services/authService';
-import { owners } from '../utils/ownersUtil';
+import { admins } from '../utils/adminsUtil';
 
 export const AuthContext = createContext();
 
@@ -13,7 +13,7 @@ export const AuthProvider = ({
     const navigate = useNavigate();
     const [user, setUser] = useLocalStorage("user",{});
 
-    const isOwner = owners.includes(user._id);
+    const isAdmin = Boolean(admins.includes(user._id));
     
     const onLogin = async (values) => {
         const newUser = await authService.login(values);
@@ -45,7 +45,7 @@ export const AuthProvider = ({
         onLogin,
         onLogout,
         onRegister,
-        isOwner,
+        isAdmin,
         userId: user._id,
         token: user.accessToken,
         userEmail: user.email,

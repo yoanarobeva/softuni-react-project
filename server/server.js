@@ -1103,81 +1103,91 @@
                 "price": 15,
                 "imageUrl": "/assets/img/designs/design_1.jpg",
                 "shape": "circle",
-                "description": "Czech Republic proposal; a fictional substance in the novel Továrna na absolutno by Karel Čapek." 
-              },
-              "design_2": {
-                  "_id": "design_2",
-                  "name": "Eridanus",
-                  "price": 20,
-                  "imageUrl": "/assets/img/designs/design_2.jpg",
-                  "shape": "circle",
-                  "description": "The name was originally Arabic: آخر النهر āẖir an-nahr ('river's end')." 
-              },
-              "design_3": {
-                  "_id": "design_3",
-                  "name": "Cassiopeia",
-                  "price": 15,
-                  "imageUrl": "/assets/img/designs/design_3.jpg",
-                  "shape": "heptagon",
-                  "description": "Apparently first applied to η Cassiopeiae in the Skalnate Pleso Atlas of the Heavens published in 1950, but is not known prior to that." 
-              },
-              "design_4": {
-                  "_id": "design_4",
-                  "name": "Scorpius",
-                  "price": 15,
-                  "imageUrl": "/assets/img/designs/design_4.jpg",
-                  "shape": "hexagon",
-                  "description": "The traditional name of the β Scorpii system has been rendered Akrab and Elakrab, derived (like Acrab) from Arabic: العقرب al-ʿaqrab ('the scorpion')." 
-              },
-              "design_5": {
-                  "_id": "design_5",
-                  "name": "Crux",
-                  "price": 18,
-                  "imageUrl": "/assets/img/designs/design_5.jpg",
-                  "shape": "hexagon",
-                  "description": "Acrux is a modern contraction of the Bayer designation, coined in the 19th century, but which entered into common use only by the mid-20th century." 
-              },
-              "design_6": {
-                  "_id": "design_6",
-                  "name": "Cancer",
-                  "price": 20,
-                  "imageUrl": "/assets/img/designs/design_6.jpg",
-                  "shape": "hexagon",
-                  "description": "The name was originally Arabic: الزبانى az-zubāná ('the claws')." 
-              },
-              "design_7": {
-                  "_id": "design_7",
-                  "name": "Canis Major",
-                  "price": 22,
-                  "imageUrl": "/assets/img/designs/design_7.jpg",
-                  "shape": "octagon",
-                  "description": "The name is originally from Arabic: عذارى ʿaḏārá ('virgins'). In the Calendarium of Al Achsasi Al Mouakket, it is designated أول العذاري awwil al-ʿaḏāriyy, translated into Latin as Prima Virginum ('first virgin')." 
-              },
-              "design_8": {
-                  "_id": "design_8",
-                  "name": "Andromeda",
-                  "price": 16,
-                  "imageUrl": "/assets/img/designs/design_8.jpg",
-                  "shape": "octagon",
-                  "description": "The name was originally Arabic: الذيل aḏ-ḏayl (the train, lit. 'the tail')." 
-              },
-              "design_9": {
-                  "_id": "design_9",
-                  "name": "Taurus",
-                  "price": 23,
-                  "imageUrl": "/assets/img/designs/design_9.jpg",
-                  "shape": "pentagon",
-                  "description": "The name is originally from Arabic: عين ʿayn ('eye') and was reviewed and adopted by the Working Group on Star Names." 
-              },
-              "design_10": {
-                  "_id": "design_10",
-                  "name": "Sagittarius",
-                  "price": 24,
-                  "imageUrl": "/assets/img/designs/design_10.jpg",
-                  "shape": "pentagon",
-                  "description": "From Arabic: عين الرامي ʿayn ar-rāmī ('eye of the archer')." 
-              }
+                "description": "Czech Republic proposal; a fictional substance in the novel Továrna na absolutno by Karel Čapek.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc"
             },
+            "design_2": {
+                "_id": "design_2",
+                "name": "Eridanus",
+                "price": 20,
+                "imageUrl": "/assets/img/designs/design_2.jpg",
+                "shape": "circle",
+                "description": "The name was originally Arabic: آخر النهر āẖir an-nahr ('river's end').", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc" 
+            },
+            "design_3": {
+                "_id": "design_3",
+                "name": "Cassiopeia",
+                "price": 15,
+                "imageUrl": "/assets/img/designs/design_3.jpg",
+                "shape": "heptagon",
+                "description": "Apparently first applied to η Cassiopeiae in the Skalnate Pleso Atlas of the Heavens published in 1950, but is not known prior to that.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc" 
+            },
+            "design_4": {
+                "_id": "design_4",
+                "name": "Scorpius",
+                "price": 15,
+                "imageUrl": "/assets/img/designs/design_4.jpg",
+                "shape": "hexagon",
+                "description": "The traditional name of the β Scorpii system has been rendered Akrab and Elakrab, derived (like Acrab) from Arabic: العقرب al-ʿaqrab ('the scorpion').", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc" 
+            },
+            "design_5": {
+                "_id": "design_5",
+                "name": "Crux",
+                "price": 18,
+                "imageUrl": "/assets/img/designs/design_5.jpg",
+                "shape": "hexagon",
+                "description": "Acrux is a modern contraction of the Bayer designation, coined in the 19th century, but which entered into common use only by the mid-20th century.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc" 
+            },
+            "design_6": {
+                "_id": "design_6",
+                "name": "Cancer",
+                "price": 20,
+                "imageUrl": "/assets/img/designs/design_6.jpg",
+                "shape": "hexagon",
+                "description": "The name was originally Arabic: الزبانى az-zubāná ('the claws').", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc" 
+            },
+            "design_7": {
+                "_id": "design_7",
+                "name": "Canis Major",
+                "price": 22,
+                "imageUrl": "/assets/img/designs/design_7.jpg",
+                "shape": "octagon",
+                "description": "The name is originally from Arabic: عذارى ʿaḏārá ('virgins'). In the Calendarium of Al Achsasi Al Mouakket, it is designated أول العذاري awwil al-ʿaḏāriyy, translated into Latin as Prima Virginum ('first virgin').", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc" 
+            },
+            "design_8": {
+                "_id": "design_8",
+                "name": "Andromeda",
+                "price": 16,
+                "imageUrl": "/assets/img/designs/design_8.jpg",
+                "shape": "octagon",
+                "description": "The name was originally Arabic: الذيل aḏ-ḏayl (the train, lit. 'the tail').", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc" 
+            },
+            "design_9": {
+                "_id": "design_9",
+                "name": "Taurus",
+                "price": 23,
+                "imageUrl": "/assets/img/designs/design_9.jpg",
+                "shape": "pentagon",
+                "description": "The name is originally from Arabic: عين ʿayn ('eye') and was reviewed and adopted by the Working Group on Star Names.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc" 
+            },
+            "design_10": {
+                "_id": "design_10",
+                "name": "Sagittarius",
+                "price": 24,
+                "imageUrl": "/assets/img/designs/design_10.jpg",
+                "shape": "pentagon",
+                "description": "From Arabic: عين الرامي ʿayn ar-rāmī ('eye of the archer').", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc" 
+            }
+        },
     	loves: {
     	},
         cart: {

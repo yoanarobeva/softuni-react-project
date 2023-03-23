@@ -26,10 +26,15 @@ export const DesignsProvider = ({
         navigate('/catalog');
     };
 
+    const onEditDesignSubmit = async (data) => {
+
+    };
+
     const designContextValues = {
         designs,
         setDesigns,
         onCreateDesignSubmit,
+        onEditDesignSubmit,
     };
 
     return (

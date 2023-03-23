@@ -18,6 +18,7 @@ import { Login } from './components/Login/Login';
 import { Register } from './components/Register/Register';
 import { Profile } from './components/Profile/Profile';
 import { CreateDesign } from './components/CreateDesign/CreateDesign';
+import { EditDesign } from './components/EditDesign/EditDesign';
 import { Cart } from './components/Cart/Cart';
 import { Logout } from './components/Logout/Logout';
 
@@ -40,18 +41,19 @@ function App() {
                             <Search />
 
                             <Routes>
-                                <Route path='*' element={<h1>404</h1>} />
                                 <Route path='/' element={<Home />} />
-                                <Route path='/about' element={<About />} />
-                                <Route path='/catalog' element={<Catalog />} />
-                                <Route path='/create' element={<CreateDesign />} />
-                                <Route path='/contact' element={<Contact />} />
-                                <Route path='/details/:designId' element={<Details />} />
-                                <Route path='/cart' element={<Cart />} />
-                                <Route path='/profile' element={<Profile />} />
                                 <Route path='/login' element={<Login />} />
                                 <Route path='/register' element={<Register />} />
                                 <Route path='/logout' element={<Logout />} />
+                                <Route path='/about' element={<About />} />
+                                <Route path='/catalog' element={<Catalog />} />
+                                <Route path='/contact' element={<Contact />} />
+                                <Route path='/create' element={<CreateDesign />} />
+                                <Route path='/details/:designId' element={<Details />} />
+                                <Route path='/details/:designId/edit' element={<EditDesign />} />
+                                <Route path='/cart' element={<Cart />} />
+                                <Route path='/profile' element={<Profile />} />
+                                <Route path='*' element={<h1>404</h1>} />
                             </Routes>
 
                         </LovesProvider>

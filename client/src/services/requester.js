@@ -1,35 +1,45 @@
-const request = async (method, token, url, data) => {
+
+const request = async (method, url, data) => {
+    let token = ''
+    if (!token) {
+        const serializedAuth = localStorage.getItem("user");
+        
+        if (serializedAuth) {
+            const user = JSON.parse(serializedAuth);
+            token = user.accessToken;
+        }
+    };
+    
     const options = {
         method,
         headers: {}
     };
-
+    
     if (data !== undefined) {
         options.headers['Content-Type'] = 'application/json';
         options.body = JSON.stringify(data);
     }
-
+    
     if (token) {
         options.headers['X-Authorization'] = token;
     }
-
+    
     try {
         const response = await fetch(url, options);
         if (response.status === 204) {
             return {};
         }
-
+        
         const result = await response.json();
 
-        if (!response.ok) {
+        if (response.ok === false) {
             throw new Error(result.message);
         }
 
         return result;
 
     } catch (err) {
-        alert(err.message);
-        throw err;
+        console.log(err.message);
     }
 };
 
@@ -43,9 +53,9 @@ export const requestFactory = (token) => {
         }
     }
     return {
-        get: request.bind(null, 'GET', token),
-        post: request.bind(null, 'POST', token),
-        put: request.bind(null, 'PUT', token),
-        delete: request.bind(null, 'DELETE', token),
+        get: request.bind(null, 'GET'),
+        post: request.bind(null, 'POST'),
+        put: request.bind(null, 'PUT'),
+        delete: request.bind(null, 'DELETE'),
     }
 };

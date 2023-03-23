@@ -9,7 +9,7 @@ import './Header.css'
 import { NavLink } from "react-router-dom";
 
 export const Header = () => {
-    const { isAuthenticated, isOwner } = useContext(AuthContext);
+    const { isAuthenticated, isAdmin } = useContext(AuthContext);
     const { cart } = useContext(CartContext);
     const { loves } = useContext(LovesContext);
 
@@ -34,7 +34,7 @@ export const Header = () => {
                                 <NavLink to={"/catalog"} className="nav-link">Designs</NavLink>
                             </li>
 
-                            {isOwner ?
+                            {isAdmin ?
                                 <li className="nav-item">
                                     <NavLink to={"/create"} className="nav-link">Create Design</NavLink>
                                 </li>
@@ -55,7 +55,7 @@ export const Header = () => {
 
                         {isAuthenticated ?
                             <>
-                                {!isOwner &&
+                                {!isAdmin &&
                                     <>
                                         <NavLink to={"/cart"} className="nav-icon position-relative text-decoration-none">
                                             <i className="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>

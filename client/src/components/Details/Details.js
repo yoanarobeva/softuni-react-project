@@ -11,7 +11,7 @@ import { DetailsForm } from "./DetailsForm";
 
 export const Details = () => {
     const navigate = useNavigate();
-    const { isOwner, isAuthenticated } = useContext(AuthContext)
+    const { isAdmin, userId, isAuthenticated } = useContext(AuthContext)
     const { loves, setLoves } = useContext(LovesContext);
     const { designs, setDesigns } = useContext(DesignsContext)
     const { designId } = useParams();
@@ -32,6 +32,8 @@ export const Details = () => {
             setIsLoved(true);
         }
     }, [loves, designId]);
+
+    const isOwner = design._ownerId === userId;
 
     const onClickLove = async () => {
         const newLove = await lovesService.love(designId);
@@ -60,7 +62,7 @@ export const Details = () => {
                                 <h1 className="h2">{design.name}</h1>
                                 <p className="h3 py-2">{design.price} BGN</p>
 
-                                {!isOwner && isAuthenticated &&
+                                {!isAdmin && !isOwner && isAuthenticated &&
                                     <p>
                                         <button onClick={onClickLove} className="btn btn-success text-white" disabled={isLoved}><i className="far fa-heart"></i> Love it!</button>
                                     </p>
@@ -78,12 +80,14 @@ export const Details = () => {
                                 <h6>Description:</h6>
                                 <p>{design.description}</p>
 
-                                {isOwner ?
+                                {isAdmin && isOwner &&
                                     <div className="d-grid">
-                                        <Link to={`/catalog/${designId}/edit`} className="btn btn-success btn-lg">Edit</Link>
+                                        <Link to={`/details/${designId}/edit`} className="btn btn-success btn-lg">Edit</Link>
                                         <button onClick={onDeleteClick} className="btn btn-success btn-lg mt-2">Delete</button>
                                     </div>
-                                    :
+                                }
+
+                                {!isAdmin && !isOwner &&
                                     <DetailsForm design={design} />
                                 }
 

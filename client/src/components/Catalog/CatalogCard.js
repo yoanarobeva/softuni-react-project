@@ -11,7 +11,7 @@ export const CatalogCard = ({
     price,
     imageUrl,
 }) => {
-    const { isAuthenticated, isOwner } = useContext(AuthContext);
+    const { isAuthenticated, isAdmin } = useContext(AuthContext);
     const { loves, setLoves } = useContext(LovesContext);
     const [isLoved, setIsLoved] = useState(false);
 
@@ -35,7 +35,7 @@ export const CatalogCard = ({
                     <img alt="img" className="card-img rounded-0 img-fluid" src={imageUrl} />
                     <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                         <ul className="list-unstyled">
-                            {!isOwner && isAuthenticated &&
+                            {!isAdmin && isAuthenticated &&
                                 <li><button onClick={onClickLove} className="btn btn-success text-white" disabled={isLoved}><i className="far fa-heart"></i></button></li>
                             }
                             <li><Link className="btn btn-success text-white mt-2" to={`/details/${_id}`}><i className="far fa-eye"></i></Link></li>
