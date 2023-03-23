@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 
 import { LovesContext } from "../../contexts/LovesContext";
-import { useService } from "../../hooks/useService";
-import { lovesServiceFactory } from "../../services/lovesService";
+import * as lovesService from "../../services/lovesService";
 
 export const CatalogCard = ({
     _id,
@@ -15,8 +14,6 @@ export const CatalogCard = ({
     const { isAuthenticated, isOwner, token } = useContext(AuthContext);
     const { loves, setLoves } = useContext(LovesContext);
     const [isLoved, setIsLoved] = useState(false);
-
-    const lovesService = useService(lovesServiceFactory);
 
     useEffect(() => {
         const userLoves = loves.map(x => x.designId);

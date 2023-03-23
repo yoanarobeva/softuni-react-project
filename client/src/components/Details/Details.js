@@ -1,9 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
-import { useService } from "../../hooks/useService";
-import { designsServiceFactory } from "../../services/designsService";
-import { lovesServiceFactory } from "../../services/lovesService";
+import * as designsService from "../../services/designsService";
+import * as lovesService from "../../services/lovesService";
 import { LovesContext } from "../../contexts/LovesContext";
 import { AuthContext } from "../../contexts/AuthContext";
 import { DesignsContext } from "../../contexts/DesignsContext";
@@ -18,9 +17,6 @@ export const Details = () => {
     const { designId } = useParams();
     const [design, setDesign] = useState({});
     const [isLoved, setIsLoved] = useState(false);
-
-    const designsService = useService(designsServiceFactory);
-    const lovesService = useService(lovesServiceFactory);
 
     useEffect(() => {
         designsService.getOne(designId)

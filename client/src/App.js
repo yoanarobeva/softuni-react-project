@@ -1,10 +1,10 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-import { authServiceFactory } from './services/authService';
-import { designsServiceFactory } from './services/designsService';
-import { cartServiceFactory } from './services/cartService';
-import { lovesServiceFactory } from './services/lovesService';
+import * as authService from './services/authService';
+import * as designsService from './services/designsService';
+import * as cartService from './services/cartService';
+import * as lovesService from './services/lovesService';
 
 import { DesignsContext } from './contexts/DesignsContext';
 import { CartContext } from './contexts/CartContext';
@@ -29,7 +29,6 @@ import { CreateDesign } from './components/CreateDesign/CreateDesign';
 import { Cart } from './components/Cart/Cart';
 import { Logout } from './components/Logout/Logout';
 
-
 function App() {
     const navigate = useNavigate();
 
@@ -38,11 +37,6 @@ function App() {
     const [cart, setCart] = useState([]);
     const [loves, setLoves] = useState([])
     
-    const authService = authServiceFactory(user.accessToken);
-    const designsService = designsServiceFactory(user.accessToken);
-    const cartService = cartServiceFactory(user.accessToken);
-    const lovesService = lovesServiceFactory(user.accessToken);
-
     useEffect(() => {
         designsService.getAll()
             .then(result => {
@@ -89,6 +83,7 @@ function App() {
 
     const onLogout = async () => {
         await authService.logout();
+        localStorage.clear();
         setUser({});
     };
 

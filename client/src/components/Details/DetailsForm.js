@@ -2,8 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useContext } from 'react';
 
-import { useService } from "../../hooks/useService";
-import { cartServiceFactory } from "../../services/cartService";
+import * as cartService from "../../services/cartService";
 import { CartContext } from "../../contexts/CartContext";
 import { AuthContext } from "../../contexts/AuthContext";
 
@@ -14,8 +13,6 @@ export const DetailsForm = ({
     const { token } = useContext(AuthContext);
     const { setCart } = useContext(CartContext);
     
-    const cartService = useService(cartServiceFactory);
-
     const [isCategorySelected, setIsCategorySelected] = useState(false);
     const [isQuantityDisabled, setIsQuantityDisabled] = useState(false);
     const [values, setValues] = useState({
