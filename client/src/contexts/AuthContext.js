@@ -24,8 +24,8 @@ export const AuthProvider = ({
     
     const onLogout = async () => {
         await authService.logout();
-        localStorage.clear();
         setUser({});
+        localStorage.clear();
     };
     
     const onRegister = async (values) => {

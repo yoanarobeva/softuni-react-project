@@ -1,12 +1,11 @@
 import { useContext } from 'react';
+import { NavLink } from "react-router-dom";
 
 import { CartContext } from '../../contexts/CartContext';
 import { LovesContext } from '../../contexts/LovesContext';
 import { AuthContext } from "../../contexts/AuthContext";
 
 import './Header.css'
-
-import { NavLink } from "react-router-dom";
 
 export const Header = () => {
     const { isAuthenticated, isAdmin } = useContext(AuthContext);

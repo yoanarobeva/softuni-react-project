@@ -61,7 +61,6 @@ export const CartCard = ({
                 <p className="mb-0" >{design.price}</p>
             </td>
 
-            {/* TODO: Maybe add remove button for a item */}
             <td className="align-middle">
                 <button onClick={() => onCartDelete(_id)} className="btn btn-success px-2">
                     <i className="fas fa-trash"></i>

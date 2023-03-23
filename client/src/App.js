@@ -21,6 +21,7 @@ import { CreateDesign } from './components/CreateDesign/CreateDesign';
 import { EditDesign } from './components/EditDesign/EditDesign';
 import { Cart } from './components/Cart/Cart';
 import { Logout } from './components/Logout/Logout';
+import { NotFound } from './components/NotFound/NotFound';
 
 function App() {
 
@@ -53,7 +54,7 @@ function App() {
                                 <Route path='/details/:designId/edit' element={<EditDesign />} />
                                 <Route path='/cart' element={<Cart />} />
                                 <Route path='/profile' element={<Profile />} />
-                                <Route path='*' element={<h1>404</h1>} />
+                                <Route path='*' element={<NotFound />} />
                             </Routes>
 
                         </LovesProvider>

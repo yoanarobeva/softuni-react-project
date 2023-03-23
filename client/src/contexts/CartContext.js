@@ -10,7 +10,7 @@ export const CartProvider = ({
     children,
 }) => {
     const navigate = useNavigate();
-    const { userId } = useContext(AuthContext)
+    const { userId } = useContext(AuthContext);
     const [cart, setCart] = useState([]);
 
     useEffect(() => {

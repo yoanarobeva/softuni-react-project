@@ -24,7 +24,7 @@ export const LovesProvider = ({
 
     const onClickLove = async (designId) => {
         const newLove = await lovesService.love(designId);
-        setLoves([...loves, newLove]);
+        setLoves(state => [...state, newLove]);
     };
 
     const onLoveDelete = async (loveId) => {

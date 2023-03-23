@@ -1,9 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../contexts/AuthContext";
 
+import { AuthContext } from "../../contexts/AuthContext";
 import { LovesContext } from "../../contexts/LovesContext";
-import * as lovesService from "../../services/lovesService";
 
 export const CatalogCard = ({
     _id,
