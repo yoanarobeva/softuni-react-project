@@ -21,7 +21,7 @@ export const EditDesign = () => {
             .then(result => {
                 changeValues(result);
             });
-    },[changeValues, designId])
+    },[designId])
 
     return (
         <section className="section py-5">

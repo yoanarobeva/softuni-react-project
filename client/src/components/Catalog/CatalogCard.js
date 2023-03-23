@@ -12,7 +12,7 @@ export const CatalogCard = ({
     imageUrl,
 }) => {
     const { isAuthenticated, isAdmin } = useContext(AuthContext);
-    const { loves, setLoves } = useContext(LovesContext);
+    const { loves, onClickLove } = useContext(LovesContext);
     const [isLoved, setIsLoved] = useState(false);
 
     useEffect(() => {
@@ -22,9 +22,8 @@ export const CatalogCard = ({
         }
     }, [loves, _id]);
 
-    const onClickLove = async () => {
-        const newLove = await lovesService.love(_id);
-        setLoves([...loves, newLove]);
+    const onLove = async () => {
+        await onClickLove(_id);
         setIsLoved(true);
     };
 
@@ -36,7 +35,7 @@ export const CatalogCard = ({
                     <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                         <ul className="list-unstyled">
                             {!isAdmin && isAuthenticated &&
-                                <li><button onClick={onClickLove} className="btn btn-success text-white" disabled={isLoved}><i className="far fa-heart"></i></button></li>
+                                <li><button onClick={onLove} className="btn btn-success text-white" disabled={isLoved}><i className="far fa-heart"></i></button></li>
                             }
                             <li><Link className="btn btn-success text-white mt-2" to={`/details/${_id}`}><i className="far fa-eye"></i></Link></li>
                         </ul>

@@ -15,3 +15,5 @@ export const getOwnLoves = async (userId) => {
 
     return result;
 };
+
+export const remove = (loveId) => request.delete(`${baseUrl}/${loveId}`);

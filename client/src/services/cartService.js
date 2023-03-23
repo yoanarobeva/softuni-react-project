@@ -17,3 +17,11 @@ export const create = async (cartData) => {
 
     return result;
 };
+
+export const remove = (cartItemId) => request.delete(`${baseUrl}/${cartItemId}`);
+
+export const edit = async (cartItemId, quantity) => {
+    const result = await request.put(`${baseUrl}/${cartItemId}`, {quantity});
+
+    return result;
+}

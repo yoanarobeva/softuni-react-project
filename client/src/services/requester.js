@@ -1,4 +1,3 @@
-
 const request = async (method, url, data) => {
     let token = ''
     if (!token) {
@@ -43,15 +42,15 @@ const request = async (method, url, data) => {
     }
 };
 
-export const requestFactory = (token) => {
-    if (!token) {
-        const serializedAuth = localStorage.getItem("user");
+export const requestFactory = () => {
+    // if (!token) {
+    //     const serializedAuth = localStorage.getItem("user");
         
-        if (serializedAuth) {
-            const user = JSON.parse(serializedAuth);
-            token = user.accessToken;
-        }
-    }
+    //     if (serializedAuth) {
+    //         const user = JSON.parse(serializedAuth);
+    //         token = user.accessToken;
+    //     }
+    // }
     return {
         get: request.bind(null, 'GET'),
         post: request.bind(null, 'POST'),

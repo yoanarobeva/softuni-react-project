@@ -7,7 +7,7 @@ import { Card } from "./Card";
 
 export const Profile = () => {
     const { userEmail } = useContext(AuthContext);
-    const { loves } = useContext(LovesContext);
+    const { loves, onLoveDelete } = useContext(LovesContext);
 
     return (
         <section className="bg-light">
@@ -23,7 +23,7 @@ export const Profile = () => {
                 <h2 className="h2">Products you have loved:</h2>
                 <div className="row">
 
-                    {loves.map(x => <Card key={x._id} {...x} />)}
+                    {loves.map(x => <Card key={x._id} {...x} onLoveDelete={onLoveDelete} />)}
                     {loves === [] ? <p className="h3">You have nothing loved...</p> : null}
 
                 </div>

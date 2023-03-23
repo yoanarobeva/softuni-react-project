@@ -22,6 +22,6 @@ export const create = async (designData) => {
     return result;
 }
 
-export const edit = async (designId, data) => request.put(`${baseUrl}/${designId}`, data);
+export const edit = (designId, data) => request.put(`${baseUrl}/${designId}`, data);
 
-export const deleteDesign = async (designId) => request.delete(`${baseUrl}/${designId}`);
+export const deleteDesign = (designId) => request.delete(`${baseUrl}/${designId}`);

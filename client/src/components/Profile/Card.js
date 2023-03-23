@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import * as designsService from "../../services/designsService";
 
 export const Card = ({
+    _id,
     designId,
+    onLoveDelete,
 }) => {
     const [design, setDesign] = useState({});
 
@@ -27,6 +29,9 @@ export const Card = ({
                         {design.description}
                     </p>
                 </div>
+                <button onClick={() => onLoveDelete(_id)} className="btn btn-success px-2">
+                    <i className="fas fa-trash"></i>
+                </button>
             </div>
         </div>
     );

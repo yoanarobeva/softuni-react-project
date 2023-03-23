@@ -1,16 +1,12 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useContext } from 'react';
 
-import * as cartService from "../../services/cartService";
 import { CartContext } from "../../contexts/CartContext";
 
 export const DetailsForm = ({
     design,
 }) => {
-    const navigate = useNavigate();
-    const { setCart } = useContext(CartContext);
-    
+    const { onCartSubmit } = useContext(CartContext);
     const [isCategorySelected, setIsCategorySelected] = useState(false);
     const [isQuantityDisabled, setIsQuantityDisabled] = useState(false);
     const [values, setValues] = useState({
@@ -26,7 +22,6 @@ export const DetailsForm = ({
 
         setValues(state => ({ ...state, category: value }));
         setIsCategorySelected(true);
-
     };
 
     const onClickQuantity = (value) => {
@@ -41,21 +36,16 @@ export const DetailsForm = ({
         setValues(state => ({ ...state, quantity: state.quantity + value }));
     };
 
-    const onCartSubmit = async (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
 
-        const newCartItem = await cartService.create({ designId: design._id, totalPrice: (values.quantity * design.price), ...values });
-
-        //TODO: update cart state
-        setCart(state => [...state, newCartItem]);
-
-        navigate('/cart');
+        await onCartSubmit({ designId: design._id, totalPrice: (values.quantity * design.price), ...values });
     };
 
     return (
         <div className="mt-5">
             {/* //TODO Implement add to cart function (submitting the form) */}
-            <form action="" method="GET" onSubmit={onCartSubmit}>
+            <form action="" method="GET" onSubmit={onSubmit}>
                 <input type="hidden" name="product-title" value="Activewear" />
                 <div className="row">
                     <div className="col-auto">

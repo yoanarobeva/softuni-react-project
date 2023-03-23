@@ -22,9 +22,20 @@ export const LovesProvider = ({
         }
     }, [userId]);
 
+    const onClickLove = async (designId) => {
+        const newLove = await lovesService.love(designId);
+        setLoves([...loves, newLove]);
+    };
+
+    const onLoveDelete = async (loveId) => {
+        await lovesService.remove(loveId);
+        setLoves(state => state.filter(x => x._id !== loveId));
+    };
+
     const lovesContextValues = {
         loves,
-        setLoves,
+        onClickLove,
+        onLoveDelete,
     }
 
     return (
