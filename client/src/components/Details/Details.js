@@ -1,8 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
-import * as designsService from "../../services/designsService";
-import * as lovesService from "../../services/lovesService";
+import { useService } from "../../hooks/useService";
+import { designsServiceFactory } from "../../services/designsService";
+import { lovesServiceFactory } from "../../services/lovesService";
 import { LovesContext } from "../../contexts/LovesContext";
 import { AuthContext } from "../../contexts/AuthContext";
 import { DesignsContext } from "../../contexts/DesignsContext";
@@ -11,12 +12,15 @@ import { DetailsForm } from "./DetailsForm";
 
 export const Details = () => {
     const navigate = useNavigate();
-    const { isOwner } = useContext(AuthContext)
+    const { isOwner, isAuthenticated } = useContext(AuthContext)
     const { loves, setLoves } = useContext(LovesContext);
     const { designs, setDesigns } = useContext(DesignsContext)
     const { designId } = useParams();
     const [design, setDesign] = useState({});
     const [isLoved, setIsLoved] = useState(false);
+
+    const designsService = useService(designsServiceFactory);
+    const lovesService = useService(lovesServiceFactory);
 
     useEffect(() => {
         designsService.getOne(designId)
@@ -60,7 +64,7 @@ export const Details = () => {
                                 <h1 className="h2">{design.name}</h1>
                                 <p className="h3 py-2">{design.price} BGN</p>
 
-                                {!isOwner &&
+                                {!isOwner && isAuthenticated &&
                                     <p>
                                         <button onClick={onClickLove} className="btn btn-success text-white" disabled={isLoved}><i className="far fa-heart"></i> Love it!</button>
                                     </p>

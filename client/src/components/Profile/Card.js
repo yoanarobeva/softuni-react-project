@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useService } from "../../hooks/useService";
 
-import * as designsService from "../../services/designsService";
+import {designsServiceFactory} from "../../services/designsService";
 
 export const Card = ({
     designId,
 }) => {
     const [design, setDesign] = useState({});
+
+    const designsService = useService(designsServiceFactory);
 
     useEffect(() => {
         designsService.getOne(designId)

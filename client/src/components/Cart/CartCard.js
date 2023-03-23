@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-import * as designsService from "../../services/designsService";
+import { useService } from "../../hooks/useService";
+import { designsServiceFactory } from "../../services/designsService";
 
 export const CartCard = ({
     designId,
@@ -8,6 +9,7 @@ export const CartCard = ({
     category,
 }) => {
     const [design, setDesign] = useState({});
+    const designsService = useService(designsServiceFactory);
 
     useEffect(() => {
         designsService.getOne(designId)

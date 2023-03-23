@@ -79,12 +79,7 @@ export const Header = () => {
                             </NavLink>
                         }
 
-                        {isAuthenticated && 
-                            <h7 className='h7'>Hello, {userEmail}</h7>  
-                        }
-
-                    </div>
-                    
+                    </div>      
                     
                 </div>
 

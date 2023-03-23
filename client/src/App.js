@@ -1,15 +1,17 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-import * as authService from './services/authService';
-import * as designsService from './services/designsService';
-import * as cartService from './services/cartService';
-import * as lovesService from './services/lovesService';
+import { authServiceFactory } from './services/authService';
+import { designsServiceFactory } from './services/designsService';
+import { cartServiceFactory } from './services/cartService';
+import { lovesServiceFactory } from './services/lovesService';
 
 import { DesignsContext } from './contexts/DesignsContext';
 import { CartContext } from './contexts/CartContext';
 import { LovesContext } from './contexts/LovesContext';
 import { AuthContext } from './contexts/AuthContext';
+import { useLocalStorage } from './hooks/useLocalStorage';
+import { owners } from './utils/ownersUtil';
 
 import { TopHeader } from "./components/TopHeader/TopHeader";
 import { Header } from "./components/Header/Header";
@@ -26,16 +28,20 @@ import { Profile } from './components/Profile/Profile';
 import { CreateDesign } from './components/CreateDesign/CreateDesign';
 import { Cart } from './components/Cart/Cart';
 import { Logout } from './components/Logout/Logout';
-import { owners } from './utils/ownersUtil';
 
 
 function App() {
     const navigate = useNavigate();
 
-    const [user, setUser] = useState({});
+    const [user, setUser] = useLocalStorage("user", {});
     const [designs, setDesigns] = useState([]);
     const [cart, setCart] = useState([]);
     const [loves, setLoves] = useState([])
+    
+    const authService = authServiceFactory(user.accessToken);
+    const designsService = designsServiceFactory(user.accessToken);
+    const cartService = cartServiceFactory(user.accessToken);
+    const lovesService = lovesServiceFactory(user.accessToken);
 
     useEffect(() => {
         designsService.getAll()
@@ -63,11 +69,11 @@ function App() {
                 })
         }
     }, [user._id]);
-    
+
     const isOwner = owners.includes(user._id);
-   
+
     const onCreateDesignSubmit = async (data) => {
-        const newDesign = await designsService.create(user.accessToken, data);
+        const newDesign = await designsService.create(data);
 
         setDesigns(state => [...state, newDesign]);
 
@@ -75,14 +81,14 @@ function App() {
     };
 
     const onLogin = async (values) => {
-        const newUser = await authService.login(user.accessToken, values);
+        const newUser = await authService.login(values);
         setUser(newUser);
 
         navigate('/catalog');
     };
 
     const onLogout = async () => {
-        await authService.logout(user.accessToken);
+        await authService.logout();
         setUser({});
     };
 

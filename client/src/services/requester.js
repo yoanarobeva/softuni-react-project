@@ -1,4 +1,4 @@
-async function request(method, url, token, data) {
+const request = async (method, token, url, data) => {
     const options = {
         method,
         headers: {}
@@ -31,9 +31,13 @@ async function request(method, url, token, data) {
         alert(err.message);
         throw err;
     }
-}
+};
 
-export const get = request.bind(null, 'GET');
-export const post = request.bind(null, 'POST');
-export const put = request.bind(null, 'PUT');
-export const del = request.bind(null, 'DELETE');
+export const requestFactory = (token) => {
+    return {
+        get: request.bind(null, 'GET', token),
+        post: request.bind(null, 'POST', token),
+        put: request.bind(null, 'PUT', token),
+        delete: request.bind(null, 'DELETE', token),
+    }
+};

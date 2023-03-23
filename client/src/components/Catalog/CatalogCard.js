@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 
 import { LovesContext } from "../../contexts/LovesContext";
-import * as lovesService from "../../services/lovesService";
+import { useService } from "../../hooks/useService";
+import { lovesServiceFactory } from "../../services/lovesService";
 
 export const CatalogCard = ({
     _id,
@@ -11,9 +12,11 @@ export const CatalogCard = ({
     price,
     imageUrl,
 }) => {
-    const { isAuthenticated, token } = useContext(AuthContext);
+    const { isAuthenticated, isOwner, token } = useContext(AuthContext);
     const { loves, setLoves } = useContext(LovesContext);
     const [isLoved, setIsLoved] = useState(false);
+
+    const lovesService = useService(lovesServiceFactory);
 
     useEffect(() => {
         const userLoves = loves.map(x => x.designId);
@@ -35,7 +38,7 @@ export const CatalogCard = ({
                     <img alt="img" className="card-img rounded-0 img-fluid" src={imageUrl} />
                     <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                         <ul className="list-unstyled">
-                            {isAuthenticated &&
+                            {!isOwner && isAuthenticated &&
                                 <li><button onClick={onClickLove} className="btn btn-success text-white" disabled={isLoved}><i className="far fa-heart"></i></button></li>
                             }
                             <li><Link className="btn btn-success text-white mt-2" to={`/details/${_id}`}><i className="far fa-eye"></i></Link></li>
