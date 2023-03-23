@@ -11,7 +11,6 @@ export const Register = () => {
         password: '',
         repeatPassword: '',
     }, onRegister);
-
     return (
         <section className="section py-5">
             <div className="row py-5">

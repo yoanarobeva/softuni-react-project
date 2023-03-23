@@ -11,7 +11,7 @@ export const CatalogCard = ({
     price,
     imageUrl,
 }) => {
-    const { isAuthenticated, isOwner, token } = useContext(AuthContext);
+    const { isAuthenticated, isOwner } = useContext(AuthContext);
     const { loves, setLoves } = useContext(LovesContext);
     const [isLoved, setIsLoved] = useState(false);
 
@@ -23,7 +23,7 @@ export const CatalogCard = ({
     }, [loves, _id]);
 
     const onClickLove = async () => {
-        const newLove = await lovesService.love(token, _id);
+        const newLove = await lovesService.love(_id);
         setLoves([...loves, newLove]);
         setIsLoved(true);
     };

@@ -9,7 +9,7 @@ import './Header.css'
 import { NavLink } from "react-router-dom";
 
 export const Header = () => {
-    const { isAuthenticated, isOwner, userEmail } = useContext(AuthContext);
+    const { isAuthenticated, isOwner } = useContext(AuthContext);
     const { cart } = useContext(CartContext);
     const { loves } = useContext(LovesContext);
 

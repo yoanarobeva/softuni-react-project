@@ -35,11 +35,11 @@ const request = async (method, token, url, data) => {
 
 export const requestFactory = (token) => {
     if (!token) {
-        const serializedAuth = localStorage.getItem("auth");
-
+        const serializedAuth = localStorage.getItem("user");
+        
         if (serializedAuth) {
-            const auth = JSON.parse(serializedAuth);
-            token = auth.accessToken;
+            const user = JSON.parse(serializedAuth);
+            token = user.accessToken;
         }
     }
     return {

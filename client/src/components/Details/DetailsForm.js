@@ -4,13 +4,11 @@ import { useContext } from 'react';
 
 import * as cartService from "../../services/cartService";
 import { CartContext } from "../../contexts/CartContext";
-import { AuthContext } from "../../contexts/AuthContext";
 
 export const DetailsForm = ({
     design,
 }) => {
     const navigate = useNavigate();
-    const { token } = useContext(AuthContext);
     const { setCart } = useContext(CartContext);
     
     const [isCategorySelected, setIsCategorySelected] = useState(false);
@@ -46,7 +44,7 @@ export const DetailsForm = ({
     const onCartSubmit = async (e) => {
         e.preventDefault();
 
-        const newCartItem = await cartService.create(token, { designId: design._id, totalPrice: (values.quantity * design.price), ...values });
+        const newCartItem = await cartService.create({ designId: design._id, totalPrice: (values.quantity * design.price), ...values });
 
         //TODO: update cart state
         setCart(state => [...state, newCartItem]);

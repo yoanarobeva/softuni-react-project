@@ -1,61 +1,62 @@
 import { createContext } from "react";
-// import { useState } from 'react';
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
-// import * as authService from '../services/authService';
-// import { owners } from '../utils/ownersUtil';
+import * as authService from '../services/authService';
+import { owners } from '../utils/ownersUtil';
 
 export const AuthContext = createContext();
 
-// export const AuthProvider = ({
-//     children,
-// }) => {
-//     const navigate = useNavigate();
-//     const [user, setUser] = useState({});
+export const AuthProvider = ({
+    children,
+}) => {
+    const navigate = useNavigate();
+    const [user, setUser] = useLocalStorage("user",{});
 
-//     const isOwner = owners.includes(user._id);
+    const isOwner = owners.includes(user._id);
     
-//     const onLogin = async (values) => {
-//         const newUser = await authService.login(user.accessToken, values);
-//         setUser(newUser);
+    const onLogin = async (values) => {
+        const newUser = await authService.login(values);
+        setUser(newUser);
     
-//         navigate('/catalog');
-//     };
+        navigate('/catalog');
+    };
     
-//     const onLogout = async () => {
-//         await authService.logout(user.accessToken);
-//         setUser({});
-//     };
+    const onLogout = async () => {
+        await authService.logout();
+        localStorage.clear();
+        setUser({});
+    };
     
-//     const onRegister = async (values) => {
-//         const { repeatPassword, ...registerData } = values;
-    
-//         if (repeatPassword !== registerData.password) {
-//             return alert("Passwords dont match!");
-//         }
+    const onRegister = async (values) => {
+        const { repeatPassword, ...registerData } = values;
         
-//         const newUser = await authService.register(user.accessToken, registerData);
-//         setUser(newUser);
+        if (repeatPassword !== registerData.password) {
+            return alert("Passwords dont match!");
+        };
         
-//         navigate('/catalog');
-//     };
+        const newUser = await authService.register(registerData);
+        setUser(newUser);
 
-//     const authContextValues = {
-//         onLogin,
-//         onLogout,
-//         onRegister,
-//         isOwner,
-//         userId: user._id,
-//         token: user.accessToken,
-//         userEmail: user.email,
-//         isAuthenticated: !!user.accessToken,
-//     }
+        navigate('/catalog');
+    };
+
+    const authContextValues = {
+        onLogin,
+        onLogout,
+        onRegister,
+        isOwner,
+        userId: user._id,
+        token: user.accessToken,
+        userEmail: user.email,
+        isAuthenticated: !!user.accessToken,
+    }
     
-//     return (
-//         <>
-//             <AuthContext.Provider value={authContextValues}>
-//                 {children}
-//             </AuthContext.Provider>
-//         </>
-//     );
-// };
+    return (
+        <>
+            <AuthContext.Provider value={authContextValues}>
+                {children}
+            </AuthContext.Provider>
+        </>
+    );
+};
