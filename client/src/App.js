@@ -48,6 +48,7 @@ function App() {
                                 <Route path='/logout' element={<Logout />} />
                                 <Route path='/about' element={<About />} />
                                 <Route path='/catalog' element={<Catalog />} />
+                                <Route path='/catalog/:category' element={<Catalog />} />
                                 <Route path='/contact' element={<Contact />} />
                                 <Route path='/create' element={<CreateDesign />} />
                                 <Route path='/details/:designId' element={<Details />} />

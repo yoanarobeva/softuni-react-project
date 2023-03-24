@@ -10,11 +10,13 @@ export const DesignsProvider = ({
 }) => {
     const navigate = useNavigate();
     const [designs, setDesigns] = useState([]);
-
+    const [filterDesigns, setFilterDesigns] = useState([])
+      
     useEffect(() => {
         designsService.getAll()
             .then(result => {
                 setDesigns(result);
+                setFilterDesigns(result);
             })
     }, []);
 
@@ -40,11 +42,37 @@ export const DesignsProvider = ({
         navigate("/catalog");
     };
 
+    const onOptionChangeHandler = (value) => {
+        switch (value) {
+            case "none": setDesigns(state => state.sort((a, b) => a._createdOn - b._createdOn)); break;
+            case "alphabetically": setDesigns(state => state.sort((a, b) => a.name.localeCompare(b.name))); break;
+            case "price": setDesigns(state => state.sort((a, b) => a.price - b.price)); break;
+            case "newest": setDesigns(state => state.sort((a, b) => b._createdOn - a._createdOn)); break;
+            default: break;
+        };
+    };
+    const onCategoryClickHandler = (value) => {
+        setFilterDesigns(designs);
+        const polygons = ["pentagon", "hexagon", "heptagon","octagon"];
+        switch (value) {
+            case "all": setFilterDesigns(designs); break;
+            case "triangle":
+            case "square":
+            case "circle":
+            case "composite": setFilterDesigns(state => state.filter(x => x.shape === value)); break;
+            case "polygon": setFilterDesigns(state => state.filter((x) => polygons.includes(x.shape))); break;
+            default: break;
+        };
+    }
+
     const designContextValues = {
         designs,
+        filterDesigns,
         onCreateDesignSubmit,
         onEditDesignSubmit,
         onDeleteClick,
+        onOptionChangeHandler,
+        onCategoryClickHandler,
     };
 
     return (

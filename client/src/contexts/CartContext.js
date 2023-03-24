@@ -24,8 +24,7 @@ export const CartProvider = ({
 
     const onCartSubmit = async (data) => {
         const newCartItem = await cartService.create(data);
-
-        setCart(state => [...state, newCartItem]);
+        setCart(cart => [...cart, newCartItem]);
         
         navigate('/cart');
     };

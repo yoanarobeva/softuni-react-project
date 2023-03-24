@@ -1,25 +1,31 @@
 import { useContext } from 'react';
+import { useParams } from 'react-router-dom';
 
 import { DesignsContext } from '../../contexts/DesignsContext';
 
 import { CatalogCard } from "./CatalogCard";
-import { Category } from "./Category";
+import { FilterCriteria } from "./FilterCriteria";
+import { SortCriteria } from './SortCriteria';
 import { Pagination } from "../Pagination/Pagination";
-import { FilterCriteria } from './FilterCriteria';
 import './Catalog.css'
 
 export const Catalog = () => {
-    const { designs } = useContext(DesignsContext);
+    let { designs, filterDesigns } = useContext(DesignsContext);
+    const {category} = useParams();
+
+    if(category) {
+        designs = filterDesigns;
+    }
 
     return (
         <div className="container py-5">
             <div className="row">
 
-                <Category />
+                <FilterCriteria />
 
                 <div className="col-lg-9">
 
-                    <FilterCriteria />
+                    <SortCriteria />
 
                     <div className="row">
 
