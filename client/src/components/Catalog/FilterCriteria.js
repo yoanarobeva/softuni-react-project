@@ -14,7 +14,7 @@ export const FilterCriteria = () => {
             <h1 className="h2 pb-4">Shapes</h1>
             
             <ul className="list-unstyled templatemo-accordion">
-                <li><Link to={"/catalog"} className="text-decoration-none" onClick={onCategoryClick} name={"none"}>None</Link></li>
+                <li><Link to={"/catalog"} className="text-decoration-none" onClick={onCategoryClick} name={"none"}>All</Link></li>
                 <li><Link to={"/catalog/triangle"} className="text-decoration-none" onClick={onCategoryClick} name={"triangle"}>Triangle</Link></li>
                 <li><Link to={"/catalog/square"} className="text-decoration-none" onClick={onCategoryClick} name={"square"}>Square</Link></li>
                 <li><Link to={"/catalog/circle"} className="text-decoration-none" onClick={onCategoryClick} name={"circle"}>Circle</Link></li>

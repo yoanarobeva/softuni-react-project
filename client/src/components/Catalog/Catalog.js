@@ -20,23 +20,22 @@ export const Catalog = () => {
     return (
         <div className="container py-5">
             <div className="row">
-
                 <FilterCriteria />
-
                 <div className="col-lg-9">
-
                     <SortCriteria />
 
                     <div className="row">
 
-                        {designs.map(x => <CatalogCard key={x._id} {...x} />)}
+                        {designs.length ?
+                            designs.map(x => <CatalogCard key={x._id} {...x} />)
+                        :
+                            <h2 className='h2'>There is no designs...</h2>
+                        }
 
                     </div>
 
                     <Pagination />
-
                 </div>
-
             </div>
         </div>
     );
