@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { useForm } from "../../hooks/useForm";
@@ -8,8 +8,34 @@ export const Login = () => {
     const {onLogin} = useContext(AuthContext);
     const {values, changeHandler, onSubmit} = useForm({
         email: '',
-        password: ''
+        password: '',
     }, onLogin);
+
+    const [errors, setErrors] = useState({
+        requiredEmail: false,
+        testEmail: false,
+        requiredPassword: false,
+    });
+
+    const onEmailBlur = () => {
+        const rgx = /^(.+)@(.+)$/;
+
+        if (values.email === "") {
+            setErrors(state => ({...state, requiredEmail:true, testEmail: false}));
+        } else  if (!rgx.test(values.email)) {
+            setErrors(state => ({...state, requiredEmail:false, testEmail: true}));
+        } else {
+            setErrors(state => ({...state, requiredEmail: false, testEmail: false}));
+        };
+    }
+
+    const onPasswordBlur = () => {
+        if (values.password === "") {
+            setErrors(state => ({...state, requiredPassword: true}));
+        } else {
+            setErrors(state => ({...state, requiredPassword: false}));
+        }
+    }
 
     return (
         <section className="section py-5">
@@ -27,8 +53,11 @@ export const Login = () => {
                                     name="email" 
                                     placeholder="Sokka@gmail.com"
                                     value={values.email}
-                                    onChange={changeHandler} 
+                                    onChange={changeHandler}
+                                    onBlur={onEmailBlur}
                                 />
+                                {errors.requiredEmail && <span style={{color: "red"}}>This field is required</span>}
+                                {errors.testEmail && <span style={{color: "red"}}>Enter valid email</span>}
                             </div>
 
                             <div className="form-group mb-3">
@@ -39,8 +68,11 @@ export const Login = () => {
                                     name="password" 
                                     placeholder="******"
                                     value={values.password}
-                                    onChange={changeHandler} 
+                                    onChange={changeHandler}
+                                    onBlur={onPasswordBlur} 
                                 />
+                                {errors.requiredPassword && <span style={{color: "red"}}>This field is required</span>}
+
                             </div>
                         </div>
 

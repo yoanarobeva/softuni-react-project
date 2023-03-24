@@ -39,6 +39,7 @@ const request = async (method, url, data) => {
 
     } catch (err) {
         console.log(err.message);
+        throw err;
     }
 };
 

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { AuthContext } from "../../contexts/AuthContext";
@@ -11,6 +11,42 @@ export const Register = () => {
         password: '',
         repeatPassword: '',
     }, onRegister);
+
+    const [errors, setErrors] = useState({
+        requiredEmail: false,
+        testEmail: false,
+        requiredPassword: false,
+        requiredRepeatPassword: false,
+    });
+
+    const onEmailBlur = () => {
+        const rgx = /^(.+)@(.+)$/;
+
+        if (values.email === "") {
+            setErrors(state => ({...state, requiredEmail:true, testEmail: false}));
+        } else  if (!rgx.test(values.email)) {
+            setErrors(state => ({...state, requiredEmail:false, testEmail: true}));
+        } else {
+            setErrors(state => ({...state, requiredEmail: false, testEmail: false}));
+        };
+    }
+
+    const onPasswordBlur = () => {
+        if (values.password === "") {
+            setErrors(state => ({...state, requiredPassword: true}));
+        } else {
+            setErrors(state => ({...state, requiredPassword: false}));
+        }
+    }
+
+    const onRepeatPasswordBlur = () => {
+        if (values.repeatPassword === "") {
+            setErrors(state => ({...state, requiredRepeatPassword: true}));
+        } else {
+            setErrors(state => ({...state, requiredRepeatPassword: false}));
+        }
+    }
+
     return (
         <section className="section py-5">
             <div className="row py-5">
@@ -21,17 +57,46 @@ export const Register = () => {
                         <div className="col py-3">
                             <div className="form-group mb-3">
                                 <label htmlFor="email">Email:</label>
-                                <input onChange={changeHandler} value={values.email} className="form-control mt-2" type="email" name="email" placeholder="maria@email.com" />
+                                <input 
+                                    className="form-control mt-2" 
+                                    type="email" 
+                                    name="email" 
+                                    placeholder="maria@email.com"
+                                    onChange={changeHandler} 
+                                    value={values.email}
+                                    onBlur={onEmailBlur} 
+                                />
+                                {errors.requiredEmail && <span style={{color: "red"}}>This field is required</span>}
+                                {errors.testEmail && <span style={{color: "red"}}>Enter valid email</span>}
                             </div>
 
                             <div className="form-group mb-3">
                                 <label htmlFor="pass">Password:</label>
-                                <input onChange={changeHandler} value={values.password} className="form-control mt-2" type="password" placeholder="******" name="password" />
+                                <input 
+                                    className="form-control mt-2" 
+                                    type="password" 
+                                    placeholder="******" 
+                                    name="password" 
+                                    onChange={changeHandler} 
+                                    value={values.password}
+                                    onBlur={onPasswordBlur} 
+                                />
+                                {errors.requiredPassword && <span style={{color: "red"}}>This field is required</span>}
+
                             </div>
 
                             <div className="form-group mb-3">
                                 <label htmlFor="con-pass">Confirm Password:</label>
-                                <input onChange={changeHandler} value={values.repeatPassword} className="form-control mt-2" type="password" placeholder="******" name="repeatPassword" />
+                                <input 
+                                    className="form-control mt-2" 
+                                    type="password" 
+                                    placeholder="******" 
+                                    name="repeatPassword" 
+                                    onChange={changeHandler} 
+                                    value={values.repeatPassword}
+                                    onBlur={onRepeatPasswordBlur}
+                                />
+                                {errors.requiredRepeatPassword && <span style={{color: "red"}}>This field is required</span>} 
                             </div>
                         </div>
 

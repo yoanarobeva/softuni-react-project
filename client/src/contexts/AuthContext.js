@@ -16,28 +16,42 @@ export const AuthProvider = ({
     const isAdmin = Boolean(admins.includes(user._id));
     
     const onLogin = async (values) => {
-        const newUser = await authService.login(values);
+        let newUser = {};
+        try {
+            newUser = await authService.login(values);
+            
+        } catch (error) {
+            return alert(error.message);
+        }
         setUser(newUser);
-    
         navigate('/catalog');
     };
     
     const onLogout = async () => {
-        await authService.logout();
+        try {
+            await authService.logout();
+        } catch (error) {
+            console.log(error.message);
+        }
         setUser({});
         localStorage.clear();
     };
     
     const onRegister = async (values) => {
+        let newUser = {};
         const { repeatPassword, ...registerData } = values;
-        
-        if (repeatPassword !== registerData.password) {
-            return alert("Passwords dont match!");
-        };
-        
-        const newUser = await authService.register(registerData);
-        setUser(newUser);
+ 
+        try {
+            if (repeatPassword !== registerData.password) {
+                throw new Error ("Passwords don't match!")
+            };
 
+            newUser = await authService.register(registerData);
+            
+        } catch (error) {
+            return alert(error.message);
+        }
+        setUser(newUser);
         navigate('/catalog');
     };
 
