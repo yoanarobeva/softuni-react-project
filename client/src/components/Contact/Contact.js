@@ -1,5 +1,5 @@
 import { ContactForm } from "./ContactForm";
-// import { Map } from "./Map";
+import { Map } from "./Map";
 
 export const Contact = () => {
     return (
@@ -8,20 +8,17 @@ export const Contact = () => {
                 <div className="col-md-6 m-auto text-center">
                     <h1 className="h1">Contact Us</h1>
                     <p>
-                        Proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        Lorem ipsum dolor sit amet.
+                        If you need more information or you're willing to meet us, please, be more than welcome to contact us!
                     </p>
                 </div>
             </div>
 
-            {/* <Map /> */}
+            <Map />
 
-            <div className="container py-5">
-                <div className="row py-5">
-                    
-                    <ContactForm />
-                    
-                </div>
+            <div className="row">
+                
+                <ContactForm />
+                
             </div>
         </>
     );
