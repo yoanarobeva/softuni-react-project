@@ -23,12 +23,21 @@ export const LovesProvider = ({
     }, [userId]);
 
     const onClickLove = async (designId) => {
-        const newLove = await lovesService.love(designId);
+        let newLove = {};
+        try {
+            newLove = await lovesService.love(designId);
+        } catch (error) {
+            return alert(error.message);
+        }
         setLoves(state => [...state, newLove]);
     };
 
     const onLoveDelete = async (loveId) => {
-        await lovesService.remove(loveId);
+        try {
+            await lovesService.remove(loveId);
+        } catch (error) {
+            return alert(error.message);
+        }
         setLoves(state => state.filter(x => x._id !== loveId));
     };
 

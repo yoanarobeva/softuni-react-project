@@ -21,23 +21,39 @@ export const DesignsProvider = ({
     }, []);
 
     const onCreateDesignSubmit = async (data) => {
-        const newDesign = await designsService.create(data);
-
+        let newDesign = {};
+        try {
+            if (Object.values(data).includes("")) {
+                throw new Error('All fields are required!')
+            }
+            newDesign = await designsService.create(data);
+        } catch (error) {
+            return alert(error.message);
+        }
         setDesigns(state => [...state, newDesign]);
-
         navigate('/catalog');
     };
 
     const onEditDesignSubmit = async (data) => {
-        const result = await designsService.edit(data._id, data);
-
+        let result = {};
+        try {
+            if (Object.values(data).includes("")) {
+                throw new Error('All fields are required!')
+            }
+            result = await designsService.edit(data._id, data);
+        } catch (error) {
+            return alert(error.message);
+        }
         setDesigns(state => state.map(x => x._id === data._id ? result : x));
-
-        navigate(`/details/${data._id}`)
+        navigate(`/details/${data._id}`);
     };
 
     const onDeleteClick = async (designId) => {
-        await designsService.deleteDesign(designId);
+        try {
+            await designsService.deleteDesign(designId);
+        } catch (error) {
+            return alert(error.message);
+        }
         setDesigns(state => state.filter(x => x._id !== designId));
         navigate("/catalog");
     };

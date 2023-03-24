@@ -23,19 +23,32 @@ export const CartProvider = ({
     }, [userId]);
 
     const onCartSubmit = async (data) => {
-        const newCartItem = await cartService.create(data);
+        let newCartItem = {}
+        try {
+            newCartItem = await cartService.create(data);
+        } catch (error) {
+            return alert(error.message);
+        }
         setCart(cart => [...cart, newCartItem]);
-        
         navigate('/cart');
     };
 
     const onCartEdit = async (cartItemId, quantity) => {
-        const newValue = await cartService.edit(cartItemId, quantity);
+        let newValue = {};
+        try {
+            newValue = await cartService.edit(cartItemId, quantity);
+        } catch (error) {
+            return alert(error.message);
+        }
         setCart(state => state.map(x => x._id === cartItemId ? newValue : x));
     }
 
     const onCartDelete = async (cartItemId) => {
-        await cartService.remove(cartItemId);
+        try {
+            await cartService.remove(cartItemId);
+        } catch (error) {
+            return alert(error.message);
+        }
         setCart(state => state.filter(x => x._id !== cartItemId));
     };
 
