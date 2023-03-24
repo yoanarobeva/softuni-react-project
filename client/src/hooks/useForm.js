@@ -9,7 +9,7 @@ export const useForm = (initialValues, onSubmitHandler) => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        if (Object.values(initialValues).includes("")) {
+        if (Object.values(values).includes("")) {
             return alert("All Fields are required!");
         }
         onSubmitHandler(values);

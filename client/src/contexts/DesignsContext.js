@@ -10,7 +10,7 @@ export const DesignsProvider = ({
 }) => {
     const navigate = useNavigate();
     const [designs, setDesigns] = useState([]);
-    const [filterDesigns, setFilterDesigns] = useState([])
+    const [filterDesigns, setFilterDesigns] = useState([]);
       
     useEffect(() => {
         designsService.getAll()
