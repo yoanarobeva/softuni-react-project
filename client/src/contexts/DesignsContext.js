@@ -84,17 +84,21 @@ export const DesignsProvider = memo(({
         };
     }, [designs]);
 
-    // const onSearchSubmit = useCallback ((values) => {
-    //     setFilterDesigns(designs);
+    const onSearchSubmit = useCallback ((values) => {
+        setFilterDesigns(designs);
 
-    //     const text = values.search;
-    //     console.log(values.search);
+        const text = values.search;
+        // eslint-disable-next-line
+        const searchResult = designs.filter((design) => Object.values(design).find(v => v == text));
+        console.log(searchResult);
 
-    //     const searchResult = designs.filter((design) => Object.values(design).find(v => v.includes(text)));
-
-    //     setFilterDesigns(searchResult);
-    //     navigate('/catalog');
-    // }, [designs, navigate]);
+        setFilterDesigns(searchResult);
+        if(text) {
+            navigate('/catalog/search');
+        } else {
+            navigate('/catalog');
+        }
+    }, [designs, navigate]);
 
     const OnPageChange = useCallback((value) => {
         setPage(state => state + value);
@@ -109,9 +113,9 @@ export const DesignsProvider = memo(({
         onDeleteClick,
         onOptionChangeHandler,
         onCategoryClickHandler,
-        // onSearchSubmit,
+        onSearchSubmit,
         OnPageChange,
-    }), [designs, filterDesigns, page, onCreateDesignSubmit, onEditDesignSubmit, onDeleteClick, onOptionChangeHandler, onCategoryClickHandler, OnPageChange]);
+    }), [designs, filterDesigns, page, onCreateDesignSubmit, onEditDesignSubmit, onDeleteClick, onOptionChangeHandler, onCategoryClickHandler, onSearchSubmit, OnPageChange]);
 
     return (
         <DesignsContext.Provider value={designContextValues}>

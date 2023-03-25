@@ -21,6 +21,7 @@ const EditDesign = () => {
             .then(result => {
                 changeValues(result);
             });
+    // eslint-disable-next-line
     },[designId])
 
     return (

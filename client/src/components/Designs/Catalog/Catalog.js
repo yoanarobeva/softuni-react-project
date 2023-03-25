@@ -12,9 +12,9 @@ import './Catalog.css'
 
 const Catalog = () => {
     let { designs, filterDesigns } = useContext(DesignsContext);
-    const {category} = useParams();
+    const { filter } = useParams();
 
-    if(category) {
+    if (filter) {
         designs = filterDesigns;
     }
 
@@ -32,7 +32,7 @@ const Catalog = () => {
 
                         {designs.length ?
                             designs.map(x => <CatalogCard key={x._id} {...x} />)
-                        :
+                            :
                             <h2 className='h2'>There is no designs...</h2>
                         }
 
