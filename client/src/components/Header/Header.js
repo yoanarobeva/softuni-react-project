@@ -48,9 +48,9 @@ const Header = () => {
                     <div className="navbar align-self-center d-flex">
 
                         {/* TODO: Implement search as a modal, now is not working */}
-                        <NavLink to={"/search"} className="nav-icon d-none d-lg-inline" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                        {/* <NavLink className="nav-icon d-none d-lg-inline" data-bs-toggle="modal" data-bs-target="#templatemo_search">
                             <i className="fa fa-fw fa-search text-dark mr-2"></i>
-                        </NavLink>
+                        </NavLink> */}
 
                         {isAuthenticated ?
                             <>

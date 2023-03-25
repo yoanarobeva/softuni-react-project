@@ -4,8 +4,10 @@ const baseUrl = 'http://localhost:3030/data/designs';
 
 const request = requestFactory();
 
-export const getAll = async () =>  {
-    const result = await request.get(baseUrl);
+export const getAllByPage = async (page) =>  {
+    const take = 9;
+    const skip = take * (page - 1);
+    const result = await request.get(`${baseUrl}?offset=${skip}&pageSize=${take}`);
 
     return Object.values(result);
 };

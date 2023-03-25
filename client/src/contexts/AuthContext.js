@@ -6,7 +6,7 @@ import * as authService from '../services/authService';
 
 export const AuthContext = createContext();
 
-const AuthProvider = ({
+export const AuthProvider = ({
     children,
 }) => {
     const navigate = useNavigate();
@@ -72,5 +72,3 @@ const AuthProvider = ({
         </>
     );
 };
-
-export default AuthProvider;

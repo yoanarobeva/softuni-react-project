@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 export const CartContext = createContext();
 
-const CartProvider = ({
+export const CartProvider = memo(({
     children,
 }) => {
     const navigate = useNavigate();
@@ -64,6 +64,4 @@ const CartProvider = ({
             {children}
         </CartContext.Provider>
     );
-};
-
-export default memo(CartProvider);
+});

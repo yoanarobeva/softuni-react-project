@@ -11,18 +11,14 @@ const SortCriteria = () => {
     };
 
     return (
-        <div className="row">
-                            
-            <div className="col-md-6 pb-4">
-                <div className="d-flex">
-                    {/* TODO: Implement filter criteria */}
-                    <select onChange={onOptionChange} className="form-control">
-                        <option value={"none"}>Sort by</option>
-                        <option value={"alphabetically"}>A to Z</option>
-                        <option value={"price"}>Price</option>
-                        <option value={"newest"}>Newest</option>
-                    </select>
-                </div>
+        <div className="col-md-4 pb-4">
+            <div className="d-flex">
+                <select onChange={onOptionChange} className="form-control">
+                    <option value={"none"}>Sort by</option>
+                    <option value={"alphabetically"}>A to Z</option>
+                    <option value={"price"}>Price</option>
+                    <option value={"newest"}>Newest</option>
+                </select>
             </div>
         </div>
     );

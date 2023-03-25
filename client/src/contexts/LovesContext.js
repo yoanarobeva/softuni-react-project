@@ -5,7 +5,7 @@ import { AuthContext } from "./AuthContext";
 
 export const LovesContext = createContext();
 
-const LovesProvider = ({
+export const LovesProvider = memo(({
     children,
 }) => {
     const { userId } = useContext(AuthContext);
@@ -50,6 +50,4 @@ const LovesProvider = ({
             {children}
         </LovesContext.Provider>
     );
-};
-
-export default memo(LovesProvider);
+});

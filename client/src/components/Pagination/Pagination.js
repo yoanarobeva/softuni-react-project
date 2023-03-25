@@ -1,18 +1,27 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { DesignsContext } from "../../contexts/DesignsContext";
 
 const Pagination = () => {
-    //TODO: Implement Pagination and map li
+    const { OnPageChange, page } = useContext(DesignsContext)
+
     return (
         <div div="row">
             <ul className="pagination pagination-lg justify-content-end">
-                <li className="page-item disabled">
-                    <Link className="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" to="/" >1</Link>
+                <li className="page-item">
+                    <button
+                        disabled={page === 1}
+                        onClick={() => OnPageChange(-1)}
+                        className="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark"
+                    >&lt;Prev.</button>
                 </li>
                 <li className="page-item">
-                    <Link className="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" to="/">2</Link>
+                    <p className="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark">{page}</p>
                 </li>
                 <li className="page-item">
-                    <Link className="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" to="/">3</Link>
+                    <button
+                        onClick={() => OnPageChange(+1)}
+                        className="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark"
+                    >Next&gt;</button>
                 </li>
             </ul>
         </div>

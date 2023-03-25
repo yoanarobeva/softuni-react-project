@@ -7,6 +7,7 @@ import CatalogCard from "./CatalogCard";
 import FilterCriteria from "./FilterCriteria";
 import SortCriteria from './SortCriteria';
 import Pagination from "../../Pagination/Pagination";
+import Search from '../../Search/Search';
 import './Catalog.css'
 
 const Catalog = () => {
@@ -22,7 +23,10 @@ const Catalog = () => {
             <div className="row">
                 <FilterCriteria />
                 <div className="col-lg-9">
-                    <SortCriteria />
+                    <div className='row'>
+                        <Search />
+                        <SortCriteria />
+                    </div>
 
                     <div className="row">
 

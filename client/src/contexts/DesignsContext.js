@@ -5,20 +5,21 @@ import * as designsService from '../services/designsService';
 
 export const DesignsContext = createContext();
 
-const DesignsProvider = ({
+export const DesignsProvider = memo(({
     children,
 }) => {
     const navigate = useNavigate();
+    const [page, setPage] = useState(1);
     const [designs, setDesigns] = useState([]);
     const [filterDesigns, setFilterDesigns] = useState([]);
       
     useEffect(() => {
-        designsService.getAll()
+        designsService.getAllByPage(page)
             .then(result => {
                 setDesigns(result);
                 setFilterDesigns(result);
             })
-    }, []);
+    }, [page, designs.length]);
 
     const onCreateDesignSubmit = useCallback(async (data) => {
         let newDesign = {};
@@ -73,7 +74,7 @@ const DesignsProvider = ({
         setFilterDesigns(designs);
         const polygons = ["pentagon", "hexagon", "heptagon","octagon"];
         switch (value) {
-            case "all": setFilterDesigns(designs); break;
+            case "all": break;
             case "triangle":
             case "square":
             case "circle":
@@ -83,21 +84,38 @@ const DesignsProvider = ({
         };
     }, [designs]);
 
-    const designContextValues = useMemo (() => ({
+    // const onSearchSubmit = useCallback ((values) => {
+    //     setFilterDesigns(designs);
+
+    //     const text = values.search;
+    //     console.log(values.search);
+
+    //     const searchResult = designs.filter((design) => Object.values(design).find(v => v.includes(text)));
+
+    //     setFilterDesigns(searchResult);
+    //     navigate('/catalog');
+    // }, [designs, navigate]);
+
+    const OnPageChange = useCallback((value) => {
+        setPage(state => state + value);
+    }, []);
+
+    const designContextValues = useMemo(() => ({
         designs,
         filterDesigns,
+        page,
         onCreateDesignSubmit,
         onEditDesignSubmit,
         onDeleteClick,
         onOptionChangeHandler,
         onCategoryClickHandler,
-    }), [designs, filterDesigns, onCreateDesignSubmit, onEditDesignSubmit, onDeleteClick, onOptionChangeHandler, onCategoryClickHandler]);
+        // onSearchSubmit,
+        OnPageChange,
+    }), [designs, filterDesigns, page, onCreateDesignSubmit, onEditDesignSubmit, onDeleteClick, onOptionChangeHandler, onCategoryClickHandler, OnPageChange]);
 
     return (
         <DesignsContext.Provider value={designContextValues}>
             {children}
         </DesignsContext.Provider>
     );
-};
-
-export default memo(DesignsProvider);
+})
