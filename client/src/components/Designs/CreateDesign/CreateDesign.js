@@ -1,7 +1,7 @@
 import { useContext } from "react"
 
-import { DesignsContext } from "../../contexts/DesignsContext";
-import { useForm } from "../../hooks/useForm";
+import { DesignsContext } from "../../../contexts/DesignsContext";
+import { useForm } from "../../../hooks/useForm";
 
 export const CreateDesign = () => {
     const { onCreateDesignSubmit } = useContext(DesignsContext);

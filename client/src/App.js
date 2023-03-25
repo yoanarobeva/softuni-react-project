@@ -17,7 +17,7 @@ import Login from './components/User/Login/Login';
 import Register from './components/User/Register/Register';
 import Logout from './components/User/Logout/Logout';
 import { Profile } from './components/Profile/Profile';
-import { CreateDesign } from './components/CreateDesign/CreateDesign';
+import { CreateDesign } from './components/Designs/CreateDesign/CreateDesign';
 import { EditDesign } from './components/Designs/EditDesign/EditDesign';
 import { Cart } from './components/Cart/Cart';
 import { Footer } from "./components/Footer/Footer";
