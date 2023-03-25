@@ -1,8 +1,8 @@
-import { useContext } from "react";
+import { memo, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { DesignsContext } from '../../contexts/DesignsContext';
+import { DesignsContext } from '../../../contexts/DesignsContext';
 
-export const SortCriteria = () => {
+const SortCriteria = () => {
     const navigate = useNavigate();
     const {onOptionChangeHandler} = useContext(DesignsContext);
     const onOptionChange = (e) => {
@@ -27,3 +27,5 @@ export const SortCriteria = () => {
         </div>
     );
 };
+
+export default memo(SortCriteria);

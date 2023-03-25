@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from 'react-router-dom'
 
-import * as designsService from "../../services/designsService";
-import { LovesContext } from "../../contexts/LovesContext";
-import { AuthContext } from "../../contexts/AuthContext";
-import { DesignsContext } from "../../contexts/DesignsContext";
+import * as designsService from "../../../services/designsService";
+import { LovesContext } from "../../../contexts/LovesContext";
+import { AuthContext } from "../../../contexts/AuthContext";
+import { DesignsContext } from "../../../contexts/DesignsContext";
 
 import { DetailsForm } from "./DetailsForm";
 

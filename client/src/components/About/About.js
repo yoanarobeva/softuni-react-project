@@ -1,4 +1,6 @@
-export const About = () => {
+import { memo } from "react";
+
+const About = () => {
     return (
         <section className="bg-success py-5">
             <div className="container">
@@ -19,3 +21,5 @@ export const About = () => {
         </section>
     );
 };
+
+export default memo(About);

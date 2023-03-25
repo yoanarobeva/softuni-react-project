@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import * as designsService from "../../services/designsService";
 
-export const Card = ({
+const Card = ({
     _id,
     designId,
     onLoveDelete,
@@ -36,3 +36,5 @@ export const Card = ({
         </div>
     );
 };
+
+export default memo(Card);

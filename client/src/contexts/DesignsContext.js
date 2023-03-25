@@ -1,11 +1,11 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useCallback, useMemo, memo } from "react";
 import { useNavigate } from "react-router-dom";
 
 import * as designsService from '../services/designsService';
 
 export const DesignsContext = createContext();
 
-export const DesignsProvider = ({
+const DesignsProvider = ({
     children,
 }) => {
     const navigate = useNavigate();
@@ -20,8 +20,9 @@ export const DesignsProvider = ({
             })
     }, []);
 
-    const onCreateDesignSubmit = async (data) => {
+    const onCreateDesignSubmit = useCallback(async (data) => {
         let newDesign = {};
+        console.log(data);
         try {
             if (Object.values(data).includes("")) {
                 throw new Error('All fields are required!')
@@ -32,9 +33,9 @@ export const DesignsProvider = ({
         }
         setDesigns(state => [...state, newDesign]);
         navigate('/catalog');
-    };
+    }, [navigate]);
 
-    const onEditDesignSubmit = async (data) => {
+    const onEditDesignSubmit = useCallback (async (data) => {
         let result = {};
         try {
             if (Object.values(data).includes("")) {
@@ -46,9 +47,9 @@ export const DesignsProvider = ({
         }
         setDesigns(state => state.map(x => x._id === data._id ? result : x));
         navigate(`/details/${data._id}`);
-    };
+    }, [navigate]);
 
-    const onDeleteClick = async (designId) => {
+    const onDeleteClick = useCallback (async (designId) => {
         try {
             await designsService.deleteDesign(designId);
         } catch (error) {
@@ -56,9 +57,9 @@ export const DesignsProvider = ({
         }
         setDesigns(state => state.filter(x => x._id !== designId));
         navigate("/catalog");
-    };
+    }, [navigate]);
 
-    const onOptionChangeHandler = (value) => {
+    const onOptionChangeHandler = useCallback ((value) => {
         switch (value) {
             case "none": setDesigns(state => state.sort((a, b) => a._createdOn - b._createdOn)); break;
             case "alphabetically": setDesigns(state => state.sort((a, b) => a.name.localeCompare(b.name))); break;
@@ -66,8 +67,9 @@ export const DesignsProvider = ({
             case "newest": setDesigns(state => state.sort((a, b) => b._createdOn - a._createdOn)); break;
             default: break;
         };
-    };
-    const onCategoryClickHandler = (value) => {
+    }, []);
+
+    const onCategoryClickHandler = useCallback ((value) => {
         setFilterDesigns(designs);
         const polygons = ["pentagon", "hexagon", "heptagon","octagon"];
         switch (value) {
@@ -79,9 +81,9 @@ export const DesignsProvider = ({
             case "polygon": setFilterDesigns(state => state.filter((x) => polygons.includes(x.shape))); break;
             default: break;
         };
-    }
+    }, [designs]);
 
-    const designContextValues = {
+    const designContextValues = useMemo (() => ({
         designs,
         filterDesigns,
         onCreateDesignSubmit,
@@ -89,7 +91,7 @@ export const DesignsProvider = ({
         onDeleteClick,
         onOptionChangeHandler,
         onCategoryClickHandler,
-    };
+    }), [designs, filterDesigns, onCreateDesignSubmit, onEditDesignSubmit, onDeleteClick, onOptionChangeHandler, onCategoryClickHandler]);
 
     return (
         <DesignsContext.Provider value={designContextValues}>
@@ -97,3 +99,5 @@ export const DesignsProvider = ({
         </DesignsContext.Provider>
     );
 };
+
+export default memo(DesignsProvider);

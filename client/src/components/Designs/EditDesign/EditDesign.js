@@ -1,9 +1,9 @@
 import { useContext, useEffect } from "react"
 import { useParams } from "react-router-dom";
 
-import { useForm } from "../../hooks/useForm";
-import { DesignsContext } from "../../contexts/DesignsContext";
-import * as designsService from "../../services/designsService";
+import { useForm } from "../../../hooks/useForm";
+import { DesignsContext } from "../../../contexts/DesignsContext";
+import * as designsService from "../../../services/designsService";
 
 export const EditDesign = () => {
     const { designId } = useParams();

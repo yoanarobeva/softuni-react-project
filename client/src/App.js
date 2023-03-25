@@ -1,26 +1,26 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { DesignsProvider } from './contexts/DesignsContext';
-import { CartProvider } from './contexts/CartContext';
-import { LovesProvider } from './contexts/LovesContext';
 import { AuthProvider } from './contexts/AuthContext';
+import DesignsProvider from './contexts/DesignsContext';
+import CartProvider from './contexts/CartContext';
+import LovesProvider from './contexts/LovesContext';
 
+import Home  from "./components/Home/Home";
+import About from './components/About/About';
+import Search from './components/SearchModal/Search';
+import Contact from './components/Contact/Contact';
 import { TopHeader } from "./components/TopHeader/TopHeader";
 import { Header } from "./components/Header/Header";
-import { Search } from './components/SearchModal/Search';
-import { Home } from "./components/Home/Home";
-import { About } from './components/About/About';
-import { Contact } from './components/Contact/Contact';
-import { Footer } from "./components/Footer/Footer";
-import { Catalog } from './components/Catalog/Catalog';
-import { Details } from './components/Details/Details';
-import { Login } from './components/Login/Login';
-import { Register } from './components/Register/Register';
+import { Catalog } from './components/Designs/Catalog/Catalog';
+import { Details } from './components/Designs/Details/Details';
+import Login from './components/User/Login/Login';
+import Register from './components/User/Register/Register';
+import Logout from './components/User/Logout/Logout';
 import { Profile } from './components/Profile/Profile';
 import { CreateDesign } from './components/CreateDesign/CreateDesign';
-import { EditDesign } from './components/EditDesign/EditDesign';
+import { EditDesign } from './components/Designs/EditDesign/EditDesign';
 import { Cart } from './components/Cart/Cart';
-import { Logout } from './components/Logout/Logout';
+import { Footer } from "./components/Footer/Footer";
 import { NotFound } from './components/NotFound/NotFound';
 
 function App() {
@@ -43,16 +43,16 @@ function App() {
 
                             <Routes>
                                 <Route path='/' element={<Home />} />
+                                <Route path='/about' element={<About />} />
+                                <Route path='/contact' element={<Contact />} />
                                 <Route path='/login' element={<Login />} />
                                 <Route path='/register' element={<Register />} />
                                 <Route path='/logout' element={<Logout />} />
-                                <Route path='/about' element={<About />} />
                                 <Route path='/catalog' element={<Catalog />} />
                                 <Route path='/catalog/:category' element={<Catalog />} />
-                                <Route path='/contact' element={<Contact />} />
-                                <Route path='/create' element={<CreateDesign />} />
                                 <Route path='/details/:designId' element={<Details />} />
                                 <Route path='/details/:designId/edit' element={<EditDesign />} />
+                                <Route path='/create' element={<CreateDesign />} />
                                 <Route path='/cart' element={<Cart />} />
                                 <Route path='/profile' element={<Profile />} />
                                 <Route path='*' element={<NotFound />} />

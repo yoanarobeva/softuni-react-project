@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, memo, useCallback, useContext, useEffect, useMemo, useState } from "react";
 
 import { AuthContext } from "./AuthContext";
 import * as cartService from '../services/cartService';
@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 export const CartContext = createContext();
 
-export const CartProvider = ({
+const CartProvider = ({
     children,
 }) => {
     const navigate = useNavigate();
@@ -22,7 +22,7 @@ export const CartProvider = ({
         }
     }, [userId]);
 
-    const onCartSubmit = async (data) => {
+    const onCartSubmit = useCallback( async (data) => {
         let newCartItem = {}
         try {
             newCartItem = await cartService.create(data);
@@ -31,9 +31,9 @@ export const CartProvider = ({
         }
         setCart(cart => [...cart, newCartItem]);
         navigate('/cart');
-    };
+    }, [navigate]);
 
-    const onCartEdit = async (cartItemId, quantity) => {
+    const onCartEdit = useCallback( async (cartItemId, quantity) => {
         let newValue = {};
         try {
             newValue = await cartService.edit(cartItemId, quantity);
@@ -41,23 +41,23 @@ export const CartProvider = ({
             return alert(error.message);
         }
         setCart(state => state.map(x => x._id === cartItemId ? newValue : x));
-    }
+    }, []);
 
-    const onCartDelete = async (cartItemId) => {
+    const onCartDelete = useCallback(async (cartItemId) => {
         try {
             await cartService.remove(cartItemId);
         } catch (error) {
             return alert(error.message);
         }
         setCart(state => state.filter(x => x._id !== cartItemId));
-    };
+    }, []);
 
-    const cartContextValues = {
+    const cartContextValues = useMemo(() => ({
         cart,
         onCartSubmit,
         onCartDelete,
         onCartEdit,
-    }
+    }), [cart, onCartSubmit, onCartDelete, onCartEdit]);
 
     return (
         <CartContext.Provider value={cartContextValues}>
@@ -65,3 +65,5 @@ export const CartProvider = ({
         </CartContext.Provider>
     );
 };
+
+export default memo(CartProvider);

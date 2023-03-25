@@ -1,10 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, memo } from "react";
 import { Link } from "react-router-dom";
 
-import { AuthContext } from "../../contexts/AuthContext";
-import { LovesContext } from "../../contexts/LovesContext";
+import { AuthContext } from "../../../contexts/AuthContext";
+import { LovesContext } from "../../../contexts/LovesContext";
 
-export const CatalogCard = ({
+const CatalogCard = ({
     _id,
     name,
     price,
@@ -48,3 +48,5 @@ export const CatalogCard = ({
         </div>
     );
 };
+
+export default memo(CatalogCard);

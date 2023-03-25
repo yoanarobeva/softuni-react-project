@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { LovesContext } from "../../contexts/LovesContext";
 
-import { Card } from "./Card";
+import Card from "./Card";
 
 export const Profile = () => {
     const { userEmail } = useContext(AuthContext);

@@ -1,4 +1,6 @@
-export const Search = () => {
+import { memo } from "react";
+
+const Search = () => {
     return (
         <div className="modal fade bg-white" id="templatemo_search" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog modal-lg" role="document">
@@ -17,3 +19,5 @@ export const Search = () => {
         </div>
     );
 };
+
+export default memo(Search);

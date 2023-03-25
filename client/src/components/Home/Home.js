@@ -1,8 +1,9 @@
 import './Home.css'
 import { Banner } from "./Banner";
+import { memo } from 'react';
 // import { Categories } from "../Categories/Categories";
 
-export const Home = () => {
+const Home = () => {
     return (
         <>
           <Banner />
@@ -12,3 +13,5 @@ export const Home = () => {
         </>
     );
 };
+
+export default memo(Home);

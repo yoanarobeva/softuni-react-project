@@ -1,13 +1,13 @@
-import { useContext } from "react";
+import { memo, useCallback, useContext } from "react";
 import { Link } from "react-router-dom";
-import { DesignsContext } from "../../contexts/DesignsContext";
+import { DesignsContext } from "../../../contexts/DesignsContext";
 
-export const FilterCriteria = () => {
+const FilterCriteria = () => {
     const {onCategoryClickHandler} = useContext(DesignsContext);
 
-    const onCategoryClick = (e) => {
+    const onCategoryClick = useCallback((e) => {
         onCategoryClickHandler(e.target.name);
-    };
+    }, [onCategoryClickHandler]);
 
     return (
         <div className="col-lg-3">
@@ -25,3 +25,5 @@ export const FilterCriteria = () => {
         </div>
     );
 };
+
+export default memo(FilterCriteria);

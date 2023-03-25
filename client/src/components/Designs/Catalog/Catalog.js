@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { DesignsContext } from '../../contexts/DesignsContext';
+import { DesignsContext } from '../../../contexts/DesignsContext';
 
-import { CatalogCard } from "./CatalogCard";
-import { FilterCriteria } from "./FilterCriteria";
-import { SortCriteria } from './SortCriteria';
-import { Pagination } from "../Pagination/Pagination";
+import CatalogCard from "./CatalogCard";
+import FilterCriteria from "./FilterCriteria";
+import SortCriteria from './SortCriteria';
+import { Pagination } from "../../Pagination/Pagination";
 import './Catalog.css'
 
 export const Catalog = () => {

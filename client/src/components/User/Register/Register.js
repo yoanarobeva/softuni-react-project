@@ -1,10 +1,10 @@
-import { useContext, useState } from "react";
+import { memo, useCallback, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { AuthContext } from "../../contexts/AuthContext";
-import { useForm } from "../../hooks/useForm";
+import { AuthContext } from "../../../contexts/AuthContext";
+import { useForm } from "../../../hooks/useForm";
 
-export const Register = () => {
+const Register = () => {
     const { onRegister } = useContext(AuthContext);
     const { values, changeHandler, onSubmit } = useForm({
         email: '',
@@ -19,7 +19,7 @@ export const Register = () => {
         requiredRepeatPassword: false,
     });
 
-    const onEmailBlur = () => {
+    const onEmailBlur = useCallback(() => {
         const rgx = /^(.+)@(.+)$/;
 
         if (values.email === "") {
@@ -29,23 +29,23 @@ export const Register = () => {
         } else {
             setErrors(state => ({...state, requiredEmail: false, testEmail: false}));
         };
-    }
+    }, [values]);
 
-    const onPasswordBlur = () => {
+    const onPasswordBlur = useCallback(() => {
         if (values.password === "") {
             setErrors(state => ({...state, requiredPassword: true}));
         } else {
             setErrors(state => ({...state, requiredPassword: false}));
         }
-    }
+    }, [values]);
 
-    const onRepeatPasswordBlur = () => {
+    const onRepeatPasswordBlur = useCallback(() => {
         if (values.repeatPassword === "") {
             setErrors(state => ({...state, requiredRepeatPassword: true}));
         } else {
             setErrors(state => ({...state, requiredRepeatPassword: false}));
         }
-    }
+    }, [values]);
 
     return (
         <section className="section py-5">
@@ -114,3 +114,5 @@ export const Register = () => {
         </section>
     );
 };
+
+export default memo(Register);

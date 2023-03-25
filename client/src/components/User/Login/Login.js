@@ -1,10 +1,10 @@
-import { useContext, useState } from "react";
+import { memo, useCallback, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { useForm } from "../../hooks/useForm";
-import { AuthContext } from "../../contexts/AuthContext";
+import { useForm } from "../../../hooks/useForm";
+import { AuthContext } from "../../../contexts/AuthContext";
 
-export const Login = () => {
+const Login = () => {
     const {onLogin} = useContext(AuthContext);
     const {values, changeHandler, onSubmit} = useForm({
         email: '',
@@ -17,7 +17,7 @@ export const Login = () => {
         requiredPassword: false,
     });
 
-    const onEmailBlur = () => {
+    const onEmailBlur = useCallback(() => {
         const rgx = /^(.+)@(.+)$/;
 
         if (values.email === "") {
@@ -27,15 +27,15 @@ export const Login = () => {
         } else {
             setErrors(state => ({...state, requiredEmail: false, testEmail: false}));
         };
-    }
+    }, [values]);
 
-    const onPasswordBlur = () => {
+    const onPasswordBlur = useCallback(() => {
         if (values.password === "") {
             setErrors(state => ({...state, requiredPassword: true}));
         } else {
             setErrors(state => ({...state, requiredPassword: false}));
         }
-    }
+    }, [values]);
 
     return (
         <section className="section py-5">
@@ -89,3 +89,5 @@ export const Login = () => {
         </section>
     );
 };
+
+export default memo(Login);

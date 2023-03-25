@@ -1,7 +1,8 @@
+import { memo } from "react";
 import { ContactForm } from "./ContactForm";
 import { Map } from "./Map";
 
-export const Contact = () => {
+const Contact = () => {
     return (
         <>
             <div className="container-fluid bg-light py-5">
@@ -23,3 +24,5 @@ export const Contact = () => {
         </>
     );
 };
+
+export default memo(Contact);
