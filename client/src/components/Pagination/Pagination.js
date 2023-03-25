@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const Pagination = () => {
+const Pagination = () => {
     //TODO: Implement Pagination and map li
     return (
         <div div="row">
@@ -18,3 +18,5 @@ export const Pagination = () => {
         </div>
     );
 };
+
+export default Pagination;

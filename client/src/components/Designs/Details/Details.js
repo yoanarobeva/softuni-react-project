@@ -8,7 +8,7 @@ import { DesignsContext } from "../../../contexts/DesignsContext";
 
 import { DetailsForm } from "./DetailsForm";
 
-export const Details = () => {
+const Details = () => {
     const { isAdmin, userId, isAuthenticated } = useContext(AuthContext)
     const { loves, onClickLove } = useContext(LovesContext);
     const { onDeleteClick } = useContext(DesignsContext)
@@ -90,3 +90,5 @@ export const Details = () => {
         </section>
     );
 };
+
+export default Details;

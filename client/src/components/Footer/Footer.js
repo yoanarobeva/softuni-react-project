@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import './Footer.css'
 
-export const Footer = () => {
+const Footer = () => {
     return (
         <footer className="bg-dark" id="tempaltemo_footer">
             <div className="container">
@@ -92,3 +92,5 @@ export const Footer = () => {
         </footer>
     );
 };
+
+export default Footer;

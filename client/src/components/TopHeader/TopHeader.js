@@ -1,6 +1,6 @@
 import './TopHeader.css'
 
-export const TopHeader = () => {
+const TopHeader = () => {
     return (
         <nav className="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
             <div className="container text-light">
@@ -21,3 +21,5 @@ export const TopHeader = () => {
         </nav>
     );
 };
+
+export default TopHeader;

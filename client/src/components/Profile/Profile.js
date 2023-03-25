@@ -5,7 +5,7 @@ import { LovesContext } from "../../contexts/LovesContext";
 
 import Card from "./Card";
 
-export const Profile = () => {
+const Profile = () => {
     const { userEmail } = useContext(AuthContext);
     const { loves, onLoveDelete } = useContext(LovesContext);
 
@@ -31,3 +31,5 @@ export const Profile = () => {
         </section>
     );
 };
+
+export default Profile;

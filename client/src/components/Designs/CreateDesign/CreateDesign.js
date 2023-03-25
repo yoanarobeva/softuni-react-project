@@ -3,7 +3,7 @@ import { useContext } from "react"
 import { DesignsContext } from "../../../contexts/DesignsContext";
 import { useForm } from "../../../hooks/useForm";
 
-export const CreateDesign = () => {
+const CreateDesign = () => {
     const { onCreateDesignSubmit } = useContext(DesignsContext);
     const {values, changeHandler, onSubmit} = useForm({
         name: '',
@@ -58,3 +58,5 @@ export const CreateDesign = () => {
         </section>
     );
 };
+
+export default CreateDesign;

@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import { CartCard } from "./CartCard";
 
-export const Cart = () => {
+const Cart = () => {
     const { cart } = useContext(CartContext);
 
     let allTotalPrice = 0;
@@ -77,3 +77,5 @@ export const Cart = () => {
         </section>
     );
 }
+
+export default Cart;

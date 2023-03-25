@@ -5,7 +5,7 @@ import { useForm } from "../../../hooks/useForm";
 import { DesignsContext } from "../../../contexts/DesignsContext";
 import * as designsService from "../../../services/designsService";
 
-export const EditDesign = () => {
+const EditDesign = () => {
     const { designId } = useParams();
     const { onEditDesignSubmit } = useContext(DesignsContext);
     const { values, changeHandler, onSubmit, changeValues } = useForm({
@@ -68,3 +68,5 @@ export const EditDesign = () => {
         </section>
     );
 };
+
+export default EditDesign;

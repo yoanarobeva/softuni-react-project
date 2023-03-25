@@ -1081,15 +1081,18 @@
     	users: {
     		"35c62d76-8152-4626-8712-eeb96381bea8": {
     			email: "peter@abv.bg",
-    			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+    			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
+                role: "admin"
     		},
     		"847ec027-f659-4086-8032-5173e2f9c93a": {
     			email: "george@abv.bg",
-    			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+    			hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
+                role: "admin"
     		},
     		"60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
     			email: "admin@abv.bg",
-    			hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302"
+    			hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302",
+                role: "admin"
     		}
     	},
     	sessions: {
@@ -1127,22 +1130,22 @@
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_createdOn": "1679590793541"  
             },
-            "design_4": {
-                "_id": "design_4",
+            "design_15": {
+                "_id": "design_15",
                 "name": "Scorpius",
                 "price": 15,
-                "imageUrl": "/assets/img/designs/design_4.jpg",
-                "shape": "hexagon",
+                "imageUrl": "/assets/img/designs/design_15.jpg",
+                "shape": "triangle",
                 "description": "The traditional name of the β Scorpii system has been rendered Akrab and Elakrab, derived (like Acrab) from Arabic: العقرب al-ʿaqrab ('the scorpion').", 
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_createdOn": "1679590793542"  
             },
-            "design_5": {
-                "_id": "design_5",
+            "design_25": {
+                "_id": "design_25",
                 "name": "Crux",
                 "price": 18,
-                "imageUrl": "/assets/img/designs/design_5.jpg",
-                "shape": "hexagon",
+                "imageUrl": "/assets/img/designs/design_25.jpg",
+                "shape": "square",
                 "description": "Acrux is a modern contraction of the Bayer designation, coined in the 19th century, but which entered into common use only by the mid-20th century.", 
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_createdOn": "1679590793543"  
@@ -1167,12 +1170,12 @@
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_createdOn": "1679590793545"  
             },
-            "design_8": {
-                "_id": "design_8",
+            "design_37": {
+                "_id": "design_37",
                 "name": "Andromeda",
                 "price": 16,
-                "imageUrl": "/assets/img/designs/design_8.jpg",
-                "shape": "octagon",
+                "imageUrl": "/assets/img/designs/design_37.jpg",
+                "shape": "composite",
                 "description": "The name was originally Arabic: الذيل aḏ-ḏayl (the train, lit. 'the tail').", 
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_createdOn": "1679590793546"  
@@ -1187,13 +1190,33 @@
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_createdOn": "1679590793547"  
             },
-            "design_10": {
-                "_id": "design_10",
+            "design_34": {
+                "_id": "design_34",
                 "name": "Sagittarius",
                 "price": 24,
-                "imageUrl": "/assets/img/designs/design_10.jpg",
-                "shape": "pentagon",
+                "imageUrl": "/assets/img/designs/design_34.jpg",
+                "shape": "square",
                 "description": "From Arabic: عين الرامي ʿayn ar-rāmī ('eye of the archer').", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": "1679590793548" 
+            },
+            "design_38": {
+                "_id": "design_38",
+                "name": "Antlia",
+                "price": 21,
+                "imageUrl": "/assets/img/designs/design_38.jpg",
+                "shape": "composite",
+                "description": "Colombian proposal; named after a mythical village from the novel Cien anos de soledad (One Hundred Years of Solitude) by Gabriel García Márquez.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": "1679590793548" 
+            },
+            "design_51": {
+                "_id": "design_51",
+                "name": "Camelopardalis",
+                "price": 27,
+                "imageUrl": "/assets/img/designs/design_51.jpg",
+                "shape": "composite",
+                "description": "German proposal; named after Mago National Park, a national park in Ethiopia noted for its giraffes (Camelopardalis is Latin for 'giraffe').", 
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_createdOn": "1679590793548" 
             }

@@ -3,23 +3,21 @@ import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 import * as authService from '../services/authService';
-import { admins } from '../utils/adminsUtil';
 
 export const AuthContext = createContext();
 
-export const AuthProvider = ({
+const AuthProvider = ({
     children,
 }) => {
     const navigate = useNavigate();
     const [user, setUser] = useLocalStorage("user",{});
 
-    const isAdmin = Boolean(admins.includes(user._id));
+    const isAdmin = Boolean(user.role === "admin");
     
     const onLogin = async (values) => {
         let newUser = {};
         try {
             newUser = await authService.login(values);
-            
         } catch (error) {
             return alert(error.message);
         }
@@ -74,3 +72,5 @@ export const AuthProvider = ({
         </>
     );
 };
+
+export default AuthProvider;

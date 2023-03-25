@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { AuthProvider } from './contexts/AuthContext';
+import AuthProvider from './contexts/AuthContext';
 import DesignsProvider from './contexts/DesignsContext';
 import CartProvider from './contexts/CartContext';
 import LovesProvider from './contexts/LovesContext';
@@ -9,19 +9,19 @@ import Home  from "./components/Home/Home";
 import About from './components/About/About';
 import Search from './components/SearchModal/Search';
 import Contact from './components/Contact/Contact';
-import { TopHeader } from "./components/TopHeader/TopHeader";
-import { Header } from "./components/Header/Header";
-import { Catalog } from './components/Designs/Catalog/Catalog';
-import { Details } from './components/Designs/Details/Details';
+import TopHeader from "./components/TopHeader/TopHeader";
+import Header from "./components/Header/Header";
+import Catalog from './components/Designs/Catalog/Catalog';
+import Details from './components/Designs/Details/Details';
 import Login from './components/User/Login/Login';
 import Register from './components/User/Register/Register';
 import Logout from './components/User/Logout/Logout';
-import { Profile } from './components/Profile/Profile';
-import { CreateDesign } from './components/Designs/CreateDesign/CreateDesign';
-import { EditDesign } from './components/Designs/EditDesign/EditDesign';
-import { Cart } from './components/Cart/Cart';
-import { Footer } from "./components/Footer/Footer";
-import { NotFound } from './components/NotFound/NotFound';
+import Profile from './components/Profile/Profile';
+import CreateDesign from './components/Designs/CreateDesign/CreateDesign';
+import EditDesign from './components/Designs/EditDesign/EditDesign';
+import Cart from './components/Cart/Cart';
+import Footer from "./components/Footer/Footer";
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
 

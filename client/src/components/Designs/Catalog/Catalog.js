@@ -6,10 +6,10 @@ import { DesignsContext } from '../../../contexts/DesignsContext';
 import CatalogCard from "./CatalogCard";
 import FilterCriteria from "./FilterCriteria";
 import SortCriteria from './SortCriteria';
-import { Pagination } from "../../Pagination/Pagination";
+import Pagination from "../../Pagination/Pagination";
 import './Catalog.css'
 
-export const Catalog = () => {
+const Catalog = () => {
     let { designs, filterDesigns } = useContext(DesignsContext);
     const {category} = useParams();
 
@@ -40,3 +40,5 @@ export const Catalog = () => {
         </div>
     );
 };
+
+export default Catalog;

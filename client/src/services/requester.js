@@ -25,11 +25,18 @@ const request = async (method, url, data) => {
         }
         const response = await buildRequest;
 
+        if (response.status === 204) {
+            return response;
+        }
+
         const result = await response.json();
 
+        if (!response.ok) {
+          throw new Error (result.message);
+        }
+        
         return result;
     } catch (error) {
-        console.log(error.message);
         throw error;
     }
 };

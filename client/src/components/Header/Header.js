@@ -7,7 +7,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 import './Header.css'
 
-export const Header = () => {
+const Header = () => {
     const { isAuthenticated, isAdmin } = useContext(AuthContext);
     const { cart } = useContext(CartContext);
     const { loves } = useContext(LovesContext);
@@ -86,3 +86,5 @@ export const Header = () => {
         </nav>
     );
 };
+
+export default Header;
