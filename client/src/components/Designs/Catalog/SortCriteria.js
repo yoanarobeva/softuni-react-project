@@ -12,7 +12,8 @@ const SortCriteria = () => {
     };
 
     return (
-        <div className="col-md-4 pb-4">
+        <div className="col-md-4">
+            <span className="d-flex py-1">sort by :</span>
             <div className="d-flex">
                 <select onChange={onOptionChange} value={selected} className="form-control">
                     <option value="none">None</option>

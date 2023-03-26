@@ -10,7 +10,8 @@ const Search = () => {
     }, onSearchSubmit);
 
     return (
-        <div className="col-md-8 pb-4">
+        <div className="col-md-8">
+            <span className="d-flex py-1">search :</span>
             <div className="d-flex">
                 <form onSubmit={onSubmit} method="POST" className="modal-content modal-body border-0 p-0">
                     <div className="input-group mb-2">
@@ -28,8 +29,7 @@ const Search = () => {
                         </button>
                     </div>
 
-                    <div className="input-group">
-                        <span className="col-md-3 ">Search criteria:</span>
+                    <div className="input-group mb-2">
                         <div className="form-check col-md-2">
                             <input 
                                 checked={values.criteria === "name"}
@@ -40,7 +40,7 @@ const Search = () => {
                                 name="criteria" 
                             />
                             <label className="form-check-label">
-                                Name
+                                name
                             </label>
                         </div>
                         <div className="form-check col-md-2">
@@ -53,7 +53,7 @@ const Search = () => {
                                 name="criteria" 
                             />
                             <label className="form-check-label">
-                                Price
+                                price
                             </label>
                         </div>
                         <div className="form-check col-md-2">
@@ -66,7 +66,7 @@ const Search = () => {
                                 name="criteria" 
                             />
                             <label className="form-check-label">
-                                Description
+                                description
                             </label>
                         </div>
                     </div>

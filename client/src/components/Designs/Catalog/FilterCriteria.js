@@ -11,7 +11,7 @@ const FilterCriteria = () => {
 
     return (
         <div className="col-lg-3">
-            <h1 className="h2 pb-4">Shapes</h1>
+            <h1 className="h2 pb-4">Category</h1>
             
             <ul className="list-unstyled templatemo-accordion" onClick={onCategoryClick}>
                 <li><Link className="text-decoration-none" name="none">All</Link></li>

@@ -28,13 +28,8 @@ const Footer = () => {
 
                     <div className="col-md-4 pt-5">
                         <h2 className="h2 text-light border-bottom pb-3 border-light">Designs</h2>
-                        {/* TODO: Not sure for categoies, think about it */}
                         <ul className="list-unstyled text-light footer-link-list">
-                            <li><Link className="text-decoration-none" to="/designs/?where=category=triangles">Triangle</Link></li>
-                            <li><Link className="text-decoration-none" to="/designs/?where=category=squares">Square</Link></li>
-                            <li><Link className="text-decoration-none" to="/designs/?where=category=circles">Circle</Link></li>
-                            <li><Link className="text-decoration-none" to="/designs/?where=category=polygones">Polygon</Link></li>
-                            <li><Link className="text-decoration-none" to="/designs/?where=category=composites">Composite</Link></li>
+                            <li><Link className="text-decoration-none" to="/designs">View our designs</Link></li>
                         </ul>
                     </div>
 
@@ -66,13 +61,6 @@ const Footer = () => {
                             </li>
                         </ul>
                     </div>
-                    {/* <div className="col-auto">
-                        <label className="sr-only" htmlFor="subscribeEmail">Email address</label>
-                        <div className="input-group mb-2">
-                            <input type="text" className="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address"/>
-                            <div className="input-group-text btn-success text-light">Subscribe</div>
-                        </div>
-                    </div> */}
                 </div>
             </div>
 
