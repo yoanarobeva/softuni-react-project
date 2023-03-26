@@ -6,6 +6,7 @@ const Search = () => {
     const { onSearchSubmit } = useContext(DesignsContext);
     const { values, changeHandler, onSubmit } = useForm({
         search: "",
+        criteria: "",
     }, onSearchSubmit);
 
     return (
@@ -18,13 +19,56 @@ const Search = () => {
                             value={values.search}
                             type="text"
                             className="form-control"
-                            id="inputModalSearch"
                             name="search"
                             placeholder="Search design ..."
                         />
+                        
                         <button type="submit" className="input-group-text bg-success text-light">
                             <i className="fa fa-fw fa-search text-white"></i>
                         </button>
+                    </div>
+
+                    <div className="input-group">
+                        <span className="col-md-3 ">Search criteria:</span>
+                        <div className="form-check col-md-2">
+                            <input 
+                                checked={values.criteria === "name"}
+                                onChange={changeHandler} 
+                                value="name"
+                                className="form-check-input" 
+                                type="radio"
+                                name="criteria" 
+                            />
+                            <label className="form-check-label">
+                                Name
+                            </label>
+                        </div>
+                        <div className="form-check col-md-2">
+                            <input 
+                                checked={values.criteria === "price"} 
+                                onChange={changeHandler} 
+                                value="price"
+                                className="form-check-input" 
+                                type="radio" 
+                                name="criteria" 
+                            />
+                            <label className="form-check-label">
+                                Price
+                            </label>
+                        </div>
+                        <div className="form-check col-md-2">
+                            <input 
+                                checked={values.criteria === "description"}
+                                onChange={changeHandler} 
+                                className="form-check-input" 
+                                value="description"
+                                type="radio"
+                                name="criteria" 
+                            />
+                            <label className="form-check-label">
+                                Description
+                            </label>
+                        </div>
                     </div>
                 </form>
             </div>

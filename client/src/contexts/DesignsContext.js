@@ -11,12 +11,10 @@ export const DesignsProvider = memo(({
     const navigate = useNavigate();
     const [page, setPage] = useState(1);
     const [designs, setDesigns] = useState([]);
-    const [filterDesigns, setFilterDesigns] = useState([]);
     const [action, setAction] = useState("");
       
     useEffect(() => {
         const [method, criteria, match] = action.split("-");
-        console.log(method, criteria, match);
         
         if (method === 'sort') {
             designsService.sort(page, criteria, match)
@@ -24,7 +22,10 @@ export const DesignsProvider = memo(({
                     setDesigns(result);
                 })
         } else if (method === 'filter') {
-            designsService.filter()
+            designsService.filter(page, criteria, match)
+                .then(result => {
+                    setDesigns(result);
+                })
         } else {
             designsService.getAllByPage(page)
                 .then(result => {
@@ -91,34 +92,28 @@ export const DesignsProvider = memo(({
     }, []);
 
     const onCategoryClickHandler = useCallback ((value) => {
-        setFilterDesigns(designs);
-        const polygons = ["pentagon", "hexagon", "heptagon","octagon"];
-        switch (value) {
-            case "all": break;
-            case "triangle":
-            case "square":
-            case "circle":
-            case "composite": setFilterDesigns(state => state.filter(x => x.shape === value)); break;
-            case "polygon": setFilterDesigns(state => state.filter((x) => polygons.includes(x.shape))); break;
-            default: break;
-        };
-    }, [designs]);
+        let criteria = 'shape';
+        let match = '';
+        
+        if (value === 'none') {
+            return setAction('');
+        } else {
+            match = value;
+        }
+
+        setAction(`filter-${criteria}-${match}`);
+    }, []);
 
     const onSearchSubmit = useCallback ((values) => {
-        setFilterDesigns(designs);
-
+        const criteria = values.criteria;
         const text = values.search;
-        // eslint-disable-next-line
-        const searchResult = designs.filter((design) => Object.values(design).find(v => v == text));
-        console.log(searchResult);
 
-        setFilterDesigns(searchResult);
-        if(text) {
-            navigate('/catalog/search');
+        if (criteria && text) {
+            setAction(`filter-${criteria}-${text}`);
         } else {
-            navigate('/catalog');
+            setAction("");
         }
-    }, [designs, navigate]);
+    }, []);
 
     const OnPageChange = useCallback((value) => {
         setPage(state => state + value);
@@ -126,7 +121,6 @@ export const DesignsProvider = memo(({
 
     const designContextValues = useMemo(() => ({
         designs,
-        filterDesigns,
         page,
         onCreateDesignSubmit,
         onEditDesignSubmit,
@@ -135,7 +129,7 @@ export const DesignsProvider = memo(({
         onCategoryClickHandler,
         onSearchSubmit,
         OnPageChange,
-    }), [designs, filterDesigns, page, onCreateDesignSubmit, onEditDesignSubmit, onDeleteClick, onOptionChangeHandler, onCategoryClickHandler, onSearchSubmit, OnPageChange]);
+    }), [designs, page, onCreateDesignSubmit, onEditDesignSubmit, onDeleteClick, onOptionChangeHandler, onCategoryClickHandler, onSearchSubmit, OnPageChange]);
 
     return (
         <DesignsContext.Provider value={designContextValues}>
