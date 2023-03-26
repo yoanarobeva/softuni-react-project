@@ -45,6 +45,5 @@ export const filter = async (page, criteria, match) => {
     const skip = take * (page - 1);
 
     const result = await request.get(`${baseUrl}?where=${criteria}%3D%22${match}%22&offset=${skip}&pageSize=${take}`);
-    console.log(result);
     return result;
 };

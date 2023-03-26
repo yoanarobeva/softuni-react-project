@@ -36,7 +36,6 @@ export const DesignsProvider = memo(({
 
     const onCreateDesignSubmit = useCallback(async (data) => {
         let newDesign = {};
-        console.log(data);
         try {
             if (Object.values(data).includes("")) {
                 throw new Error('All fields are required!')
