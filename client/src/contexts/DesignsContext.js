@@ -12,14 +12,26 @@ export const DesignsProvider = memo(({
     const [page, setPage] = useState(1);
     const [designs, setDesigns] = useState([]);
     const [filterDesigns, setFilterDesigns] = useState([]);
+    const [action, setAction] = useState("");
       
     useEffect(() => {
-        designsService.getAllByPage(page)
-            .then(result => {
-                setDesigns(result);
-                setFilterDesigns(result);
-            })
-    }, [page, designs.length]);
+        const [method, criteria, match] = action.split("-");
+        console.log(method, criteria, match);
+        
+        if (method === 'sort') {
+            designsService.sort(page, criteria, match)
+                .then(result => {
+                    setDesigns(result);
+                })
+        } else if (method === 'filter') {
+            designsService.filter()
+        } else {
+            designsService.getAllByPage(page)
+                .then(result => {
+                    setDesigns(result);
+                })
+        }
+    }, [page, action, designs.length]);
 
     const onCreateDesignSubmit = useCallback(async (data) => {
         let newDesign = {};
@@ -60,14 +72,22 @@ export const DesignsProvider = memo(({
         navigate("/catalog");
     }, [navigate]);
 
-    const onOptionChangeHandler = useCallback ((value) => {
+    const onOptionChangeHandler = useCallback (async (value) => {
+        let criteria = "";
+        let order = "";
+
         switch (value) {
-            case "none": setDesigns(state => state.sort((a, b) => a._createdOn - b._createdOn)); break;
-            case "alphabetically": setDesigns(state => state.sort((a, b) => a.name.localeCompare(b.name))); break;
-            case "price": setDesigns(state => state.sort((a, b) => a.price - b.price)); break;
-            case "newest": setDesigns(state => state.sort((a, b) => b._createdOn - a._createdOn)); break;
+            case "":
+            case "none": setAction(''); return;
+            case "alphabetically": criteria = "name"; break;
+            case "price-asc": criteria = "price"; break;
+            case "price-desc": criteria = "price"; order = "desc"; break;
+            case "newest": criteria = "_createdOn"; order = "desc"; break;
+            case "oldest": criteria = "_createdOn"; order = "asc"; break;
             default: break;
         };
+
+        setAction(`sort-${criteria}-${order}`);
     }, []);
 
     const onCategoryClickHandler = useCallback ((value) => {

@@ -1108,7 +1108,7 @@
                 "shape": "circle",
                 "description": "Czech Republic proposal; a fictional substance in the novel Továrna na absolutno by Karel Čapek.", 
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                "_createdOn": "1679590793539" 
+                "_createdOn": 1679590793539 
             },
             "design_2": {
                 "_id": "design_2",
@@ -1118,7 +1118,7 @@
                 "shape": "circle",
                 "description": "The name was originally Arabic: آخر النهر āẖir an-nahr ('river's end').", 
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                "_createdOn": "1679590793540"  
+                "_createdOn": 1679590793540
             },
             "design_3": {
                 "_id": "design_3",
@@ -1128,7 +1128,7 @@
                 "shape": "heptagon",
                 "description": "Apparently first applied to η Cassiopeiae in the Skalnate Pleso Atlas of the Heavens published in 1950, but is not known prior to that.", 
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                "_createdOn": "1679590793541"  
+                "_createdOn": 1679590793541  
             },
             "design_15": {
                 "_id": "design_15",
@@ -1138,7 +1138,7 @@
                 "shape": "triangle",
                 "description": "The traditional name of the β Scorpii system has been rendered Akrab and Elakrab, derived (like Acrab) from Arabic: العقرب al-ʿaqrab ('the scorpion').", 
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                "_createdOn": "1679590793542"  
+                "_createdOn": 1679590793542  
             },
             "design_25": {
                 "_id": "design_25",
@@ -1148,7 +1148,7 @@
                 "shape": "square",
                 "description": "Acrux is a modern contraction of the Bayer designation, coined in the 19th century, but which entered into common use only by the mid-20th century.", 
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                "_createdOn": "1679590793543"  
+                "_createdOn": 1679590793543  
             },
             "design_6": {
                 "_id": "design_6",
@@ -1158,7 +1158,7 @@
                 "shape": "hexagon",
                 "description": "The name was originally Arabic: الزبانى az-zubāná ('the claws').", 
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                "_createdOn": "1679590793544"  
+                "_createdOn": 1679590793544 
             },
             "design_7": {
                 "_id": "design_7",
@@ -1168,7 +1168,7 @@
                 "shape": "octagon",
                 "description": "The name is originally from Arabic: عذارى ʿaḏārá ('virgins'). In the Calendarium of Al Achsasi Al Mouakket, it is designated أول العذاري awwil al-ʿaḏāriyy, translated into Latin as Prima Virginum ('first virgin').", 
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                "_createdOn": "1679590793545"  
+                "_createdOn": 1679590793545  
             },
             "design_37": {
                 "_id": "design_37",
@@ -1178,7 +1178,7 @@
                 "shape": "composite",
                 "description": "The name was originally Arabic: الذيل aḏ-ḏayl (the train, lit. 'the tail').", 
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                "_createdOn": "1679590793546"  
+                "_createdOn": 1679590793546  
             },
             "design_9": {
                 "_id": "design_9",
@@ -1188,7 +1188,7 @@
                 "shape": "pentagon",
                 "description": "The name is originally from Arabic: عين ʿayn ('eye') and was reviewed and adopted by the Working Group on Star Names.", 
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                "_createdOn": "1679590793547"  
+                "_createdOn": 1679590793547  
             },
             "design_34": {
                 "_id": "design_34",
@@ -1198,7 +1198,7 @@
                 "shape": "square",
                 "description": "From Arabic: عين الرامي ʿayn ar-rāmī ('eye of the archer').", 
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                "_createdOn": "1679590793548" 
+                "_createdOn": 1679590793548 
             },
             "design_38": {
                 "_id": "design_38",
@@ -1208,7 +1208,7 @@
                 "shape": "composite",
                 "description": "Colombian proposal; named after a mythical village from the novel Cien anos de soledad (One Hundred Years of Solitude) by Gabriel García Márquez.", 
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                "_createdOn": "1679590793548" 
+                "_createdOn": 1679590793548 
             },
             "design_51": {
                 "_id": "design_51",
@@ -1218,7 +1218,7 @@
                 "shape": "composite",
                 "description": "German proposal; named after Mago National Park, a national park in Ethiopia noted for its giraffes (Camelopardalis is Latin for 'giraffe').", 
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                "_createdOn": "1679590793548" 
+                "_createdOn": 1679590793548 
             }
         },
     	loves: {

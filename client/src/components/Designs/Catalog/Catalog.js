@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import { useParams } from 'react-router-dom';
 
 import { DesignsContext } from '../../../contexts/DesignsContext';
 
@@ -11,13 +10,8 @@ import Search from '../../Search/Search';
 import './Catalog.css'
 
 const Catalog = () => {
-    let { designs, filterDesigns } = useContext(DesignsContext);
-    const { filter } = useParams();
-
-    if (filter) {
-        designs = filterDesigns;
-    }
-
+    let { designs } = useContext(DesignsContext);
+   
     return (
         <div className="container py-5">
             <div className="row">

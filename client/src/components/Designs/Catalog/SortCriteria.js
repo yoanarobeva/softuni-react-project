@@ -1,23 +1,26 @@
-import { memo, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { memo, useContext, useState } from "react";
 import { DesignsContext } from '../../../contexts/DesignsContext';
 
 const SortCriteria = () => {
-    const navigate = useNavigate();
+    const [selected, setSelected] = useState("");
     const {onOptionChangeHandler} = useContext(DesignsContext);
+
     const onOptionChange = (e) => {
-        onOptionChangeHandler(e.target.value);
-        navigate('/catalog');
+        const optionName = e.target.value;
+        onOptionChangeHandler(optionName);
+        setSelected(optionName);
     };
 
     return (
         <div className="col-md-4 pb-4">
             <div className="d-flex">
-                <select onChange={onOptionChange} className="form-control">
-                    <option value={"none"}>Sort by</option>
-                    <option value={"alphabetically"}>A to Z</option>
-                    <option value={"price"}>Price</option>
-                    <option value={"newest"}>Newest</option>
+                <select onChange={onOptionChange} value={selected} className="form-control">
+                    <option value="none">None</option>
+                    <option value="alphabetically">A to Z</option>
+                    <option value="price-asc">Price /ascending/</option>
+                    <option value="price-desc">Price /descending/</option>
+                    <option value="newest">Newest</option>
+                    <option value="oldest">Oldest</option>
                 </select>
             </div>
         </div>
