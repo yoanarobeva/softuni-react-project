@@ -64,4 +64,4 @@ If you want to run the project, you have *package.json* file in the main client 
 
 **The server used in the project is [Softuni practice server](https://github.com/softuni-practice-server/softuni-practice-server).**
 
-It was modified, so the initial users have admin role and the initial collecitons are changed. If you want to start the server, read its [documentation](https://github.com/softuni-practice-server/softuni-practice-server#readme).
+It was modified, so the initial users have admin role and the initial collecitons are changed. If you want to start the server, read its documentation.
