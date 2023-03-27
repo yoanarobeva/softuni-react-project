@@ -106,7 +106,7 @@ const Register = () => {
 
 
                         <div className="col mt-2">
-                            <span>If you already have profile click <Link to="/login" className="text-success">here</Link></span>
+                            <span>If you already have profile <Link to="/login" className="text-success">sign-in here</Link></span>
                         </div>
                     </div>
                 </form>

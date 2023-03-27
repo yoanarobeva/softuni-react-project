@@ -81,7 +81,7 @@ const Login = () => {
                         </div>
 
                         <div className="col mt-2">
-                            <span>If you don't have profile click <Link to="/register" className="text-success">here</Link></span>
+                            <span>If you don't have profile <Link to="/register" className="text-success">sign-up here</Link></span>
                         </div>
                     </div>
                 </form>
