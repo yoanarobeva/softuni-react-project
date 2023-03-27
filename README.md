@@ -1,5 +1,6 @@
 # uniQUEode_brainmade jewelery
-##### Softuni ReactJS Final Project
+
+Softuni ReactJS Final Project
 
 ## Overview
 
