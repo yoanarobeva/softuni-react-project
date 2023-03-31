@@ -78,7 +78,7 @@ const Details = () => {
                                     </div>
                                 }
 
-                                {!isAdmin && !isOwner &&
+                                {!isAdmin && !isOwner && isAuthenticated &&
                                     <DetailsForm design={design} />
                                 }
 
