@@ -1,7 +1,10 @@
+import config from "../config/config";
+
 const request = async (method, url, data) => {
     try {
         const user = localStorage.getItem('user');
         const auth = JSON.parse(user || '{}');
+        const baseUrl = config.BASE_URL;
 
         let headers = {}
 
@@ -12,9 +15,9 @@ const request = async (method, url, data) => {
         let buildRequest;
 
         if (method === 'GET') {
-            buildRequest = fetch(url, { headers });
+            buildRequest = fetch(baseUrl + url, { headers });
         } else {
-            buildRequest = fetch(url, {
+            buildRequest = fetch(baseUrl + url, {
                 method,
                 headers: {
                     ...headers,
