@@ -29,7 +29,7 @@ const Footer = () => {
                     <div className="col-md-4 pt-5">
                         <h2 className="h2 text-light border-bottom pb-3 border-light">Designs</h2>
                         <ul className="list-unstyled text-light footer-link-list">
-                            <li><Link className="text-decoration-none" to="/designs">View our designs</Link></li>
+                            <li><Link className="text-decoration-none" to="/catalog">View our designs</Link></li>
                         </ul>
                     </div>
 
