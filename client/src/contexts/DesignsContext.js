@@ -63,13 +63,17 @@ export const DesignsProvider = memo(({
     }, [navigate]);
 
     const onDeleteClick = useCallback (async (designId) => {
+        // eslint-disable-next-line no-restricted-globals
+        const result = confirm("Are you sure you want to delete?");
         try {
-            await designsService.deleteDesign(designId);
+            if (result) {
+                await designsService.deleteDesign(designId);
+                setDesigns(state => state.filter(x => x._id !== designId));
+                navigate("/catalog");
+            }
         } catch (error) {
             return alert(error.message);
         }
-        setDesigns(state => state.filter(x => x._id !== designId));
-        navigate("/catalog");
     }, [navigate]);
 
     const onOptionChangeHandler = useCallback (async (value) => {

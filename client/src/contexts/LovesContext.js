@@ -31,12 +31,16 @@ export const LovesProvider = memo(({
     }, []);
 
     const onLoveDelete = useCallback(async (loveId) => {
+        // eslint-disable-next-line no-restricted-globals
+        const result = confirm("Are you sure you want to delete?")
         try {
-            await lovesService.remove(loveId);
+            if(result) {
+                await lovesService.remove(loveId);
+                setLoves(state => state.filter(x => x._id !== loveId));
+            }
         } catch (error) {
             return alert(error.message);
         }
-        setLoves(state => state.filter(x => x._id !== loveId));
     }, []);
 
     const lovesContextValues = useMemo (() => ({

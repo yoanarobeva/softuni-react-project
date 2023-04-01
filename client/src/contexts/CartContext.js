@@ -44,12 +44,16 @@ export const CartProvider = memo(({
     }, []);
 
     const onCartDelete = useCallback(async (cartItemId) => {
+        // eslint-disable-next-line no-restricted-globals
+        const result = confirm("Are you sure you want to delete?");
         try {
-            await cartService.remove(cartItemId);
+            if(result) {
+                await cartService.remove(cartItemId);
+                setCart(state => state.filter(x => x._id !== cartItemId));
+            }
         } catch (error) {
             return alert(error.message);
         }
-        setCart(state => state.filter(x => x._id !== cartItemId));
     }, []);
 
     const cartContextValues = useMemo(() => ({
