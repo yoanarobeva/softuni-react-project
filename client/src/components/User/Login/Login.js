@@ -51,7 +51,6 @@ const Login = () => {
                                     className="form-control mt-2" 
                                     type="email" 
                                     name="email" 
-                                    placeholder="Sokka@gmail.com"
                                     value={values.email}
                                     onChange={changeHandler}
                                     onBlur={onEmailBlur}
@@ -66,7 +65,6 @@ const Login = () => {
                                     className="form-control mt-2" 
                                     type="password" 
                                     name="password" 
-                                    placeholder="******"
                                     value={values.password}
                                     onChange={changeHandler}
                                     onBlur={onPasswordBlur} 

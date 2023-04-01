@@ -21,6 +21,8 @@ import EditDesign from './components/Designs/EditDesign/EditDesign';
 import Cart from './components/Cart/Cart';
 import Footer from "./components/Footer/Footer";
 import NotFound from './components/NotFound/NotFound';
+import RouteGuard from './components/Guards/RouteGuard';
+import AdminGuard from './components/Guards/AdminGuard';
 
 function App() {
 
@@ -44,14 +46,18 @@ function App() {
                                 <Route path='/contact' element={<Contact />} />
                                 <Route path='/login' element={<Login />} />
                                 <Route path='/register' element={<Register />} />
-                                <Route path='/logout' element={<Logout />} />
                                 <Route path='/catalog' element={<Catalog />} />
                                 <Route path='/catalog/:aciton' element={<Catalog />} />
                                 <Route path='/details/:designId' element={<Details />} />
-                                <Route path='/details/:designId/edit' element={<EditDesign />} />
-                                <Route path='/create' element={<CreateDesign />} />
-                                <Route path='/cart' element={<Cart />} />
-                                <Route path='/profile' element={<Profile />} />
+                                <Route element={<RouteGuard />}>
+                                    <Route path='/cart' element={<Cart />} />
+                                    <Route path='/profile' element={<Profile />} />
+                                    <Route path='/logout' element={<Logout />} />
+                                </Route>
+                                <Route element={<AdminGuard />}>
+                                    <Route path='/details/:designId/edit' element={<EditDesign />} />
+                                    <Route path='/create' element={<CreateDesign />} />
+                                </Route>
                                 <Route path='*' element={<NotFound />} />
                             </Routes>
 

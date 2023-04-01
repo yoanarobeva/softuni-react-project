@@ -61,7 +61,6 @@ const Register = () => {
                                     className="form-control mt-2" 
                                     type="email" 
                                     name="email" 
-                                    placeholder="maria@email.com"
                                     onChange={changeHandler} 
                                     value={values.email}
                                     onBlur={onEmailBlur} 
@@ -75,7 +74,6 @@ const Register = () => {
                                 <input 
                                     className="form-control mt-2" 
                                     type="password" 
-                                    placeholder="******" 
                                     name="password" 
                                     onChange={changeHandler} 
                                     value={values.password}
@@ -90,7 +88,6 @@ const Register = () => {
                                 <input 
                                     className="form-control mt-2" 
                                     type="password" 
-                                    placeholder="******" 
                                     name="repeatPassword" 
                                     onChange={changeHandler} 
                                     value={values.repeatPassword}

@@ -118,6 +118,10 @@ export const DesignsProvider = memo(({
         setPage(state => state + value);
     }, []);
 
+    const getDesign = useCallback ((designId) => {
+        return designs.find(design => design._id === designId);
+    }, [designs])
+
     const designContextValues = useMemo(() => ({
         designs,
         page,
@@ -128,7 +132,8 @@ export const DesignsProvider = memo(({
         onCategoryClickHandler,
         onSearchSubmit,
         OnPageChange,
-    }), [designs, page, onCreateDesignSubmit, onEditDesignSubmit, onDeleteClick, onOptionChangeHandler, onCategoryClickHandler, onSearchSubmit, OnPageChange]);
+        getDesign,
+    }), [designs, page, onCreateDesignSubmit, onEditDesignSubmit, onDeleteClick, onOptionChangeHandler, onCategoryClickHandler, onSearchSubmit, OnPageChange, getDesign]);
 
     return (
         <DesignsContext.Provider value={designContextValues}>
