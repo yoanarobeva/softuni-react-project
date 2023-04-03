@@ -8,7 +8,11 @@ const Cart = () => {
     const { cart } = useContext(CartContext);
 
     let allTotalPrice = 0;
-    cart.map(x => allTotalPrice += x.totalPrice);
+    cart.map(x => allTotalPrice += (x.designPrice * x.quantity));
+
+    const onCheckout = () => {
+        return alert("To be implemented!");
+    };
 
     return (
         <section className="h-100 h-custom">
@@ -59,7 +63,7 @@ const Cart = () => {
                                             <p className="mb-2">{allTotalPrice + 6} BGN</p>
                                         </div>
 
-                                        <button type="button" className="btn btn-success btn-block btn-lg">
+                                        <button onClick={onCheckout} type="button" className="btn btn-success btn-block btn-lg">
                                             <div className="d-flex justify-content-between">
                                                 <span>Checkout</span>
                                             </div>

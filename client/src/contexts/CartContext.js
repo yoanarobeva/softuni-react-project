@@ -26,6 +26,7 @@ export const CartProvider = memo(({
         let newCartItem = {}
         try {
             newCartItem = await cartService.create(data);
+            console.log(newCartItem);
         } catch (error) {
             return alert(error.message);
         }
@@ -37,11 +38,13 @@ export const CartProvider = memo(({
         let newValue = {};
         try {
             newValue = await cartService.edit(cartItemId, quantity);
+            setCart(state => state.map(x => x._id === cartItemId ? newValue : x));
+            navigate('/cart');
+            console.log(newValue);
         } catch (error) {
             return alert(error.message);
         }
-        setCart(state => state.map(x => x._id === cartItemId ? newValue : x));
-    }, []);
+    }, [navigate]);
 
     const onCartDelete = useCallback(async (cartItemId) => {
         // eslint-disable-next-line no-restricted-globals

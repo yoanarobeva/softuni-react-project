@@ -39,7 +39,7 @@ export const DetailsForm = ({
     const onSubmit = async (e) => {
         e.preventDefault();
 
-        await onCartSubmit({ designId: design._id, totalPrice: (values.quantity * design.price), ...values });
+        await onCartSubmit({ designId: design._id, designPrice:  design.price, ...values });
     };
 
     return (

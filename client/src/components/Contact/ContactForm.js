@@ -1,4 +1,8 @@
 export const ContactForm = () => {
+    const onContactSubmit = (e) => {
+        e.preventDefault();
+        return alert("To be implemented!");
+    };
     return (
         <div className="container py-5">
             <div className="row py-5">
@@ -23,7 +27,7 @@ export const ContactForm = () => {
                     </div>
                     <div className="row">
                         <div className="col text-end mt-2">
-                            <button type="submit" className="btn btn-success btn-lg px-3">Let’s Talk</button>
+                            <button onClick={onContactSubmit} type="submit" className="btn btn-success btn-lg px-3">Let’s Talk</button>
                         </div>
                     </div>
                 </form>

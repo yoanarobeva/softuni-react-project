@@ -7,7 +7,7 @@ const TopHeader = () => {
                 <div className="w-100 d-flex justify-content-between">
                     <div>
                         <i className="fa fa-envelope mx-2"></i>
-                        <a className="navbar-sm-brand text-light text-decoration-none" href="mailto:uniqode@gmail.com">uniqode@gmail.com</a>
+                        <a className="navbar-sm-brand text-light text-decoration-none" href="mailto:uniqueode.brainmade@gmail.com">uniqueode.brainmade@gmail.com</a>
                         <i className="fa fa-phone mx-2"></i>
                         <a className="navbar-sm-brand text-light text-decoration-none" href="tel:+359885825068">+359 88 582 50 68</a>
                     </div>

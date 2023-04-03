@@ -6,6 +6,7 @@ import * as designsService from "../../services/designsService";
 export const CartCard = ({
     _id,
     designId,
+    designPrice,
     quantity,
     category,
 }) => {
@@ -20,9 +21,20 @@ export const CartCard = ({
             })
     }, [designId]);
 
-    //TODO: Try to make it wotk, now its not
-    const onChange = async () => {
-        await onCartEdit(_id, itemQuantity);
+    // const handleDecrement = async () => {
+    //     if ( itemQuantity > 1) {
+    //         setItemQuantity(state => state - 1);
+    //     }
+    // };
+
+    // const handleIncrement = async () => {
+    //     setItemQuantity(state => state + 1);
+    // };
+
+    const onChange = async (e) => {
+        const value = Number(e.target.value)
+        setItemQuantity(value);
+        await onCartEdit(_id, value);
     }
 
     return (
@@ -44,21 +56,22 @@ export const CartCard = ({
 
             <td className="align-middle">
                 <div className="d-flex flex-row">
-                    {/* //TODO: Implement quantity change and when adding the same item to + the quantity, not creating new */}
-                    <button onClick={() => setItemQuantity(itemQuantity - 1)} className="btn btn-success px-2">
+                    {/* //TODO: Implement when adding the same item to + the quantity, not creating new */}
+                    {/* //TODO: Implement quantity change with the buttons? */}
+                    {/* <button onClick={handleDecrement} className="btn btn-success px-2">
                         <i className="fas fa-minus"></i>
-                    </button>
+                    </button> */}
 
-                    <input onChange={onChange} min="0" name="quantity" value={itemQuantity} className="form-control" style={{ width: '50px' }} />
+                    <input onChange={(e) => onChange(e)} type="number" value={itemQuantity} className="form-control" style={{ width: '50px' }} />
 
-                    <button onClick={() => setItemQuantity(itemQuantity + 1)} className="btn btn-success px-2">
+                    {/* <button onClick={handleIncrement} className="btn btn-success px-2">
                         <i className="fas fa-plus"></i>
-                    </button>
+                    </button> */}
                 </div>
             </td>
 
             <td className="align-middle">
-                <p className="mb-0" >{design.price}</p>
+                <p className="mb-0" >{designPrice * quantity}</p>
             </td>
 
             <td className="align-middle">

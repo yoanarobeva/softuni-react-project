@@ -21,7 +21,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <i className="fa fa-envelope fa-fw"></i>
-                                <a className="text-decoration-none" href="mailto:info@company.com">uniqode@gmail.com</a>
+                                <a className="text-decoration-none" href="mailto:uniqueode.brainmade@gmail.com">uniqueode.brainmade@gmail.com</a>
                             </li>
                         </ul>
                     </div>
