@@ -25,14 +25,18 @@ export const CartProvider = memo(({
     const onCartSubmit = useCallback( async (data) => {
         let newCartItem = {}
         try {
-            newCartItem = await cartService.create(data);
-            console.log(newCartItem);
+            newCartItem = await cartService.create(data, userId);
         } catch (error) {
             return alert(error.message);
         }
-        setCart(cart => [...cart, newCartItem]);
+
+        setCart(cart => {
+            cart = cart.filter(x => x._id !== newCartItem._id);
+            return [...cart, newCartItem];
+        });
+
         navigate('/cart');
-    }, [navigate]);
+    }, [navigate, userId]);
 
     const onCartEdit = useCallback( async (cartItemId, quantity) => {
         let newValue = {};
@@ -40,7 +44,6 @@ export const CartProvider = memo(({
             newValue = await cartService.edit(cartItemId, quantity);
             setCart(state => state.map(x => x._id === cartItemId ? newValue : x));
             navigate('/cart');
-            console.log(newValue);
         } catch (error) {
             return alert(error.message);
         }

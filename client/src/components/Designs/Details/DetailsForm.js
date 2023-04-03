@@ -39,12 +39,11 @@ export const DetailsForm = ({
     const onSubmit = async (e) => {
         e.preventDefault();
 
-        await onCartSubmit({ designId: design._id, designPrice:  design.price, ...values });
+        await onCartSubmit({ designId: design._id, designPrice: design.price, ...values });
     };
 
     return (
         <div className="mt-5">
-            {/* //TODO Implement add to cart function (submitting the form) */}
             <form action="" method="GET" onSubmit={onSubmit}>
                 <input type="hidden" name="product-title" value="Activewear" />
                 <div className="row">

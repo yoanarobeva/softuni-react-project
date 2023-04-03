@@ -21,21 +21,11 @@ export const CartCard = ({
             })
     }, [designId]);
 
-    // const handleDecrement = async () => {
-    //     if ( itemQuantity > 1) {
-    //         setItemQuantity(state => state - 1);
-    //     }
-    // };
-
-    // const handleIncrement = async () => {
-    //     setItemQuantity(state => state + 1);
-    // };
-
     const onChange = async (e) => {
         const value = Number(e.target.value)
         setItemQuantity(value);
         await onCartEdit(_id, value);
-    }
+    };
 
     return (
         <tr>
@@ -56,17 +46,7 @@ export const CartCard = ({
 
             <td className="align-middle">
                 <div className="d-flex flex-row">
-                    {/* //TODO: Implement when adding the same item to + the quantity, not creating new */}
-                    {/* //TODO: Implement quantity change with the buttons? */}
-                    {/* <button onClick={handleDecrement} className="btn btn-success px-2">
-                        <i className="fas fa-minus"></i>
-                    </button> */}
-
-                    <input onChange={(e) => onChange(e)} type="number" value={itemQuantity} className="form-control" style={{ width: '50px' }} />
-
-                    {/* <button onClick={handleIncrement} className="btn btn-success px-2">
-                        <i className="fas fa-plus"></i>
-                    </button> */}
+                    <input onChange={(e) => onChange(e)} type="number" value={itemQuantity} className="form-control" style={{ width: '70px' }} />
                 </div>
             </td>
 

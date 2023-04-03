@@ -9,10 +9,17 @@ export const getOwnCart = async (userId) =>  {
     return Object.values(result);
 };
 
-export const create = async (cartData) => {
-    const result = await request.post(url, cartData);
+export const create = async (cartData, userId) => {
+    let result = {};
+    const currentCart = await getOwnCart(userId);
+    const isAdded = currentCart.find(x => x.designId === cartData.designId);
 
-    console.log("Cart Submitted");
+    if(isAdded && isAdded.category === cartData.category) {
+        cartData = {...isAdded, quantity: isAdded.quantity + cartData.quantity};
+        result = await request.put(`${url}/${cartData._id}`, cartData);
+    } else {
+        result = await request.post(url, cartData);
+    }
 
     return result;
 };
