@@ -29,7 +29,6 @@ export const AuthProvider = ({
         try {
             await authService.logout();
         } catch (error) {
-            console.log(error.message);
         }
         setUser({});
         localStorage.clear();

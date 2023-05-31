@@ -1,6 +1,9 @@
 import { render, screen } from "@testing-library/react"
 import '@testing-library/jest-dom';
 import Details from "./Details"
+import { AuthContext } from "../../../contexts/AuthContext";
+import { LovesContext } from "../../../contexts/LovesContext";
+import { DesignsContext } from "../../../contexts/DesignsContext";
 
 const design = {
     "_id": "design_1",
@@ -28,7 +31,15 @@ beforeEach(() => {
 });
 
 it('Should render fetched design details', async () => {
-    render(<Details />);
+    render(
+        <AuthContext.Provider value={{isAdmin: false, isAuthenticated: false, userId: null}}>
+            <DesignsContext.Provider value={{onDeleteClick: "nothing"}}>
+                <LovesContext.Provider value={[]}>
+                    <Details />
+                </LovesContext.Provider>
+            </DesignsContext.Provider>
+        </AuthContext.Provider>
+    );
 
     const element = await screen.findByText(design.name);
 
