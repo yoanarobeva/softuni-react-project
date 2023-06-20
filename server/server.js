@@ -1189,458 +1189,457 @@
                 "description": "The name is originally from Arabic: عين ʿayn ('eye') and was reviewed and adopted by the Working Group on Star Names.", 
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "_createdOn": 1679590793547  
+            },
+            "design_10": {
+                "_id": "design_10",
+                "name": "Lyra",
+                "price": 24,
+                "imageUrl": "https://live.staticflickr.com/65535/52988517804_35bfe63af1_z.jpg",
+                "shape": "pentagon",
+                "description": "Nanjing proposal; Xihe is the goddess of the Sun in Chinese mythology. The star also represents the earliest Chinese astronomers and makers of calendars.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793548  
+            },
+            "design_11": {
+                "_id": "design_11",
+                "name": "Phoenix",
+                "price": 26,
+                "imageUrl": "https://live.staticflickr.com/65535/52987778472_854068b467_z.jpg",
+                "shape": "square",
+                "description": "A traditional name in the culture of the Wardaman people of the Northern Territory of Australia.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793549  
+            },
+            "design_12": {
+                "_id": "design_12",
+                "name": "Virgo",
+                "price": 25,
+                "imageUrl": "https://live.staticflickr.com/65535/52988834963_58b64f615b_z.jpg",
+                "shape": "square",
+                "description": "Vindemiatrix is Latin for '(female) grape gatherer'", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793550  
+            },
+            "design_13": {
+                "_id": "design_13",
+                "name": "Sagitta",
+                "price": 19,
+                "imageUrl": "https://live.staticflickr.com/65535/52988835293_1dc8275d70_z.jpg",
+                "shape": "square",
+                "description": "Iraqi proposal; named after Uruk, an ancient city of Sumer and Babylonia in Mesopotamia.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793551  
+            },
+            "design_14": {
+                "_id": "design_14",
+                "name": "Serpens",
+                "price": 27,
+                "imageUrl": "https://live.staticflickr.com/65535/52988378661_f8055c30c5_z.jpg",
+                "shape": "square",
+                "description": "From Arabic: عنق الحية ʿunuq al-ḥayya ('the serpent's neck'), called Cor Serpentis ('Heart of the Serpent') in Latin.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793552  
+            },
+            "design_15": {
+                "_id": "design_15",
+                "name": "Scorpius",
+                "price": 15,
+                "imageUrl": "https://live.staticflickr.com/65535/52988835273_62fee5d5b3_z.jpg",
+                "shape": "triangle",
+                "description": "The traditional name of the β Scorpii system has been rendered Akrab and Elakrab, derived (like Acrab) from Arabic: العقرب al-ʿaqrab ('the scorpion').", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793553  
+            },
+            "design_16": {
+                "_id": "design_16",
+                "name": "Centaurus",
+                "price": 20,
+                "imageUrl": "https://live.staticflickr.com/65535/52988835263_58285f081c_z.jpg",
+                "shape": "triangle",
+                "description": "Pitcairn Islands proposal. Aklen means 'we/us' in the Pitkern language.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793554  
+            },
+            "design_17": {
+                "_id": "design_17",
+                "name": "Reticulum",
+                "price": 21,
+                "imageUrl": "https://live.staticflickr.com/65535/52988835238_6a91305d2e_z.jpg",
+                "shape": "hexagon",
+                "description": "Brazilian proposal; named after the indigenous Tupi people.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793555  
+            },
+            "design_18": {
+                "_id": "design_18",
+                "name": "Canes Venatici",
+                "price": 22,
+                "imageUrl": "https://live.staticflickr.com/65535/52988835253_bbce736ce0_z.jpg",
+                "shape": "hexagon",
+                "description": "Irish proposal. The aunt of the warrior Fionn mac Cumhaill of Irish legend.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793556  
+            },
+            "design_19": {
+                "_id": "design_19",
+                "name": "Puppis",
+                "price": 23,
+                "imageUrl": "https://live.staticflickr.com/65535/52988518019_3c91f088a7_z.jpg",
+                "shape": "hexagon",
+                "description": "Moroccan proposal; named after Tislit Lake and means 'the bride' in the Amazigh language. Associated with a heartbroken girl in legend.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793557  
+            },
+            "design_20": {
+                "_id": "design_20",
+                "name": "Ophiuchus",
+                "price": 24,
+                "imageUrl": "https://live.staticflickr.com/65535/52988378381_9aa53ee249_z.jpg",
+                "shape": "octagon",
+                "description": "Bangladeshi proposal; means 'darkness' in the Bengali language.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793558  
+            },
+            "design_21": {
+                "_id": "design_21",
+                "name": "Draco",
+                "price": 25,
+                "imageUrl": "https://live.staticflickr.com/65535/52988748090_7ae669f917_z.jpg",
+                "shape": "octagon",
+                "description": "From the Chinese name 天乙 Tiānyǐ or 天一 Tiānyī ('the Celestial Great One'), a deity in Taoism.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793559  
+            },
+            "design_22": {
+                "_id": "design_22",
+                "name": "Auriga",
+                "price": 26,
+                "imageUrl": "https://live.staticflickr.com/65535/52988835213_cb0fc14d27_z.jpg",
+                "shape": "octagon",
+                "description": "Israeli proposal; means 'world' or 'universe' in the Hebrew language.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793560  
+            },
+            "design_23": {
+                "_id": "design_23",
+                "name": "Gemini",
+                "price": 16,
+                "imageUrl": "https://live.staticflickr.com/65535/52988834923_4a6682732e_z.jpg",
+                "shape": "square",
+                "description": "Traditional name, also called Tejat Posterior.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793561  
+            },
+            "design_24": {
+                "_id": "design_24",
+                "name": "Aquila",
+                "price": 15,
+                "imageUrl": "https://live.staticflickr.com/65535/52988835233_b82c6c6519_z.jpg",
+                "shape": "square",
+                "description": "Alternative traditional spelling of Tarazet.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793562  
+            },
+            "design_25": {
+                "_id": "design_25",
+                "name": "Crux",
+                "price": 18,
+                "imageUrl": "https://live.staticflickr.com/65535/52988378576_530c9febc7_z.jpg",
+                "shape": "square",
+                "description": "Acrux is a modern contraction of the Bayer designation, coined in the 19th century, but which entered into common use only by the mid-20th century.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793563  
+            },
+            "design_26": {
+                "_id": "design_26",
+                "name": "Carina",
+                "price": 17,
+                "imageUrl": "https://live.staticflickr.com/65535/52988517964_c450934081_z.jpg",
+                "shape": "hexagon",
+                "description": "Bolivian proposal; means 'Milky Way' in Guarani.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793564  
+            },
+            "design_27": {
+                "_id": "design_27",
+                "name": "Pegasus",
+                "price": 18,
+                "imageUrl": "https://live.staticflickr.com/65535/52987778342_8239ed8625_z.jpg",
+                "shape": "hexagon",
+                "description": "Bulgarian proposal; named after Tengri, the god early Bulgars worshiped.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793565  
+            },
+            "design_28": {
+                "_id": "design_28",
+                "name": "Lacerta",
+                "price": 19,
+                "imageUrl": "https://live.staticflickr.com/65535/52987778347_a34a435f3f_z.jpg",
+                "shape": "octagon",
+                "description": "Lithuanian proposal; means 'peace' in the Lithuanian language.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793566  
+            },
+            "design_29": {
+                "_id": "design_29",
+                "name": "Vela",
+                "price": 20,
+                "imageUrl": "https://live.staticflickr.com/65535/52988835158_1ddfb86088_z.jpg",
+                "shape": "octagon",
+                "description": "Traditionally, this name also applied to Velorum (Regor).", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793567  
+            },
+            "design_30": {
+                "_id": "design_30",
+                "name": "Delphinus",
+                "price": 21,
+                "imageUrl": "https://live.staticflickr.com/65535/52987778297_461bf8b985_z.jpg",
+                "shape": "octagon",
+                "description": "The name appeared in Piazzi's Palermo Star Catalogue in 1814, added by Niccolò Cacciatore as a prank along with Rotanev (β Delphini); 'Sualocin' is Nicolaus, the Latin form of Italian: Niccolò ('Nicholas'), spelt backwards.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793568  
+            },
+            "design_31": {
+                "_id": "design_31",
+                "name": "Leo",
+                "price": 22,
+                "imageUrl": "/assets/img/designs/design_31.jpg",
+                "shape": "pentagon",
+                "description": "Pakistani proposal; an Urdu literary term meaning 'a small lamp or flame'.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793569  
+            },
+            "design_32": {
+                "_id": "design_32",
+                "name": "Piscis Austrinus",
+                "price": 23,
+                "imageUrl": "/assets/img/designs/design_32.jpg",
+                "shape": "pentagon",
+                "description": "Sri Lankan proposal; means 'peace' in the Sinhala language.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793570  
+            },
+            "design_33": {
+                "_id": "design_33",
+                "name": "Orion",
+                "price": 24,
+                "imageUrl": "/assets/img/designs/design_33.jpg",
+                "shape": "square",
+                "description": "Traditional name from Arabic: سیف الجبار sayf al-jabbār, literally 'saif ('sword') of the giant'.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793571  
+            },
+            "design_34": {
+                "_id": "design_34",
+                "name": "Sagittarius",
+                "price": 24,
+                "imageUrl": "/assets/img/designs/design_34.jpg",
+                "shape": "square",
+                "description": "From Arabic: عين الرامي ʿayn ar-rāmī ('eye of the archer').", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793572 
+            },
+            "design_35": {
+                "_id": "design_35",
+                "name": "Tucana",
+                "price": 25,
+                "imageUrl": "/assets/img/designs/design_35.jpg",
+                "shape": "circle",
+                "description": "Cook Islands proposal; means a large mystical black pearl in the Cook Islands Māori language.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793573  
+            },
+            "design_36": {
+                "_id": "design_36",
+                "name": "Hercules",
+                "price": 26,
+                "imageUrl": "/assets/img/designs/design_36.jpg",
+                "shape": "circle",
+                "description": "Liechtenstein proposal; named after a bright and visible butterfly in the local dialect of Triesenberg.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793574  
+            },
+            "design_37": {
+                "_id": "design_37",
+                "name": "Andromeda",
+                "price": 16,
+                "imageUrl": "/assets/img/designs/design_37.jpg",
+                "shape": "composite",
+                "description": "The name was originally Arabic: الذيل aḏ-ḏayl (the train, lit. 'the tail').", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793575  
+            },
+            "design_38": {
+                "_id": "design_38",
+                "name": "Antlia",
+                "price": 21,
+                "imageUrl": "/assets/img/designs/design_38.jpg",
+                "shape": "composite",
+                "description": "Colombian proposal; named after a mythical village from the novel Cien anos de soledad (One Hundred Years of Solitude) by Gabriel García Márquez.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793576 
+            },
+            "design_39": {
+                "_id": "design_39",
+                "name": "Pavo",
+                "price": 28,
+                "imageUrl": "/assets/img/designs/design_39.jpg",
+                "shape": "hexagon",
+                "description": "Designated 'Peacock' (after the constellation) by His Majesty's Nautical Almanac Office for the Royal Air Force in the 1930s.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793577  
+            },
+            "design_40": {
+                "_id": "design_40",
+                "name": "Pisces",
+                "price": 16,
+                "imageUrl": "/assets/img/designs/design_40.jpg",
+                "shape": "hexagon",
+                "description": "Singaporean proposal; the name is Latin for 'little lion'.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793578  
+            },
+            "design_42": {
+                "_id": "design_42",
+                "name": "Dorado",
+                "price": 22,
+                "imageUrl": "/assets/img/designs/design_42.jpg",
+                "shape": "octagon",
+                "description": "South African proposal; means 'star' in the Sesotho, SeTswana and SePedi languages.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793579  
+            },
+            "design_43": {
+                "_id": "design_43",
+                "name": "Perseus",
+                "price": 23,
+                "imageUrl": "/assets/img/designs/design_43.jpg",
+                "shape": "octagon",
+                "description": "Danish proposal; named after the Norse mythological realm of fire Muspelheim.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793580  
+            },
+            "design_44": {
+                "_id": "design_44",
+                "name": "Cetus",
+                "price": 24,
+                "imageUrl": "/assets/img/designs/design_44.jpg",
+                "shape": "octagon",
+                "description": "Tanzanian proposal; named after Dalbergia melanoxylon, a tree whose ebony wood is used for musical instruments.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793581  
+            },
+            "design_45": {
+                "_id": "design_45",
+                "name": "Corona Borealis",
+                "price": 24,
+                "imageUrl": "/assets/img/designs/design_45.jpg",
+                "shape": "octagon",
+                "description": "Romanian proposal; named after Moldoveanu Peak, the highest peak in Romania.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793582  
+            },
+            "design_46": {
+                "_id": "design_46",
+                "name": "Monoceros",
+                "price": 27,
+                "imageUrl": "/assets/img/designs/design_46.jpg",
+                "shape": "square",
+                "description": "Portuguese proposal; ancient name for Lusitania, the region where most of Portugal is situated.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793583  
+            },
+            "design_47": {
+                "_id": "design_47",
+                "name": "Aquarius",
+                "price": 28,
+                "imageUrl": "/assets/img/designs/design_47.jpg",
+                "shape": "square",
+                "description": "Hong Kong proposal; named after Lion Rock, a culturally important lion-shaped peak.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793584  
+            },
+            "design_48": {
+                "_id": "design_48",
+                "name": "Apus",
+                "price": 27,
+                "imageUrl": "/assets/img/designs/design_48.jpg",
+                "shape": "circle",
+                "description": "New Zealand proposal; word for a local plant that produces orange fruit in the Māori language.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793585  
+            },
+            "design_49": {
+                "_id": "design_49",
+                "name": "Grus",
+                "price": 25,
+                "imageUrl": "/assets/img/designs/design_49.jpg",
+                "shape": "circle",
+                "description": "Gabonese proposal; means 'all that is beautiful' in the Myene language.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793586  
+            },
+            "design_50": {
+                "_id": "design_50",
+                "name": "Fornax",
+                "price": 25,
+                "imageUrl": "/assets/img/designs/design_50.jpg",
+                "shape": "composite",
+                "description": "Malaysian proposal; means 'diamond' in the Malay language.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793587  
+            },
+            "design_51": {
+                "_id": "design_51",
+                "name": "Camelopardalis",
+                "price": 27,
+                "imageUrl": "/assets/img/designs/design_51.jpg",
+                "shape": "composite",
+                "description": "German proposal; named after Mago National Park, a national park in Ethiopia noted for its giraffes (Camelopardalis is Latin for 'giraffe').", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793588 
+            },
+            "design_52": {
+                "_id": "design_52",
+                "name": "Ara",
+                "price": 23,
+                "imageUrl": "/assets/img/designs/design_52.jpg",
+                "shape": "hexagon",
+                "description": "Peruvian proposal; a character in the story Way to the Sun by Abraham Valdelomar.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793589  
+            },
+            "design_53": {
+                "_id": "design_53",
+                "name": "Leo Minor",
+                "price": 22,
+                "imageUrl": "/assets/img/designs/design_53.jpg",
+                "shape": "hexagon",
+                "description": "Albanian proposal; named after the Illyrians, the people from whom Albanians are descended and what they call themselves.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793590  
+            },
+            "design_54": {
+                "_id": "design_54",
+                "name": "Crater",
+                "price": 20,
+                "imageUrl": "/assets/img/designs/design_54.jpg",
+                "shape": "octagon",
+                "description": "Honduran proposal; one of the Maya Hero Twins who became the Sun in K'iche' Maya mythology.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793591  
+            },
+            "design_55": {
+                "_id": "design_55",
+                "name": "Triangulum",
+                "price": 19,
+                "imageUrl": "/assets/img/designs/design_55.jpg",
+                "shape": "octagon",
+                "description": "Finnish proposal; the name of hell or the underworld in Finnic mythology.", 
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "_createdOn": 1679590793592  
             }
-            // },
-            // "design_10": {
-            //     "_id": "design_10",
-            //     "name": "Lyra",
-            //     "price": 24,
-            //     "imageUrl": "/assets/img/designs/design_10.jpg",
-            //     "shape": "pentagon",
-            //     "description": "Nanjing proposal; Xihe is the goddess of the Sun in Chinese mythology. The star also represents the earliest Chinese astronomers and makers of calendars.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793548  
-            // },
-            // "design_11": {
-            //     "_id": "design_11",
-            //     "name": "Phoenix",
-            //     "price": 26,
-            //     "imageUrl": "/assets/img/designs/design_11.jpg",
-            //     "shape": "square",
-            //     "description": "A traditional name in the culture of the Wardaman people of the Northern Territory of Australia.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793549  
-            // },
-            // "design_12": {
-            //     "_id": "design_12",
-            //     "name": "Virgo",
-            //     "price": 25,
-            //     "imageUrl": "/assets/img/designs/design_12.jpg",
-            //     "shape": "square",
-            //     "description": "Vindemiatrix is Latin for '(female) grape gatherer'", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793550  
-            // },
-            // "design_13": {
-            //     "_id": "design_13",
-            //     "name": "Sagitta",
-            //     "price": 19,
-            //     "imageUrl": "/assets/img/designs/design_13.jpg",
-            //     "shape": "square",
-            //     "description": "Iraqi proposal; named after Uruk, an ancient city of Sumer and Babylonia in Mesopotamia.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793551  
-            // },
-            // "design_14": {
-            //     "_id": "design_14",
-            //     "name": "Serpens",
-            //     "price": 27,
-            //     "imageUrl": "/assets/img/designs/design_14.jpg",
-            //     "shape": "square",
-            //     "description": "From Arabic: عنق الحية ʿunuq al-ḥayya ('the serpent's neck'), called Cor Serpentis ('Heart of the Serpent') in Latin.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793552  
-            // },
-            // "design_15": {
-            //     "_id": "design_15",
-            //     "name": "Scorpius",
-            //     "price": 15,
-            //     "imageUrl": "/assets/img/designs/design_15.jpg",
-            //     "shape": "triangle",
-            //     "description": "The traditional name of the β Scorpii system has been rendered Akrab and Elakrab, derived (like Acrab) from Arabic: العقرب al-ʿaqrab ('the scorpion').", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793553  
-            // },
-            // "design_16": {
-            //     "_id": "design_16",
-            //     "name": "Centaurus",
-            //     "price": 20,
-            //     "imageUrl": "/assets/img/designs/design_16.jpg",
-            //     "shape": "triangle",
-            //     "description": "Pitcairn Islands proposal. Aklen means 'we/us' in the Pitkern language.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793554  
-            // },
-            // "design_17": {
-            //     "_id": "design_17",
-            //     "name": "Reticulum",
-            //     "price": 21,
-            //     "imageUrl": "/assets/img/designs/design_17.jpg",
-            //     "shape": "hexagon",
-            //     "description": "Brazilian proposal; named after the indigenous Tupi people.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793555  
-            // },
-            // "design_18": {
-            //     "_id": "design_18",
-            //     "name": "Canes Venatici",
-            //     "price": 22,
-            //     "imageUrl": "/assets/img/designs/design_18.jpg",
-            //     "shape": "hexagon",
-            //     "description": "Irish proposal. The aunt of the warrior Fionn mac Cumhaill of Irish legend.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793556  
-            // },
-            // "design_19": {
-            //     "_id": "design_19",
-            //     "name": "Puppis",
-            //     "price": 23,
-            //     "imageUrl": "/assets/img/designs/design_19.jpg",
-            //     "shape": "hexagon",
-            //     "description": "Moroccan proposal; named after Tislit Lake and means 'the bride' in the Amazigh language. Associated with a heartbroken girl in legend.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793557  
-            // },
-            // "design_20": {
-            //     "_id": "design_20",
-            //     "name": "Ophiuchus",
-            //     "price": 24,
-            //     "imageUrl": "/assets/img/designs/design_20.jpg",
-            //     "shape": "octagon",
-            //     "description": "Bangladeshi proposal; means 'darkness' in the Bengali language.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793558  
-            // },
-            // "design_21": {
-            //     "_id": "design_21",
-            //     "name": "Draco",
-            //     "price": 25,
-            //     "imageUrl": "/assets/img/designs/design_21.jpg",
-            //     "shape": "octagon",
-            //     "description": "From the Chinese name 天乙 Tiānyǐ or 天一 Tiānyī ('the Celestial Great One'), a deity in Taoism.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793559  
-            // },
-            // "design_22": {
-            //     "_id": "design_22",
-            //     "name": "Auriga",
-            //     "price": 26,
-            //     "imageUrl": "/assets/img/designs/design_22.jpg",
-            //     "shape": "octagon",
-            //     "description": "Israeli proposal; means 'world' or 'universe' in the Hebrew language.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793560  
-            // },
-            // "design_23": {
-            //     "_id": "design_23",
-            //     "name": "Gemini",
-            //     "price": 16,
-            //     "imageUrl": "/assets/img/designs/design_23.jpg",
-            //     "shape": "square",
-            //     "description": "Traditional name, also called Tejat Posterior.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793561  
-            // },
-            // "design_24": {
-            //     "_id": "design_24",
-            //     "name": "Aquila",
-            //     "price": 15,
-            //     "imageUrl": "/assets/img/designs/design_24.jpg",
-            //     "shape": "square",
-            //     "description": "Alternative traditional spelling of Tarazet.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793562  
-            // },
-            // "design_25": {
-            //     "_id": "design_25",
-            //     "name": "Crux",
-            //     "price": 18,
-            //     "imageUrl": "/assets/img/designs/design_25.jpg",
-            //     "shape": "square",
-            //     "description": "Acrux is a modern contraction of the Bayer designation, coined in the 19th century, but which entered into common use only by the mid-20th century.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793563  
-            // },
-            // "design_26": {
-            //     "_id": "design_26",
-            //     "name": "Carina",
-            //     "price": 17,
-            //     "imageUrl": "/assets/img/designs/design_26.jpg",
-            //     "shape": "hexagon",
-            //     "description": "Bolivian proposal; means 'Milky Way' in Guarani.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793564  
-            // },
-            // "design_27": {
-            //     "_id": "design_27",
-            //     "name": "Pegasus",
-            //     "price": 18,
-            //     "imageUrl": "/assets/img/designs/design_27.jpg",
-            //     "shape": "hexagon",
-            //     "description": "Bulgarian proposal; named after Tengri, the god early Bulgars worshiped.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793565  
-            // },
-            // "design_28": {
-            //     "_id": "design_28",
-            //     "name": "Lacerta",
-            //     "price": 19,
-            //     "imageUrl": "/assets/img/designs/design_28.jpg",
-            //     "shape": "octagon",
-            //     "description": "Lithuanian proposal; means 'peace' in the Lithuanian language.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793566  
-            // },
-            // "design_29": {
-            //     "_id": "design_29",
-            //     "name": "Vela",
-            //     "price": 20,
-            //     "imageUrl": "/assets/img/designs/design_29.jpg",
-            //     "shape": "octagon",
-            //     "description": "Traditionally, this name also applied to Velorum (Regor).", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793567  
-            // },
-            // "design_30": {
-            //     "_id": "design_30",
-            //     "name": "Delphinus",
-            //     "price": 21,
-            //     "imageUrl": "/assets/img/designs/design_30.jpg",
-            //     "shape": "octagon",
-            //     "description": "The name appeared in Piazzi's Palermo Star Catalogue in 1814, added by Niccolò Cacciatore as a prank along with Rotanev (β Delphini); 'Sualocin' is Nicolaus, the Latin form of Italian: Niccolò ('Nicholas'), spelt backwards.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793568  
-            // },
-            // "design_31": {
-            //     "_id": "design_31",
-            //     "name": "Leo",
-            //     "price": 22,
-            //     "imageUrl": "/assets/img/designs/design_31.jpg",
-            //     "shape": "pentagon",
-            //     "description": "Pakistani proposal; an Urdu literary term meaning 'a small lamp or flame'.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793569  
-            // },
-            // "design_32": {
-            //     "_id": "design_32",
-            //     "name": "Piscis Austrinus",
-            //     "price": 23,
-            //     "imageUrl": "/assets/img/designs/design_32.jpg",
-            //     "shape": "pentagon",
-            //     "description": "Sri Lankan proposal; means 'peace' in the Sinhala language.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793570  
-            // },
-            // "design_33": {
-            //     "_id": "design_33",
-            //     "name": "Orion",
-            //     "price": 24,
-            //     "imageUrl": "/assets/img/designs/design_33.jpg",
-            //     "shape": "square",
-            //     "description": "Traditional name from Arabic: سیف الجبار sayf al-jabbār, literally 'saif ('sword') of the giant'.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793571  
-            // },
-            // "design_34": {
-            //     "_id": "design_34",
-            //     "name": "Sagittarius",
-            //     "price": 24,
-            //     "imageUrl": "/assets/img/designs/design_34.jpg",
-            //     "shape": "square",
-            //     "description": "From Arabic: عين الرامي ʿayn ar-rāmī ('eye of the archer').", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793572 
-            // },
-            // "design_35": {
-            //     "_id": "design_35",
-            //     "name": "Tucana",
-            //     "price": 25,
-            //     "imageUrl": "/assets/img/designs/design_35.jpg",
-            //     "shape": "circle",
-            //     "description": "Cook Islands proposal; means a large mystical black pearl in the Cook Islands Māori language.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793573  
-            // },
-            // "design_36": {
-            //     "_id": "design_36",
-            //     "name": "Hercules",
-            //     "price": 26,
-            //     "imageUrl": "/assets/img/designs/design_36.jpg",
-            //     "shape": "circle",
-            //     "description": "Liechtenstein proposal; named after a bright and visible butterfly in the local dialect of Triesenberg.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793574  
-            // },
-            // "design_37": {
-            //     "_id": "design_37",
-            //     "name": "Andromeda",
-            //     "price": 16,
-            //     "imageUrl": "/assets/img/designs/design_37.jpg",
-            //     "shape": "composite",
-            //     "description": "The name was originally Arabic: الذيل aḏ-ḏayl (the train, lit. 'the tail').", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793575  
-            // },
-            // "design_38": {
-            //     "_id": "design_38",
-            //     "name": "Antlia",
-            //     "price": 21,
-            //     "imageUrl": "/assets/img/designs/design_38.jpg",
-            //     "shape": "composite",
-            //     "description": "Colombian proposal; named after a mythical village from the novel Cien anos de soledad (One Hundred Years of Solitude) by Gabriel García Márquez.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793576 
-            // },
-            // "design_39": {
-            //     "_id": "design_39",
-            //     "name": "Pavo",
-            //     "price": 28,
-            //     "imageUrl": "/assets/img/designs/design_39.jpg",
-            //     "shape": "hexagon",
-            //     "description": "Designated 'Peacock' (after the constellation) by His Majesty's Nautical Almanac Office for the Royal Air Force in the 1930s.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793577  
-            // },
-            // "design_40": {
-            //     "_id": "design_40",
-            //     "name": "Pisces",
-            //     "price": 16,
-            //     "imageUrl": "/assets/img/designs/design_40.jpg",
-            //     "shape": "hexagon",
-            //     "description": "Singaporean proposal; the name is Latin for 'little lion'.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793578  
-            // },
-            // "design_42": {
-            //     "_id": "design_42",
-            //     "name": "Dorado",
-            //     "price": 22,
-            //     "imageUrl": "/assets/img/designs/design_42.jpg",
-            //     "shape": "octagon",
-            //     "description": "South African proposal; means 'star' in the Sesotho, SeTswana and SePedi languages.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793579  
-            // },
-            // "design_43": {
-            //     "_id": "design_43",
-            //     "name": "Perseus",
-            //     "price": 23,
-            //     "imageUrl": "/assets/img/designs/design_43.jpg",
-            //     "shape": "octagon",
-            //     "description": "Danish proposal; named after the Norse mythological realm of fire Muspelheim.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793580  
-            // },
-            // "design_44": {
-            //     "_id": "design_44",
-            //     "name": "Cetus",
-            //     "price": 24,
-            //     "imageUrl": "/assets/img/designs/design_44.jpg",
-            //     "shape": "octagon",
-            //     "description": "Tanzanian proposal; named after Dalbergia melanoxylon, a tree whose ebony wood is used for musical instruments.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793581  
-            // },
-            // "design_45": {
-            //     "_id": "design_45",
-            //     "name": "Corona Borealis",
-            //     "price": 24,
-            //     "imageUrl": "/assets/img/designs/design_45.jpg",
-            //     "shape": "octagon",
-            //     "description": "Romanian proposal; named after Moldoveanu Peak, the highest peak in Romania.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793582  
-            // },
-            // "design_46": {
-            //     "_id": "design_46",
-            //     "name": "Monoceros",
-            //     "price": 27,
-            //     "imageUrl": "/assets/img/designs/design_46.jpg",
-            //     "shape": "square",
-            //     "description": "Portuguese proposal; ancient name for Lusitania, the region where most of Portugal is situated.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793583  
-            // },
-            // "design_47": {
-            //     "_id": "design_47",
-            //     "name": "Aquarius",
-            //     "price": 28,
-            //     "imageUrl": "/assets/img/designs/design_47.jpg",
-            //     "shape": "square",
-            //     "description": "Hong Kong proposal; named after Lion Rock, a culturally important lion-shaped peak.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793584  
-            // },
-            // "design_48": {
-            //     "_id": "design_48",
-            //     "name": "Apus",
-            //     "price": 27,
-            //     "imageUrl": "/assets/img/designs/design_48.jpg",
-            //     "shape": "circle",
-            //     "description": "New Zealand proposal; word for a local plant that produces orange fruit in the Māori language.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793585  
-            // },
-            // "design_49": {
-            //     "_id": "design_49",
-            //     "name": "Grus",
-            //     "price": 25,
-            //     "imageUrl": "/assets/img/designs/design_49.jpg",
-            //     "shape": "circle",
-            //     "description": "Gabonese proposal; means 'all that is beautiful' in the Myene language.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793586  
-            // },
-            // "design_50": {
-            //     "_id": "design_50",
-            //     "name": "Fornax",
-            //     "price": 25,
-            //     "imageUrl": "/assets/img/designs/design_50.jpg",
-            //     "shape": "composite",
-            //     "description": "Malaysian proposal; means 'diamond' in the Malay language.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793587  
-            // },
-            // "design_51": {
-            //     "_id": "design_51",
-            //     "name": "Camelopardalis",
-            //     "price": 27,
-            //     "imageUrl": "/assets/img/designs/design_51.jpg",
-            //     "shape": "composite",
-            //     "description": "German proposal; named after Mago National Park, a national park in Ethiopia noted for its giraffes (Camelopardalis is Latin for 'giraffe').", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793588 
-            // },
-            // "design_52": {
-            //     "_id": "design_52",
-            //     "name": "Ara",
-            //     "price": 23,
-            //     "imageUrl": "/assets/img/designs/design_52.jpg",
-            //     "shape": "hexagon",
-            //     "description": "Peruvian proposal; a character in the story Way to the Sun by Abraham Valdelomar.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793589  
-            // },
-            // "design_53": {
-            //     "_id": "design_53",
-            //     "name": "Leo Minor",
-            //     "price": 22,
-            //     "imageUrl": "/assets/img/designs/design_53.jpg",
-            //     "shape": "hexagon",
-            //     "description": "Albanian proposal; named after the Illyrians, the people from whom Albanians are descended and what they call themselves.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793590  
-            // },
-            // "design_54": {
-            //     "_id": "design_54",
-            //     "name": "Crater",
-            //     "price": 20,
-            //     "imageUrl": "/assets/img/designs/design_54.jpg",
-            //     "shape": "octagon",
-            //     "description": "Honduran proposal; one of the Maya Hero Twins who became the Sun in K'iche' Maya mythology.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793591  
-            // },
-            // "design_55": {
-            //     "_id": "design_55",
-            //     "name": "Triangulum",
-            //     "price": 19,
-            //     "imageUrl": "/assets/img/designs/design_55.jpg",
-            //     "shape": "octagon",
-            //     "description": "Finnish proposal; the name of hell or the underworld in Finnic mythology.", 
-            //     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-            //     "_createdOn": 1679590793592  
-            // }
         },
     	loves: {
     	},
